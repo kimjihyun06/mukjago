@@ -1,0 +1,21 @@
+# 받은 자료 원본 (카톡 사진·카드·메모 등) — 절대 올리지 않는다
+자료/
+*.zip
+KakaoTalk_*
+*카드*
+*비번*
+소통*.txt
+
+# 비밀
+.env
+*.key
+.claude/settings.local.json
+
+# 기록 도구 임시파일
+*.tmp
+__pycache__/
+
+# 운영체제
+Thumbs.db
+desktop.ini
+.DS_Store

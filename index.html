@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>먹자GO - 도매가로 만나는 맛있는 세상</title>
+<meta name="description" content="먹자GO - 도매가로 만나는 맛있는 세상. 농·수·축산물부터 간편식품까지 도매가 그대로 판매합니다.">
+<meta property="og:title" content="먹자GO - 도매가로 만나는 맛있는 세상">
+<meta property="og:description" content="농·수·축산물부터 간편식품까지 도매가 그대로! 매일 특가를 만나보세요.">
+<meta property="og:image" content="images/logo.png">
+<meta name="theme-color" content="#2c5a1c">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/config.js" defer></script>
+<script src="js/products.js" defer></script>
+<script src="js/app.js" defer></script>
+</head>
+<body data-page="home">
+<a class="skip" href="#main">본문 바로가기</a>
+<header id="site-header"></header>
+<main id="main" class="wrap">
+<!-- ① 메인 배너 (1~10장) : js/config.js 의 banners 에서 고칩니다 -->
+<section id="banner" class="banner" aria-label="메인 배너"></section>
+
+<!-- 신규회원 웰컴쿠폰 -->
+<section class="welcome" aria-label="신규회원 혜택">
+  <div>
+    <small>신규회원 웰컴쿠폰</small>
+    <h2><em id="coupon-amount">최대 5,000원</em> 할인</h2>
+    <p>지금 가입하고 첫 주문부터 도매가에 할인까지 받으세요.</p>
+  </div>
+  <a href="notice.html" class="btn">혜택보기 ›</a>
+</section>
+
+<!-- ② 오늘의 특가전 (products.js 에서 tags 에 "today") -->
+<section class="sec" aria-labelledby="h-today">
+  <div class="sec-head"><div>
+    <h2 id="h-today">지금 안 사면 <span class="hl">'손해'</span>, 오늘의 특가전!</h2>
+    <p>망설이면 놓치는 오늘의 최저가, 실속 구성과 가격을 한 번에 잡으세요!</p>
+  </div><a href="list.html?cat=today" class="more-link">더보기 ›</a></div>
+  <div id="sec-today"></div>
+</section>
+
+<!-- 실시간 Best (tags 에 "best") -->
+<section class="sec" aria-labelledby="h-best">
+  <div class="sec-head"><div>
+    <h2 id="h-best">실시간 <span class="hl">Best</span> 메뉴</h2>
+    <p>인기 먹거리부터 베스트 구성까지 한자리에!</p>
+  </div></div>
+  <div id="sec-best"></div>
+</section>
+
+<!-- ③ 농산물 · ④ 축산물 · ⑤ 수산물 -->
+<section class="sec" id="sec-farm"></section>
+<section class="sec" id="sec-meat"></section>
+<section class="sec" id="sec-sea"></section>
+
+<!-- ⑥ 카카오톡 오픈채팅 특가방 -->
+<section class="kakao" id="kakao" aria-labelledby="h-kakao">
+  <div>
+    <span class="pill">매일 올라오는 실속특가 가장 먼저</span>
+    <h2 id="h-kakao"><b>먹자GO</b> 매일 특가 오픈채팅방 입장하기!</h2>
+    <p>비밀번호 <span class="pw" id="kakao-pw">1004</span> (특가·쿠폰 혜택이 와르르!)</p>
+    <a href="#" class="btn big kakao-btn" data-kakao>💬 특가방 입장하기</a>
+  </div>
+  <img src="images/kakao-poster.jpg" alt="먹자고 할인 특가방 안내 - 농·수·축산물부터 간편식품까지 도매가 그대로 판매" loading="lazy">
+</section>
+
+<!-- 찐후기 -->
+<section class="sec" aria-labelledby="h-review">
+  <div class="sec-head"><div>
+    <h2 id="h-review">놓치면 아까운 찐후기 모음</h2>
+    <p>먹자GO의 믿고 먹는 생생한 후기, 지금 바로 확인해보세요!</p>
+  </div></div>
+  <div class="reviews" id="reviews"></div>
+</section>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

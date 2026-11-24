@@ -1,0 +1,109 @@
+# 먹자GO 홈페이지
+
+> 도매가로 만나는 맛있는 세상 — 주식회사 잇플로우
+
+빌드 도구 없이 HTML·CSS·JS 만으로 만든 쇼핑몰 홈페이지입니다.
+GitHub 에 올리면 **GitHub Pages** 로 바로 배포됩니다 (무료).
+
+---
+
+## 1. 필요한 프로그램 (윈도, 처음 한 번)
+
+| 프로그램 | 쓰는 곳 | 설치 |
+|---|---|---|
+| **Git** | GitHub 과 주고받기 | https://git-scm.com/download/win |
+| **Python 3.12** | 점검·기록 도구 (`tools/`) | https://www.python.org/downloads/ — 설치 첫 화면에서 **Add Python to PATH** 꼭 체크 |
+| **VS Code** | 파일 고치기·미리보기 | https://code.visualstudio.com/ |
+| **Claude Code** | AI 와 함께 작업 | Claude 데스크톱 앱 또는 https://claude.ai/code |
+| GitHub Desktop (선택) | 버튼으로 올리기 | https://desktop.github.com/ |
+
+PowerShell 에서 한 번에 설치하려면 (윈도 10/11):
+
+```bash
+winget install Git.Git Python.Python.3.12 Microsoft.VisualStudioCode
+```
+
+설치 후 확인:
+
+```bash
+git --version
+```
+
+```bash
+python --version
+```
+
+## 2. 내 컴퓨터로 받아오기 (처음 한 번)
+
+```bash
+cd C:\Users\Administrator\Desktop\my-hamepage\my-hamepage
+```
+
+```bash
+git clone https://github.com/<아이디>/<저장소이름>.git kimjihyun06-homepage
+```
+
+처음 올릴 때 이름·메일을 한 번 정해 둡니다:
+
+```bash
+git config --global user.name "김지현"
+```
+
+```bash
+git config --global user.email "<GitHub 에 등록한 메일>"
+```
+
+## 3. 배포 켜기 (처음 한 번, GitHub 웹에서)
+
+1. 저장소 → **Settings** → 왼쪽 **Pages**
+2. **Source**: `Deploy from a branch`
+3. **Branch**: `main` / `/ (root)` → **Save**
+4. 1~2분 뒤 주소가 뜹니다: `https://<아이디>.github.io/<저장소이름>/`
+
+## 4. 매일 작업하는 순서
+
+```text
+① 받아오기      git pull                    (다른 사람이 고친 것 먼저 받기)
+② 점검          python tools/state.py       (또는 상태확인.bat 더블클릭)
+③ 고치기        직접 또는 Claude 에게 부탁
+④ 확인          index.html 더블클릭 → 컴퓨터·휴대폰 크기로 보기
+⑤ 점검          python tools/state.py check (모두 OK 여야 올림)
+⑥ 올리기        git add . → git commit -m "무엇을 바꿨나" → git push
+⑦ 기록          python tools/state.py log
+```
+
+`main` 에 올라간 것은 1~2분 뒤 **실제 홈페이지에 바로 반영**됩니다.
+큰 변경은 새 가지(branch)에서 작업 → Pull Request → 확인 후 합치기를 권합니다.
+PR·push 때마다 GitHub Actions 가 점검(`state.py check`)을 자동으로 돌립니다.
+
+## 5. 무엇을 어디서 고치나
+
+| 고칠 것 | 파일 |
+|---|---|
+| 회사 정보·전화·계좌·**카톡 오픈채팅 링크**·**메인 배너** | `js/config.js` |
+| **상품**·후기·공지사항 | `js/products.js` |
+| 첫 화면 칸 순서·문구 | `index.html` |
+| 색·글꼴·배치 | `css/style.css` |
+| 사진 | `images/` (배너 `images/banners/`, 상품 `images/products/`) |
+
+**사진 넣는 법**
+1. 사진 파일 이름을 **영문**으로 바꿉니다 (예: `apple-5kg.jpg`). 1MB 이하로.
+2. `images/products/` (배너는 `images/banners/`) 에 넣습니다.
+3. Claude 에게: *"product.html?id=1 상품 사진을 images/products/apple-5kg.jpg 로 바꿔줘"*
+
+**상품을 실제 상품으로 바꾸기** — `js/products.js` 의 각 상품에서 이름·가격을 고치고
+`sample: true` 를 지우면 「예시 상품」 표시가 사라집니다.
+
+## 6. 협업 체계
+
+| 파일 | 무엇 |
+|---|---|
+| `CLAUDE.md` | AI 가 지키는 규칙 (Claude Code 가 자동으로 읽음) |
+| `운영규칙.txt` | 사람이 보는 한 장 요약 |
+| `04_LOG/` | 상태판·개발/오류/시험/결정 기록 |
+| `07_BOOK/` | 기록 → 출판 원자료 |
+| `tools/state.py` | 상태 보기·점검·기록 명령 |
+| `tools/guards_project.py` | 이 홈페이지 전용 점검 (깨진 링크·사진 크기·**민감 자료**) |
+
+> ⚠️ **카드 사진·비밀번호·카톡 원본 자료는 `자료/` 폴더에 두세요.**
+> 그 폴더는 GitHub 에 올라가지 않습니다(`.gitignore`). 올라간 것은 전 세계에 공개됩니다.

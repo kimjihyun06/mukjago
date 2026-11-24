@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>전체상품 | 먹자GO</title>
+<meta name="description" content="먹자GO - 도매가로 만나는 맛있는 세상. 농·수·축산물부터 간편식품까지 도매가 그대로 판매합니다.">
+<meta property="og:title" content="먹자GO - 도매가로 만나는 맛있는 세상">
+<meta property="og:description" content="농·수·축산물부터 간편식품까지 도매가 그대로! 매일 특가를 만나보세요.">
+<meta property="og:image" content="images/logo.png">
+<meta name="theme-color" content="#2c5a1c">
+<link rel="icon" href="images/favicon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/config.js" defer></script>
+<script src="js/products.js" defer></script>
+<script src="js/app.js" defer></script>
+</head>
+<body data-page="list">
+<a class="skip" href="#main">본문 바로가기</a>
+<header id="site-header"></header>
+<main id="main" class="wrap">
+<div class="page-head">
+  <div><h1 id="list-title">전체상품</h1><p id="list-sub"></p></div>
+  <label><span class="skip">정렬</span>
+    <select id="sort" aria-label="정렬">
+      <option value="">추천순</option><option value="pct">할인율순</option>
+      <option value="low">낮은 가격순</option><option value="high">높은 가격순</option>
+    </select></label>
+</div>
+<div id="list"></div>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>
