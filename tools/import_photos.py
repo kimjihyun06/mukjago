@@ -7,7 +7,7 @@
 
 폴더 안 파일을 이렇게 나눈다:
     대표이미지.jpg / 대표*.jpg      -> 대표사진 맨 앞
-    0.jpg 1.jpg 2.jpg ... (숫자)    -> 대표사진 (숫자 순서)       -> 1.jpg, 2.jpg ... 로 저장 (가로 최대 1200)
+    0.jpg 1.jpg 7 (1).jpg ... (숫자) -> 대표사진 (숫자 순서)       -> 1.jpg, 2.jpg ... 로 저장 (가로 최대 1200)
     *상세*.jpg                      -> 상세페이지 이미지           -> detail-1.jpg ... (세로 2000px 씩 잘라 저장)
     아주 긴 그림 (세로 > 가로×4)     -> 이름이 달라도 상세페이지로 봄
     KakaoTalk_*, *카톡*, 그 밖 포스터·광고 그림
@@ -55,8 +55,9 @@ def classify(files):
             detail.append(f)
         elif s.startswith("대표"):
             main.insert(0, (-1, f))
-        elif s.isdigit():
-            main.append((int(s), f))
+        elif re.fullmatch(r"\d+(\s*\(\d+\))?", s):  # 7.jpg, 윈도 복사본 7 (1).jpg 도 숫자 사진
+            n = re.findall(r"\d+", s)
+            main.append((int(n[0]) + (int(n[1]) / 100 if len(n) > 1 else 0), f))
         else:
             kakao.append(f)  # 숫자·상세가 아닌 포스터·광고 그림 = 홍보이미지로 보고 올리지 않음
     main.sort(key=lambda x: x[0])

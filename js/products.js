@@ -1,6 +1,6 @@
 /* 자동 생성 파일 — 손으로 고치지 마세요 (다시 만들면 지워집니다).
  * 원본: 늘푸른우리 제품 공급표_잇플로우.xlsx
- * 만든 때: 2026-11-26 04:06
+ * 만든 때: 2026-11-26 04:08
  * 다시 만들기: python tools/import_excel.py
  * 문구·후기·공지·분류는 js/content.js 에서 고칩니다. */
 window.PRODUCTS = [
@@ -838,9 +838,34 @@ window.PRODUCTS = [
   "price": 10590,
   "ship": 4000,
   "emoji": "🦀",
-  "images": [],
+  "images": [
+   "images/products/p26/1.jpg",
+   "images/products/p26/2.jpg",
+   "images/products/p26/3.jpg",
+   "images/products/p26/4.jpg",
+   "images/products/p26/5.jpg",
+   "images/products/p26/6.jpg",
+   "images/products/p26/7.jpg",
+   "images/products/p26/8.jpg",
+   "images/products/p26/9.jpg",
+   "images/products/p26/10.jpg",
+   "images/products/p26/11.jpg",
+   "images/products/p26/12.jpg"
+  ],
   "top": "images/products/p26/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p26/detail-1.jpg",
+   "images/products/p26/detail-2.jpg",
+   "images/products/p26/detail-3.jpg",
+   "images/products/p26/detail-4.jpg",
+   "images/products/p26/detail-5.jpg",
+   "images/products/p26/detail-6.jpg",
+   "images/products/p26/detail-7.jpg",
+   "images/products/p26/detail-8.jpg",
+   "images/products/p26/detail-9.jpg",
+   "images/products/p26/detail-10.jpg",
+   "images/products/p26/detail-11.jpg"
+  ],
   "options": [
    {
     "name": "(일반형) 소문난 간장게장 1kg(2미/4조각)",
