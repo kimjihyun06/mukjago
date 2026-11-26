@@ -2,6 +2,10 @@
 
 > 판본별 **요약만**. 자세한 것은 `DEVELOPMENT_LOG.md`.
 
+## 0.6.0 - 2026-11-26
+
+- GitHub Pages 배포: https://kimjihyun06.github.io/mukjago/
+
 ## 0.5.0 - 2026-11-26
 
 - 하위 메뉴 이름(신선채소·제철 과일 | 배추김치·기타김치류), 참조기 상세, AI 연출 이미지 38장 (Gemini)
