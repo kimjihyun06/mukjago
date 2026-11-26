@@ -10,6 +10,20 @@ GitHub 에 올리면 **GitHub Pages** 로 바로 배포됩니다 (무료).
 
 ---
 
+## 0. PC 작업 환경 한 번에 갖추기 (윈도, 처음 한 번)
+
+`D:\my-hamepage\my-hamepage` 에서 PowerShell 을 열고:
+
+```bash
+irm https://raw.githubusercontent.com/kimjihyun06/mukjago/main/tools/setup_windows.ps1 -OutFile setup_windows.ps1
+```
+
+```bash
+powershell -ExecutionPolicy Bypass -File setup_windows.ps1
+```
+
+Git·Python·VS Code 설치, Claude Code PATH 등록, 홈페이지 최신본 받기, 파이썬 부품 설치, git 사용자 설정, 점검까지 한 번에 합니다 (이미 있는 것은 건너뜀).
+
 ## 1. 필요한 프로그램 (윈도, 처음 한 번)
 
 | 프로그램 | 쓰는 곳 | 설치 |

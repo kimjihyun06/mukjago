@@ -431,3 +431,29 @@ T024
 사용자: PC 에서 사진전체갱신.bat 또는 Remote Control 연결
 
 ==========================================================
+
+==========================================================
+[DEVELOPMENT RECORD #013]
+
+DATE: 2026-11-26
+TIME: 06:37
+
+[USER] 사용자 지시
+모든 필요한 프로그램과 환경을 구축해두세요
+
+[CONTEXT] 그때 상황
+사용자 PC 에 Claude Code 설치·로그인 완료(D:\my-hamepage\my-hamepage). PC 의 Claude 가 git·python 이 없음을 찾아 설치 허락을 묻는 중. 클라우드 세션은 PC 에 직접 설치 불가
+
+[EXECUTION] 실제 한 일
+tools/setup_windows.ps1 (winget 으로 Git·Python 3.12·VS Code, Claude PATH, 홈페이지 clone 또는 pull·옛 폴더 보관, pip requirements, git 사용자·core.quotepath, state.py check, 자료 폴더 확인). UTF-8 BOM·CRLF. README 0장, CLAUDE.md 표
+
+[FILES] 건드린 파일
+tools/setup_windows.ps1, README.md, CLAUDE.md
+
+[TEST] 어떻게 쟀나
+PowerShell 이 클라우드에 없어 구문 검사·실행 못 함 (확인 필요: PC 에서 실행 결과)
+
+[NEXT] 다음
+PC 의 Claude Code 가 스크립트를 받아 실행 → 결과 확인 → import_all_photos --dry
+
+==========================================================

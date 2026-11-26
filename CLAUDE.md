@@ -124,6 +124,7 @@ python tools/makebook.py       # 기록 -> 출판 원자료
 
 | 고칠 것 | 파일 |
 |---|---|
+| PC 작업 환경 (Git·Python·VS Code·최신본·부품) | `tools/setup_windows.ps1` — 여러 번 돌려도 안전 |
 | 회사 정보·전화·계좌·카톡 링크·**메인 배너** | `js/config.js` |
 | **상품·가격** | 공급표 엑셀 → `python tools/import_excel.py` → `js/products.js` (**자동 생성, 손대지 말 것**) |
 | **메뉴·하위 메뉴**(분류)·첫 화면 Best·후기·공지 | `js/content.js` — 메뉴 순서는 자료 폴더 순서(1 전체상품 … 8 입점문의)를 따른다 |

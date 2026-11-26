@@ -8,13 +8,13 @@
 >
 > 다듬은 원고는 `BOOK_MANUSCRIPT.md` 로 간다. **RAW -> EDIT -> BOOK**
 
-마지막으로 뽑은 때: 2026-11-26 05:46
+마지막으로 뽑은 때: 2026-11-26 06:37
 
 ---
 
 ## 숫자 (실제 기록에서 셈)
 
-- 개발 기록: **12**
+- 개발 기록: **13**
 - 오류 기록: **3**
 - 시험 기록: **22**
 - 결정 기록: **11**
@@ -473,6 +473,44 @@ T024
 
 ### 결과
 도구는 준비됨. 실제 전 품목 연결은 PC 에서 bat 실행 또는 Remote Control 연결 후
+
+### 정한 것
+-
+
+---
+
+
+## 제013회 · 2026-11-26 06:37
+
+### 무엇이 문제였나
+사용자 PC 에 Claude Code 설치·로그인 완료(D:\my-hamepage\my-hamepage). PC 의 Claude 가 git·python 이 없음을 찾아 설치 허락을 묻는 중. 클라우드 세션은 PC 에 직접 설치 불가
+
+### 사용자가 지시한 것
+모든 필요한 프로그램과 환경을 구축해두세요
+
+### 분석
+-
+
+### 실제로 한 일
+tools/setup_windows.ps1 (winget 으로 Git·Python 3.12·VS Code, Claude PATH, 홈페이지 clone 또는 pull·옛 폴더 보관, pip requirements, git 사용자·core.quotepath, state.py check, 자료 폴더 확인). UTF-8 BOM·CRLF. README 0장, CLAUDE.md 표
+
+### 건드린 파일
+tools/setup_windows.ps1, README.md, CLAUDE.md
+
+### 일어난 오류
+(없음)
+
+### 진범
+(없음)
+
+### 고친 방법
+(없음)
+
+### 어떻게 쟀나
+PowerShell 이 클라우드에 없어 구문 검사·실행 못 함 (확인 필요: PC 에서 실행 결과)
+
+### 결과
+-
 
 ### 정한 것
 -
