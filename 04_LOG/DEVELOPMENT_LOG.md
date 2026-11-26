@@ -550,3 +550,26 @@ tools/label_main.py, tools/import_photos.py, tools/product_info.json, images/pro
 p09 1.jpg 에 「활 돌문어」
 
 ==========================================================
+
+==========================================================
+[DEVELOPMENT RECORD #017]
+
+DATE: 2026-11-26
+TIME: 08:18
+
+[USER] 사용자 지시
+문구 작성한 이미지 원래대로 돌려줘
+
+[EXECUTION] 실제 한 일
+p09/1.jpg 를 650f773 의 원본으로 되돌림, product_info 의 9.main_label 삭제 (도구 tools/label_main.py 는 남김)
+
+[FILES] 건드린 파일
+images/products/p09/1.jpg, tools/product_info.json
+
+[TEST] 어떻게 쟀나
+원본 md5 일치, 이름표 주석 없음, 이름표 자리 색 (127,188,219) 하늘색, label_main 대상 0, 걸쇠 10/10
+
+[NEXT] 다음
+배포 여부 대표님께 확인
+
+==========================================================
