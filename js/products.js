@@ -1,6 +1,6 @@
 /* 자동 생성 파일 — 손으로 고치지 마세요 (다시 만들면 지워집니다).
  * 원본: 늘푸른우리 제품 공급표_잇플로우.xlsx
- * 만든 때: 2026-11-26 04:24
+ * 만든 때: 2026-11-26 05:00
  * 다시 만들기: python tools/import_excel.py
  * 문구·후기·공지·분류는 js/content.js 에서 고칩니다. */
 window.PRODUCTS = [
@@ -263,7 +263,13 @@ window.PRODUCTS = [
   "emoji": "🐟",
   "images": [],
   "top": "images/products/p12/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p12/detail-1.jpg",
+   "images/products/p12/detail-2.jpg",
+   "images/products/p12/detail-3.jpg",
+   "images/products/p12/detail-4.jpg",
+   "images/products/p12/detail-5.jpg"
+  ],
   "options": [
    {
     "name": "여수 참조기 500g(6-8미내외)",

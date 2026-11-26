@@ -10,10 +10,8 @@
 window.CATEGORIES = {
   farm: { name: "농산물", title: "실속 담은 농산물 특가", sub: "매일 찾는 기본 식재료, 거품 뺀 도매가로 한번에!", default: "veg",
     subs: [
-      { key: "veg",    name: "채소",       match: [] },
-      { key: "potato", name: "고구마·감자", match: ["고구마", "히카마", "감자", "산마", "장마"] },
-      { key: "chest",  name: "밤",         match: ["햇밤", "약단밤"] },
-      { key: "corn",   name: "옥수수",     match: ["옥수수"] },
+      { key: "veg",   name: "신선채소",  match: [] },
+      { key: "fruit", name: "제철 과일", match: ["사과", "배 ", "감귤", "귤", "딸기", "포도", "샤인머스캣", "복숭아", "자두", "참외", "수박", "멜론", "단감", "홍시", "곶감", "키위", "한라봉", "천혜향", "레드향", "블루베리", "체리", "망고", "바나나", "오렌지", "자몽", "석류", "무화과"] },
     ] },
   meat: { name: "축산물", title: "진심을 담은 정직한 축산", sub: "보이는 그대로 알차게, 정직하게 고른 고기.", default: "pork",
     subs: [
@@ -26,11 +24,10 @@ window.CATEGORIES = {
       { key: "season", name: "제철 수산물", match: [] },
       { key: "bap",    name: "밥도둑",     match: ["게장", "무침", "새우장", "꼬막장", "곱창김"] },
     ] },
-  kimchi: { name: "김치류", title: "정성 담은 김치 특가", sub: "매일 밥상에 오르는 김치, 도매가로 넉넉하게!", default: "special",
+  kimchi: { name: "김치류", title: "정성 담은 김치 특가", sub: "매일 밥상에 오르는 김치, 도매가로 넉넉하게!", default: "etc",
     subs: [
-      { key: "cabbage", name: "배추김치", match: ["배추김치", "포기", "백김치", "묵은지"] },
-      { key: "special", name: "별미김치", match: [] },
-      { key: "water",   name: "물김치",   match: ["물김치"] },
+      { key: "cabbage", name: "배추김치",   match: ["배추김치", "포기", "백김치", "묵은지"] },
+      { key: "etc",     name: "기타김치류", match: [] },
     ] },
   easy: { name: "간편식품", title: "든든한 간편식품", sub: "국·탕부터 반찬까지, 데우기만 하면 한 끼 완성!", default: "side",
     subs: [

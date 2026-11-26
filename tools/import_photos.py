@@ -3,6 +3,8 @@
 쓰기:
     python tools/import_photos.py <사진폴더> <상품번호>
     python tools/import_photos.py ..\자료\엑셀\5수산물\밥도둑\순살게장 28
+    python tools/import_photos.py <사진폴더> <상품번호> --kakao-detail
+                                  카톡 실물 사진을 상세 이미지로 씀 (사용자가 원할 때만, 업체 표시 없는지 먼저 확인)
     (상품번호는 상품번호표.txt 에서 찾습니다. 끝나면 상품갱신.bat 을 한 번 더 돌리세요)
 
 폴더 안 파일을 이렇게 나눈다:
@@ -111,6 +113,12 @@ def main():
     src = unwrap(src)
     files = [f for f in src.rglob("*") if f.is_file() and f.suffix.lower() in EXT]
     main_f, detail_f, kakao, skip = classify(files, src)
+    if "--kakao-detail" in sys.argv:
+        # 사용자가 「카톡 사진을 상세로 써 달라」고 한 경우에만: 카톡 이름의 실물 사진 -> 상세 이미지 (이름순)
+        # 포스터·광고(카톡 이름이 아닌 그림)는 여전히 올리지 않는다.
+        kk = sorted((f for f in kakao if re.match(r"(?i)kakaotalk|카톡", f.stem)), key=lambda f: f.name)
+        detail_f = detail_f + kk
+        kakao = [f for f in kakao if f not in kk]
     out = ROOT / "images" / "products" / f"p{pid:02d}"
     out.mkdir(parents=True, exist_ok=True)
     for old in out.iterdir():
