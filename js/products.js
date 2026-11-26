@@ -1,6 +1,6 @@
 /* 자동 생성 파일 — 손으로 고치지 마세요 (다시 만들면 지워집니다).
  * 원본: 늘푸른우리 제품 공급표_잇플로우.xlsx
- * 만든 때: 2026-11-26 16:43
+ * 만든 때: 2026-11-26 16:58
  * 다시 만들기: python tools/import_excel.py
  * 문구·후기·공지·분류는 js/content.js 에서 고칩니다. */
 window.PRODUCTS = [
@@ -364,15 +364,20 @@ window.PRODUCTS = [
   "ship": 4000,
   "emoji": "🐟",
   "images": [
-   "images/products/p12/ai-1.jpg"
+   "images/products/p12/1.jpg",
+   "images/products/p12/2.jpg",
+   "images/products/p12/3.jpg",
+   "images/products/p12/4.jpg",
+   "images/products/p12/5.jpg",
+   "images/products/p12/6.jpg",
+   "images/products/p12/7.jpg"
   ],
   "top": "images/products/p12/top.jpg",
   "detail": [
    "images/products/p12/detail-1.jpg",
    "images/products/p12/detail-2.jpg",
    "images/products/p12/detail-3.jpg",
-   "images/products/p12/detail-4.jpg",
-   "images/products/p12/detail-5.jpg"
+   "images/products/p12/detail-4.jpg"
   ],
   "options": [
    {
@@ -394,8 +399,7 @@ window.PRODUCTS = [
    "origin": "국내산 (여수)",
    "courier": "CJ대한통운 · 5개까지 합배송",
    "kakao_detail": true
-  },
-  "ai": true
+  }
  },
  {
   "id": 13,
@@ -2973,10 +2977,31 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🍠",
   "images": [
-   "images/products/p57/ai-1.jpg"
+   "images/products/p57/1.jpg",
+   "images/products/p57/2.jpg",
+   "images/products/p57/3.jpg",
+   "images/products/p57/4.jpg",
+   "images/products/p57/5.jpg",
+   "images/products/p57/6.jpg",
+   "images/products/p57/7.jpg",
+   "images/products/p57/8.jpg",
+   "images/products/p57/9.jpg"
   ],
   "top": "images/products/p57/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p57/detail-1.jpg",
+   "images/products/p57/detail-2.jpg",
+   "images/products/p57/detail-3.jpg",
+   "images/products/p57/detail-4.jpg",
+   "images/products/p57/detail-5.jpg",
+   "images/products/p57/detail-6.jpg",
+   "images/products/p57/detail-7.jpg",
+   "images/products/p57/detail-8.jpg",
+   "images/products/p57/detail-9.jpg",
+   "images/products/p57/detail-10.jpg",
+   "images/products/p57/detail-11.jpg",
+   "images/products/p57/detail-12.jpg"
+  ],
   "options": [
    {
     "name": "비세척 꿀고구마 2kg 한입(20-50g)",
@@ -3090,8 +3115,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 58,
@@ -3128,19 +3152,7 @@ window.PRODUCTS = [
    "images/products/p58/detail-10.jpg",
    "images/products/p58/detail-11.jpg",
    "images/products/p58/detail-12.jpg",
-   "images/products/p58/detail-13.jpg",
-   "images/products/p58/detail-14.jpg",
-   "images/products/p58/detail-15.jpg",
-   "images/products/p58/detail-16.jpg",
-   "images/products/p58/detail-17.jpg",
-   "images/products/p58/detail-18.jpg",
-   "images/products/p58/detail-19.jpg",
-   "images/products/p58/detail-20.jpg",
-   "images/products/p58/detail-21.jpg",
-   "images/products/p58/detail-22.jpg",
-   "images/products/p58/detail-23.jpg",
-   "images/products/p58/detail-24.jpg",
-   "images/products/p58/detail-25.jpg"
+   "images/products/p58/detail-13.jpg"
   ],
   "options": [
    {
