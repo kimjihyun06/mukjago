@@ -76,12 +76,37 @@ git config --global user.email "<GitHub 에 등록한 메일>"
 큰 변경은 새 가지(branch)에서 작업 → Pull Request → 확인 후 합치기를 권합니다.
 PR·push 때마다 GitHub Actions 가 점검(`state.py check`)을 자동으로 돌립니다.
 
-## 5. 무엇을 어디서 고치나
+## 5. 상품·가격 올리기 (공급표 엑셀)
+
+1. 최신 공급표를 `my-hamepage\자료\엑셀\` 에 넣습니다 (이 저장소 **바깥** 폴더 — 매입가가 공개되지 않게).
+2. `상품갱신.bat` 더블클릭 (또는 `python tools/import_excel.py`)
+   - 처음 한 번: `pip install -r requirements.txt`
+3. 화면 확인 → 올리기
+
+| 엑셀 | 홈페이지 |
+|---|---|
+| 시트 하나 | 상품 하나 (`product.html?id=번호`, 번호는 `tools/product_ids.json`) |
+| 품목명 + 옵션 | 선택 옵션 |
+| 실제 판매가 · 택배비 · 면세/과세 · 발주 마감시간 | 그대로 표시 (택배비 0 = 무료배송) |
+| 같은 품목 여러 줄 | **일자가 가장 늦은 줄**의 가격 |
+| **숨김 시트** | 올리지 않음 (품절·판매중단) |
+| 공급가액 · 마진 | **절대 올리지 않음** |
+
+**사진** — `images/products/p번호/` 폴더에 넣고 2번을 다시 하면 됩니다.
+
+| 파일 이름 | 쓰이는 곳 |
+|---|---|
+| `1.jpg`, `2.jpg`, … (숫자) | 대표사진 (전부, 숫자 순서) |
+| `top.jpg` | 상세 맨 위 안내 이미지 — **자동으로 그려짐** (먹자고 / 010-8017-7457, 엑셀 가격) |
+| `detail-1.jpg`, `detail-2.jpg`, … | 상세페이지 이미지 (안내 이미지 아래) |
+
+## 6. 무엇을 어디서 고치나
 
 | 고칠 것 | 파일 |
 |---|---|
 | 회사 정보·전화·계좌·**카톡 오픈채팅 링크**·**메인 배너** | `js/config.js` |
-| **상품**·후기·공지사항 | `js/products.js` |
+| 상품·가격 | 엑셀 → `상품갱신.bat` (`js/products.js` 는 자동 생성) |
+| 분류 문구·첫 화면 Best·후기·공지사항 | `js/content.js` |
 | 첫 화면 칸 순서·문구 | `index.html` |
 | 색·글꼴·배치 | `css/style.css` |
 | 사진 | `images/` (배너 `images/banners/`, 상품 `images/products/`) |
@@ -91,10 +116,8 @@ PR·push 때마다 GitHub Actions 가 점검(`state.py check`)을 자동으로 �
 2. `images/products/` (배너는 `images/banners/`) 에 넣습니다.
 3. Claude 에게: *"product.html?id=1 상품 사진을 images/products/apple-5kg.jpg 로 바꿔줘"*
 
-**상품을 실제 상품으로 바꾸기** — `js/products.js` 의 각 상품에서 이름·가격을 고치고
-`sample: true` 를 지우면 「예시 상품」 표시가 사라집니다.
 
-## 6. 협업 체계
+## 7. 협업 체계
 
 | 파일 | 무엇 |
 |---|---|

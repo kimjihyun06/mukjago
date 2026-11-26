@@ -1,64 +1,2398 @@
-/* =============================================================
- * 상품 목록 — 상품을 더하거나 고칠 때는 이 파일만 고칩니다.
- *
- *  id        : 번호 (겹치면 안 됩니다. 상세페이지 주소 product.html?id=번호)
- *  name      : 상품 이름
- *  cat       : 분류  farm=농산물  meat=축산물  sea=수산물  easy=간편식품
- *  tags      : today=오늘의 특가전 칸   best=실시간 Best 칸
- *  price     : 정가 (원)          sale : 판매가 (원)
- *  unit      : 구성/중량          origin : 원산지
- *  image     : 사진 경로 (images/products/ 에 넣고 적기). 없으면 emoji 로 표시
- *  detail    : 상세페이지 사진들 ["images/products/상세1.jpg", ...] (선택)
- *  desc      : 상품 설명
- *  sample    : true 이면 「예시 상품」 표시가 붙습니다 → 실제 상품으로 바꾸면 지우세요
- * ============================================================= */
-window.CATEGORIES = {
-  farm: { name: "농산물", title: "실속 담은 농산물 특가", sub: "매일 찾는 기본 식재료, 거품 뺀 도매가로 한번에!" },
-  meat: { name: "축산물", title: "진심을 담은 정직한 축산", sub: "보이는 그대로 알차게, 정직하게 고른 고기." },
-  sea:  { name: "수산물", title: "산지직송 수산의 반격", sub: "바다 건너 식탁 직행, 산지에서 바로 보내드립니다!" },
-  easy: { name: "간편식품", title: "든든한 간편식품", sub: "밀키트·냉동 간편식, 도매가로 쟁여두세요!" },
-};
-
+/* 자동 생성 파일 — 손으로 고치지 마세요 (다시 만들면 지워집니다).
+ * 원본: 늘푸른우리 제품 공급표_잇플로우.xlsx
+ * 만든 때: 2026-11-26 03:56
+ * 다시 만들기: python tools/import_excel.py
+ * 문구·후기·공지·분류는 js/content.js 에서 고칩니다. */
 window.PRODUCTS = [
-  // ---------- 농산물 ----------
-  { id: 1, cat: "farm", tags: ["today"], name: "제철 꿀사과 5kg (중과)", price: 39900, sale: 29900, unit: "5kg / 16~18과", origin: "국내산(경북)", emoji: "🍎", desc: "아삭하고 달콤한 제철 사과를 도매가로 보내드립니다.", sample: true },
-  { id: 2, cat: "farm", tags: ["best"], name: "하우스 감귤 3kg", price: 24900, sale: 17900, unit: "3kg", origin: "국내산(제주)", emoji: "🍊", desc: "새콤달콤 제주 감귤.", sample: true },
-  { id: 3, cat: "farm", tags: [], name: "친환경 브로콜리 1kg", price: 12900, sale: 8900, unit: "1kg (3~4송이)", origin: "국내산", emoji: "🥦", desc: "단단하고 싱싱한 브로콜리.", sample: true },
-  { id: 4, cat: "farm", tags: ["today"], name: "샤인머스캣 2kg", price: 35900, sale: 25900, unit: "2kg (3~4송이)", origin: "국내산(경북)", emoji: "🍇", desc: "향 좋고 당도 높은 샤인머스캣.", sample: true },
-  { id: 5, cat: "farm", tags: [], name: "햇양파 5kg", price: 11900, sale: 7900, unit: "5kg", origin: "국내산(전남)", emoji: "🧅", desc: "매일 쓰는 기본 식재료.", sample: true },
-  { id: 6, cat: "farm", tags: ["best"], name: "논산 딸기 1kg", price: 21900, sale: 15900, unit: "1kg (2팩)", origin: "국내산(충남)", emoji: "🍓", desc: "향긋한 설향 딸기.", sample: true },
-
-  // ---------- 축산물 ----------
-  { id: 7, cat: "meat", tags: ["best"], name: "한돈 삼겹살 1kg", price: 32900, sale: 23900, unit: "1kg (500g×2)", origin: "국내산", emoji: "🥓", desc: "두께 그대로, 정직하게 고른 한돈 삼겹살.", sample: true },
-  { id: 8, cat: "meat", tags: ["today"], name: "1+등급 한우 등심 500g", price: 69900, sale: 54900, unit: "500g", origin: "국내산(한우)", emoji: "🥩", desc: "마블링 좋은 1+등급 한우 등심.", sample: true },
-  { id: 9, cat: "meat", tags: [], name: "통닭 (생닭) 1.1kg × 2", price: 15900, sale: 11900, unit: "1.1kg × 2마리", origin: "국내산", emoji: "🍗", desc: "백숙·치킨용 신선 생닭.", sample: true },
-  { id: 10, cat: "meat", tags: [], name: "한돈 목살 1kg", price: 31900, sale: 22900, unit: "1kg", origin: "국내산", emoji: "🍖", desc: "구이용 두툼한 목살.", sample: true },
-  { id: 11, cat: "meat", tags: ["best"], name: "LA갈비 2kg", price: 59900, sale: 44900, unit: "2kg", origin: "미국산", emoji: "🍖", desc: "명절·캠핑용 LA갈비.", sample: true },
-  { id: 12, cat: "meat", tags: [], name: "오리 슬라이스 1kg", price: 19900, sale: 14900, unit: "1kg", origin: "국내산", emoji: "🦆", desc: "간편 구이용 오리 슬라이스.", sample: true },
-
-  // ---------- 수산물 ----------
-  { id: 13, cat: "sea", tags: ["today", "best"], name: "당일 직송 신선한 고등어 1미", price: 12900, sale: 8900, unit: "1미", origin: "국내산", image: "images/products/mackerel.jpg", desc: "산지에서 당일 직송한 신선한 고등어입니다." },
-  { id: 14, cat: "sea", tags: [], name: "완도 활전복 1kg (중)", price: 49900, sale: 36900, unit: "1kg (12~14미)", origin: "국내산(완도)", emoji: "🐚", desc: "살아있는 완도 전복.", sample: true },
-  { id: 15, cat: "sea", tags: ["best"], name: "흰다리 새우 1kg", price: 24900, sale: 17900, unit: "1kg (40~50미)", origin: "에콰도르산", emoji: "🦐", desc: "구이·찜용 냉동 흰다리 새우.", sample: true },
-  { id: 16, cat: "sea", tags: [], name: "노르웨이 생연어 500g", price: 29900, sale: 21900, unit: "500g", origin: "노르웨이산", emoji: "🐟", desc: "회·스테이크용 생연어.", sample: true },
-
-  // ---------- 간편식품 ----------
-  { id: 17, cat: "easy", tags: ["today"], name: "부대찌개 밀키트 2~3인분", price: 15900, sale: 9900, unit: "1팩 (2~3인분)", origin: "국내 제조", emoji: "🍲", desc: "끓이기만 하면 완성되는 밀키트.", sample: true },
-  { id: 18, cat: "easy", tags: ["best"], name: "왕교자 만두 1.4kg × 2", price: 19900, sale: 13900, unit: "1.4kg × 2봉", origin: "국내 제조", emoji: "🥟", desc: "속이 꽉 찬 냉동 왕교자.", sample: true },
-  { id: 19, cat: "easy", tags: [], name: "양념 소불고기 1kg", price: 21900, sale: 15900, unit: "1kg", origin: "국내 제조", emoji: "🥘", desc: "데우기만 하면 되는 양념 불고기.", sample: true },
-  { id: 20, cat: "easy", tags: [], name: "냉동 피자 3판", price: 17900, sale: 12900, unit: "3판", origin: "국내 제조", emoji: "🍕", desc: "에어프라이어로 간편하게.", sample: true },
-];
-
-/* 고객 후기 — 실제 후기를 받으면 여기에 적으세요 (예시는 sample: true) */
-window.REVIEWS = [
-  { productId: 13, name: "김**", stars: 5, text: "고등어가 정말 싱싱해요. 구워 먹으니 살이 통통합니다!", sample: true },
-  { productId: 7, name: "이**", stars: 5, text: "삼겹살 두께가 좋고 잡내가 없어요. 재구매 의사 있습니다.", sample: true },
-  { productId: 1, name: "박**", stars: 4, text: "사과가 아삭하고 달아요. 가격 대비 아주 만족합니다.", sample: true },
-  { productId: 18, name: "최**", stars: 5, text: "만두 속이 꽉 차 있어서 아이들이 좋아해요.", sample: true },
-];
-
-/* 공지사항 — 위가 최신 */
-window.NOTICES = [
-  { date: "2026-11-24", title: "먹자GO 홈페이지를 열었습니다", body: "도매가로 만나는 맛있는 세상, 먹자GO 입니다. 주문·문의는 카카오톡 특가방 또는 고객센터(010-8017-7457, 평일 10~17시)로 해 주세요." },
-  { date: "2026-11-24", title: "주문·문의 방법 안내", body: "현재 주문은 카카오톡 오픈채팅 특가방(비밀번호 1004)과 고객센터 전화로 받고 있습니다. 장바구니에 담은 상품 목록을 보여 주시면 빠르게 안내해 드립니다." },
+ {
+  "id": 3,
+  "name": "통영 생굴",
+  "cat": "sea",
+  "tax": "면세",
+  "deadline": "오후 2시",
+  "start": "",
+  "price": 11180,
+  "ship": 4000,
+  "emoji": "🦪",
+  "images": [],
+  "top": "images/products/p03/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "통영 생굴",
+    "unit": "1kg",
+    "price": 11180,
+    "ship": 4000,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 7,
+  "name": "벌교 새꼬막",
+  "cat": "sea",
+  "tax": "면세",
+  "deadline": "오후 1시 30분",
+  "start": "2026-10-14",
+  "price": 1650,
+  "ship": 4000,
+  "emoji": "🐚",
+  "images": [],
+  "top": "images/products/p07/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "벌교 새꼬막 1kg 소",
+    "unit": "1kg",
+    "price": 1650,
+    "ship": 4000,
+    "tax": "면세"
+   },
+   {
+    "name": "벌교 새꼬막 1kg 중",
+    "unit": "1kg",
+    "price": 3060,
+    "ship": 4000,
+    "tax": "면세"
+   },
+   {
+    "name": "벌교 새꼬막 1kg 상",
+    "unit": "1kg",
+    "price": 4000,
+    "ship": 4000,
+    "tax": "면세"
+   },
+   {
+    "name": "벌교 새꼬막 1kg 대",
+    "unit": "1kg",
+    "price": 5530,
+    "ship": 4000,
+    "tax": "면세"
+   },
+   {
+    "name": "꼬막까는도구",
+    "unit": "",
+    "price": 2360,
+    "ship": null,
+    "tax": "과세"
+   }
+  ]
+ },
+ {
+  "id": 8,
+  "name": "반건조오징어",
+  "cat": "sea",
+  "tax": "면세",
+  "deadline": "오후 2시",
+  "start": "2026-10-19",
+  "price": 9180,
+  "ship": 4000,
+  "emoji": "🦑",
+  "images": [],
+  "top": "images/products/p08/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "반건조 오징어 5미 350g",
+    "unit": "350g",
+    "price": 9180,
+    "ship": 4000,
+    "tax": "면세"
+   },
+   {
+    "name": "반건조 오징어 5미 550g",
+    "unit": "550g",
+    "price": 14000,
+    "ship": 4000,
+    "tax": "면세"
+   },
+   {
+    "name": "반건조 오징어 10미 700g",
+    "unit": "700g",
+    "price": 18240,
+    "ship": 4000,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 9,
+  "name": "활 돌문어",
+  "cat": "sea",
+  "tax": "면세",
+  "deadline": "오후 2시",
+  "start": "2026-10-20",
+  "price": 19420,
+  "ship": 4000,
+  "emoji": "🐙",
+  "images": [],
+  "top": "images/products/p09/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "활 돌문어 1kg(1-4미)",
+    "unit": "1kg",
+    "price": 19420,
+    "ship": 4000,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 10,
+  "name": "반건조박대",
+  "cat": "sea",
+  "tax": "면세",
+  "deadline": "오전 9시30분",
+  "start": "2026-10-20",
+  "price": 5890,
+  "ship": 4000,
+  "emoji": "🐟",
+  "images": [],
+  "top": "images/products/p10/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "반건조 박대 소(26-28)",
+    "unit": "5마리",
+    "price": 5890,
+    "ship": 4000,
+    "tax": "면세"
+   },
+   {
+    "name": "반건조 박대 중(28-30)",
+    "unit": "5마리",
+    "price": 6480,
+    "ship": 4000,
+    "tax": "면세"
+   },
+   {
+    "name": "반건조 박대 대(31-33)",
+    "unit": "5마리",
+    "price": 12950,
+    "ship": 4000,
+    "tax": "면세"
+   },
+   {
+    "name": "반건조 박대 특대(33-35)",
+    "unit": "5마리",
+    "price": 14120,
+    "ship": 4000,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 11,
+  "name": "구룡포햇과메기",
+  "cat": "sea",
+  "tax": "면세",
+  "deadline": "오후 2시",
+  "start": "2026-10-22",
+  "price": 6830,
+  "ship": 3500,
+  "emoji": "🐟",
+  "images": [],
+  "top": "images/products/p11/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "구룡포 햇 과메기 단품",
+    "unit": "5미 10쪽",
+    "price": 6830,
+    "ship": 3500,
+    "tax": "면세"
+   },
+   {
+    "name": "구룡포 햇 과메기 단품",
+    "unit": "10미 20쪽",
+    "price": 13530,
+    "ship": 3500,
+    "tax": "면세"
+   },
+   {
+    "name": "구룡포꽁치 햇 과메기 야채세트",
+    "unit": "5미 10쪽",
+    "price": 11770,
+    "ship": 3500,
+    "tax": "면세"
+   },
+   {
+    "name": "구룡포꽁치 햇 과메기 야채세트",
+    "unit": "10미 20쪽",
+    "price": 22360,
+    "ship": 3500,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 12,
+  "name": "여수참조기",
+  "cat": "sea",
+  "tax": "면세",
+  "deadline": "오후 2시",
+  "start": "2026-10-22",
+  "price": 10000,
+  "ship": 4000,
+  "emoji": "🐟",
+  "images": [],
+  "top": "images/products/p12/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "여수 참조기 500g(6-8미내외)",
+    "unit": "500g",
+    "price": 10000,
+    "ship": 4000,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 13,
+  "name": "러시아 자숙대게",
+  "cat": "sea",
+  "tax": "면세",
+  "deadline": "오후 2시",
+  "start": "2026-10-22",
+  "price": 40590,
+  "ship": 0,
+  "emoji": "🦀",
+  "images": [],
+  "top": "images/products/p13/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "(자숙) 러시아대게 B급 3kg/2-3마리",
+    "unit": "3kg",
+    "price": 64710,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "(자숙) 러시아대게 A급 1kg/1마리",
+    "unit": "1kg",
+    "price": 40590,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "(자숙) 러시아대게 A급 3kg/2-3마리",
+    "unit": "3kg",
+    "price": 104710,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 14,
+  "name": "국내산 곱창김",
+  "cat": "sea",
+  "tax": "면세",
+  "deadline": "오전 9시 30분",
+  "start": "2026-10-22",
+  "price": 24480,
+  "ship": 0,
+  "emoji": "🍙",
+  "images": [],
+  "top": "images/products/p14/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "국내산 곱창김 100장",
+    "unit": "100장",
+    "price": 24480,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 곱창김 100장 x2",
+    "unit": "200장",
+    "price": 44590,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 15,
+  "name": "프리미엄 자숙 홍게",
+  "cat": "sea",
+  "tax": "면세",
+  "deadline": "오후 2시",
+  "start": "2026-10-23",
+  "price": 12360,
+  "ship": 0,
+  "emoji": "🦀",
+  "images": [],
+  "top": "images/products/p15/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "포항 자숙 연지홍게 3kg(수율70%내외)",
+    "unit": "3kg",
+    "price": 12360,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "포항 자숙 연지홍게 6kg(수율70%내외)",
+    "unit": "6kg",
+    "price": 20000,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "프리미엄 자숙 박달홍게 3kg 9-11마리",
+    "unit": "3kg",
+    "price": 22360,
+    "ship": null,
+    "tax": "면세"
+   },
+   {
+    "name": "프리미엄 자숙 박달홍게 5kg(혼합) -15마리내외",
+    "unit": "5kg",
+    "price": 27650,
+    "ship": null,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 16,
+  "name": "연평도 급냉 암꽃게",
+  "cat": "sea",
+  "tax": "면세",
+  "deadline": "오후 2시",
+  "start": "2026-10-26",
+  "price": 14710,
+  "ship": 4000,
+  "emoji": "🦀",
+  "images": [],
+  "top": "images/products/p16/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "연평도 급냉 암꽃게 1kg(3-5미)",
+    "unit": "1kg",
+    "price": 14710,
+    "ship": 4000,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 17,
+  "name": "대방어 필렛",
+  "cat": "sea",
+  "tax": "면세",
+  "deadline": "오후 2시",
+  "start": "2026-10-27",
+  "price": 16360,
+  "ship": 4000,
+  "emoji": "🐟",
+  "images": [],
+  "top": "images/products/p17/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "국내산 방어 필렛",
+    "unit": "300g",
+    "price": 16360,
+    "ship": 4000,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 방어 필렛",
+    "unit": "500g",
+    "price": 20000,
+    "ship": 4000,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 18,
+  "name": "하모샤브샤브",
+  "cat": "sea",
+  "tax": "면세",
+  "deadline": "오후 2시",
+  "start": "2026-10-28",
+  "price": 14710,
+  "ship": 4000,
+  "emoji": "🐟",
+  "images": [],
+  "top": "images/products/p18/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "하모 샤브샤브세트",
+    "unit": "300g",
+    "price": 14710,
+    "ship": 4000,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 20,
+  "name": "연평도 급냉 절단암꽃게",
+  "cat": "sea",
+  "tax": "면세",
+  "deadline": "오후 2시",
+  "start": "2026-10-28",
+  "price": 16710,
+  "ship": 0,
+  "emoji": "🦀",
+  "images": [],
+  "top": "images/products/p20/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "하프절단 암꽃게 1kg (6-10조각)",
+    "unit": "1kg",
+    "price": 16710,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "하프절단 암꽃게 2kg (12-20조각)",
+    "unit": "2kg",
+    "price": 28830,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "하프절단 암꽃게 4kg (24-40조각)",
+    "unit": "4kg",
+    "price": 51770,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 21,
+  "name": "국내산&흑산도 명품홍어",
+  "cat": "sea",
+  "tax": "면세",
+  "deadline": "오전 10시",
+  "start": "2026-10-28",
+  "price": 27650,
+  "ship": 0,
+  "emoji": "🐟",
+  "images": [],
+  "top": "images/products/p21/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "국내산 홍어 500g (약)",
+    "unit": "500g",
+    "price": 27650,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 홍어 500g (중)",
+    "unit": "500g",
+    "price": 27650,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 홍어 500g (강)",
+    "unit": "500g",
+    "price": 27650,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 홍어 1kg (약)",
+    "unit": "1kg",
+    "price": 52950,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 홍어 1kg (중)",
+    "unit": "1kg",
+    "price": 52950,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 홍어 1kg (강)",
+    "unit": "1kg",
+    "price": 52950,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "흑산도 홍어 500g (약)",
+    "unit": "500g",
+    "price": 38830,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "흑산도 홍어 500g (강)",
+    "unit": "500g",
+    "price": 38830,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "흑산도 홍어 1kg (약)",
+    "unit": "1kg",
+    "price": 75890,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "흑산도 홍어 1kg (강)",
+    "unit": "1kg",
+    "price": 75890,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 22,
+  "name": "국내산여수석화",
+  "cat": "sea",
+  "tax": "면세",
+  "deadline": "오후 1시 30분",
+  "start": "2026-10-30",
+  "price": 10590,
+  "ship": 0,
+  "emoji": "🦪",
+  "images": [],
+  "top": "images/products/p22/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "국내산 여수 석화",
+    "unit": "3kg",
+    "price": 10590,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 여수 석화",
+    "unit": "5kg",
+    "price": 13530,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 여수 석화",
+    "unit": "10kg",
+    "price": 22950,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 23,
+  "name": "통영생굴무침",
+  "cat": "easy",
+  "tax": "과세",
+  "deadline": "오전 10시 30분",
+  "start": "2026-11-02",
+  "price": 6480,
+  "ship": 4000,
+  "emoji": "🦪",
+  "images": [],
+  "top": "images/products/p23/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "통영 생굴무침 330g",
+    "unit": "330g",
+    "price": 6480,
+    "ship": 4000,
+    "tax": "과세"
+   }
+  ]
+ },
+ {
+  "id": 24,
+  "name": "새꼬막무침(양념'간장)",
+  "cat": "easy",
+  "tax": "과세",
+  "deadline": "오전 10시 30분",
+  "start": "2026-11-02",
+  "price": 6360,
+  "ship": 3500,
+  "emoji": "🐚",
+  "images": [],
+  "top": "images/products/p24/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "양념 새꼬막무침 330g",
+    "unit": "330g",
+    "price": 6360,
+    "ship": 3500,
+    "tax": "과세"
+   },
+   {
+    "name": "간장 새꼬막장 330g",
+    "unit": "330g",
+    "price": 6360,
+    "ship": 3500,
+    "tax": "과세"
+   },
+   {
+    "name": "간장 새꼬막장330g + 양념 새꼬막무침330g",
+    "unit": "660g",
+    "price": 12710,
+    "ship": 3500,
+    "tax": "과세"
+   },
+   {
+    "name": "양념 새꼬막무침330g + 양념 새꼬막무침330g",
+    "unit": "660g",
+    "price": 12710,
+    "ship": 3500,
+    "tax": "과세"
+   },
+   {
+    "name": "간장 새꼬막장330g + 간장 새꼬막장330g",
+    "unit": "660g",
+    "price": 12710,
+    "ship": 3500,
+    "tax": "과세"
+   }
+  ]
+ },
+ {
+  "id": 25,
+  "name": "국내산연평도 100%알배기 간장게장",
+  "cat": "easy",
+  "tax": "과세",
+  "deadline": "오전 11시 30분",
+  "start": "2026-11-02",
+  "price": 17650,
+  "ship": 0,
+  "emoji": "🦀",
+  "images": [],
+  "top": "images/products/p25/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "연평도 간장게장 / 2kg 2미(중사이즈)",
+    "unit": "2kg",
+    "price": 17650,
+    "ship": 0,
+    "tax": "과세"
+   },
+   {
+    "name": "연평도 간장게장 / 2.5kg 3미(중사이즈)",
+    "unit": "2.5kg",
+    "price": 24710,
+    "ship": 0,
+    "tax": "과세"
+   },
+   {
+    "name": "연평도 간장게장 / 3kg 4미(중사이즈)",
+    "unit": "3kg",
+    "price": 32360,
+    "ship": 0,
+    "tax": "과세"
+   }
+  ]
+ },
+ {
+  "id": 26,
+  "name": "국내산연평도 알배기간장게장(하프절단)",
+  "cat": "easy",
+  "tax": "과세",
+  "deadline": "오후 2시",
+  "start": "2026-11-02",
+  "price": 10590,
+  "ship": 4000,
+  "emoji": "🦀",
+  "images": [],
+  "top": "images/products/p26/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "(일반형) 소문난 간장게장 1kg(2미/4조각)",
+    "unit": "1kg",
+    "price": 10590,
+    "ship": 4000,
+    "tax": "과세"
+   },
+   {
+    "name": "(프리미엄) 소문난 간장게장 1kg(2미/4조각)",
+    "unit": "1kg",
+    "price": 15890,
+    "ship": 4000,
+    "tax": "과세"
+   }
+  ]
+ },
+ {
+  "id": 27,
+  "name": "국내산연평도 양념게장",
+  "cat": "easy",
+  "tax": "과세",
+  "deadline": "오전 11시 30분",
+  "start": "2026-11-03",
+  "price": 13530,
+  "ship": 0,
+  "emoji": "🦀",
+  "images": [],
+  "top": "images/products/p27/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "국내산 연평도 양념게장 / 500g (3-4미)",
+    "unit": "500g",
+    "price": 13530,
+    "ship": 0,
+    "tax": "과세"
+   },
+   {
+    "name": "국내산 연평도 양념게장 / 1kg (7-8미)",
+    "unit": "1kg",
+    "price": 19420,
+    "ship": 0,
+    "tax": "과세"
+   }
+  ]
+ },
+ {
+  "id": 28,
+  "name": "국내산 연평도 순살게장",
+  "cat": "easy",
+  "tax": "과세",
+  "deadline": "오전 11시 30분",
+  "start": "2026-11-03",
+  "price": 12950,
+  "ship": 0,
+  "emoji": "🦀",
+  "images": [],
+  "top": "images/products/p28/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "양념 순살게장 / 250g",
+    "unit": "250g",
+    "price": 12950,
+    "ship": 0,
+    "tax": "과세"
+   }
+  ]
+ },
+ {
+  "id": 29,
+  "name": "명품 삼점암꽃게장",
+  "cat": "easy",
+  "tax": "과세",
+  "deadline": "오후 1시",
+  "start": "2026-11-03",
+  "price": 14710,
+  "ship": 0,
+  "emoji": "🦀",
+  "images": [],
+  "top": "images/products/p29/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "삼점암꽃게장 2kg",
+    "unit": "2kg",
+    "price": 14710,
+    "ship": 0,
+    "tax": "과세"
+   },
+   {
+    "name": "삼점암꽃게장 2kg 2통",
+    "unit": "4kg",
+    "price": 24120,
+    "ship": 0,
+    "tax": "과세"
+   },
+   {
+    "name": "삼점암꽃게장 2kg 3통",
+    "unit": "6kg",
+    "price": 33530,
+    "ship": 0,
+    "tax": "과세"
+   }
+  ]
+ },
+ {
+  "id": 30,
+  "name": "특제 간장&양념 깐새우장",
+  "cat": "easy",
+  "tax": "과세",
+  "deadline": "오후 2시",
+  "start": "2026-11-12",
+  "price": 6830,
+  "ship": 3000,
+  "emoji": "🦐",
+  "images": [],
+  "top": "images/products/p30/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "특제 간장새우장 300g",
+    "unit": "300g",
+    "price": 6830,
+    "ship": 3000,
+    "tax": "과세"
+   },
+   {
+    "name": "특제 양념새우장 300g",
+    "unit": "300g",
+    "price": 7890,
+    "ship": 3000,
+    "tax": "과세"
+   }
+  ]
+ },
+ {
+  "id": 33,
+  "name": "나박물김치",
+  "cat": "kimchi",
+  "tax": "면세",
+  "deadline": "",
+  "start": "2026-10-29",
+  "price": 7300,
+  "ship": 0,
+  "emoji": "🥬",
+  "images": [],
+  "top": "images/products/p33/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "나박물김치",
+    "unit": "1kg",
+    "price": 7300,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "나박물김치",
+    "unit": "2kg",
+    "price": 9770,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "나박물김치",
+    "unit": "3kg",
+    "price": 12360,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "나박물김치",
+    "unit": "5kg",
+    "price": 17530,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 34,
+  "name": "전라도식 파김치",
+  "cat": "kimchi",
+  "tax": "면세",
+  "deadline": "오전 10시 30분",
+  "start": "2026-10-29",
+  "price": 12360,
+  "ship": 0,
+  "emoji": "🥬",
+  "images": [],
+  "top": "images/products/p34/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "전라도식 파김치",
+    "unit": "1kg",
+    "price": 12360,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "전라도식 파김치",
+    "unit": "2kg",
+    "price": 21770,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "전라도식 파김치",
+    "unit": "3kg",
+    "price": 31180,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "전라도식 파김치",
+    "unit": "5kg",
+    "price": 49420,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 35,
+  "name": "여수 갓김치",
+  "cat": "kimchi",
+  "tax": "면세",
+  "deadline": "오전 10시 30분",
+  "start": "2026-10-29",
+  "price": 14710,
+  "ship": 0,
+  "emoji": "🥬",
+  "images": [],
+  "top": "images/products/p35/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "여수갓김치",
+    "unit": "2kg",
+    "price": 14710,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "여수갓김치",
+    "unit": "3kg",
+    "price": 20590,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "여수갓김치",
+    "unit": "5kg",
+    "price": 31180,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 36,
+  "name": "매운실비김치",
+  "cat": "kimchi",
+  "tax": "면세",
+  "deadline": "오전 9시 30분",
+  "start": "2026-10-29",
+  "price": 13530,
+  "ship": 0,
+  "emoji": "🥬",
+  "images": [],
+  "top": "images/products/p36/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "매운 실비김치",
+    "unit": "2kg",
+    "price": 13530,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "매운 실비김치",
+    "unit": "3kg",
+    "price": 18240,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "매운 실비김치",
+    "unit": "5kg",
+    "price": 25300,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "매운 실비김치",
+    "unit": "10kg",
+    "price": 49420,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 37,
+  "name": "총각김치(알타리김치)",
+  "cat": "kimchi",
+  "tax": "면세",
+  "deadline": "오전 10시 30분",
+  "start": "2026-10-29",
+  "price": 14710,
+  "ship": 0,
+  "emoji": "🥬",
+  "images": [],
+  "top": "images/products/p37/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "총각김치(알타리김치)",
+    "unit": "2kg",
+    "price": 14710,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "총각김치(알타리김치)",
+    "unit": "3kg",
+    "price": 20590,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "총각김치(알타리김치)",
+    "unit": "5kg",
+    "price": 28830,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 39,
+  "name": "배추김치(국산100%)",
+  "cat": "kimchi",
+  "tax": "면세",
+  "deadline": "오전 9시 30분",
+  "start": "2026-10-29",
+  "price": 14120,
+  "ship": 0,
+  "emoji": "🥬",
+  "images": [],
+  "top": "images/products/p39/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "국산 포기김치",
+    "unit": "2kg",
+    "price": 14120,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국산 포기김치",
+    "unit": "3kg",
+    "price": 18240,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국산 포기김치",
+    "unit": "5kg",
+    "price": 26480,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국산 포기김치",
+    "unit": "10kg",
+    "price": 47060,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 40,
+  "name": "배추김치(고춧가루만중국산)",
+  "cat": "kimchi",
+  "tax": "면세",
+  "deadline": "오전 10시 30분",
+  "start": "2026-10-30",
+  "price": 16480,
+  "ship": 0,
+  "emoji": "🥬",
+  "images": [],
+  "top": "images/products/p40/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "배추김치",
+    "unit": "3kg",
+    "price": 16480,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "배추김치",
+    "unit": "5kg",
+    "price": 22950,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "배추김치",
+    "unit": "10kg",
+    "price": 38830,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 41,
+  "name": "백김치(국산100%)",
+  "cat": "kimchi",
+  "tax": "면세",
+  "deadline": "오전 9시 30분",
+  "start": "2026-10-30",
+  "price": 14830,
+  "ship": 0,
+  "emoji": "🥬",
+  "images": [],
+  "top": "images/products/p41/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "백김치",
+    "unit": "2kg",
+    "price": 14830,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "백김치",
+    "unit": "3kg",
+    "price": 18120,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "백김치",
+    "unit": "5kg",
+    "price": 24240,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "백김치",
+    "unit": "10kg",
+    "price": 42360,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 42,
+  "name": "묵은지(국산100%)",
+  "cat": "kimchi",
+  "tax": "면세",
+  "deadline": "오전 9시 30분",
+  "start": "2026-10-30",
+  "price": 16120,
+  "ship": 0,
+  "emoji": "🥬",
+  "images": [],
+  "top": "images/products/p42/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "묵은지",
+    "unit": "2kg",
+    "price": 16120,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "묵은지",
+    "unit": "3kg",
+    "price": 20590,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "묵은지",
+    "unit": "5kg",
+    "price": 31060,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "묵은지",
+    "unit": "10kg",
+    "price": 57060,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 43,
+  "name": "국내산오이소박이",
+  "cat": "kimchi",
+  "tax": "면세",
+  "deadline": "오전 10시 30분",
+  "start": "2026-10-30",
+  "price": 8240,
+  "ship": 4000,
+  "emoji": "🥒",
+  "images": [],
+  "top": "images/products/p43/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "오이소박이",
+    "unit": "1kg",
+    "price": 8240,
+    "ship": 4000,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 44,
+  "name": "국내산 부추김치",
+  "cat": "kimchi",
+  "tax": "면세",
+  "deadline": "오전 10시 30분",
+  "start": "2026-10-30",
+  "price": 7060,
+  "ship": 4000,
+  "emoji": "🥬",
+  "images": [],
+  "top": "images/products/p44/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "부추김치",
+    "unit": "1kg",
+    "price": 7060,
+    "ship": 4000,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 45,
+  "name": "국내산 햇밤",
+  "cat": "farm",
+  "tax": "면세",
+  "deadline": "오전 9시 30분",
+  "start": "2026-11-17",
+  "price": 6360,
+  "ship": 0,
+  "emoji": "🌰",
+  "images": [],
+  "top": "images/products/p45/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "햇밤 중",
+    "unit": "1kg",
+    "price": 6360,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "햇밤 중",
+    "unit": "2kg",
+    "price": 9180,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "햇밤 중",
+    "unit": "3kg",
+    "price": 11650,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "햇밤 중",
+    "unit": "5kg",
+    "price": 16590,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "햇밤 대",
+    "unit": "1kg",
+    "price": 6590,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "햇밤 대",
+    "unit": "2kg",
+    "price": 9300,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "햇밤 대",
+    "unit": "3kg",
+    "price": 12590,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "햇밤 대",
+    "unit": "5kg",
+    "price": 16950,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "햇밤 특",
+    "unit": "1kg",
+    "price": 7890,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "햇밤 특",
+    "unit": "2kg",
+    "price": 11530,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "햇밤 특",
+    "unit": "3kg",
+    "price": 14480,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "햇밤 특",
+    "unit": "5kg",
+    "price": 19890,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 46,
+  "name": "국내산 시금치",
+  "cat": "farm",
+  "tax": "면세",
+  "deadline": "오전 9시 30분",
+  "start": "2026-11-17",
+  "price": 6000,
+  "ship": 0,
+  "emoji": "🥬",
+  "images": [],
+  "top": "images/products/p46/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "시금치 500g",
+    "unit": "500g",
+    "price": 6000,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "시금치 1kg",
+    "unit": "1kg",
+    "price": 8480,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "시금치 2kg",
+    "unit": "2kg",
+    "price": 12240,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 47,
+  "name": "국내산 파프리카",
+  "cat": "farm",
+  "tax": "면세",
+  "deadline": "오전 9시 30분",
+  "start": "2026-11-17",
+  "price": 6120,
+  "ship": 0,
+  "emoji": "🫑",
+  "images": [],
+  "top": "images/products/p47/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "혼합 파프리카 1kg",
+    "unit": "1kg",
+    "price": 6120,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "혼합 파프리카 2kg",
+    "unit": "2kg",
+    "price": 8000,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "혼합 파프리카 3kg",
+    "unit": "3kg",
+    "price": 9650,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "혼합 파프리카 5kg",
+    "unit": "5kg",
+    "price": 13300,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "혼합 파프리카 10kg",
+    "unit": "10kg",
+    "price": 22000,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 48,
+  "name": "약단밤",
+  "cat": "farm",
+  "tax": "면세",
+  "deadline": "오전 10시 30분",
+  "start": "2026-11-18",
+  "price": 4360,
+  "ship": 3000,
+  "emoji": "🌰",
+  "images": [],
+  "top": "images/products/p48/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "약단밤 500g",
+    "unit": "500g",
+    "price": 4360,
+    "ship": 3000,
+    "tax": "면세"
+   },
+   {
+    "name": "약단밤 1kg",
+    "unit": "1kg",
+    "price": 8710,
+    "ship": 3000,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 49,
+  "name": "백찰옥수수(특)",
+  "cat": "farm",
+  "tax": "과세",
+  "deadline": "오전 10시 30분",
+  "start": "2026-11-18",
+  "price": 11650,
+  "ship": 0,
+  "emoji": "🌽",
+  "images": [],
+  "top": "images/products/p49/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "백찰옥수수 특 10개입",
+    "unit": "3kg",
+    "price": 11650,
+    "ship": 0,
+    "tax": "과세"
+   },
+   {
+    "name": "백찰옥수수 특 15개입",
+    "unit": "4.5kg",
+    "price": 16360,
+    "ship": 0,
+    "tax": "과세"
+   },
+   {
+    "name": "백찰옥수수 특 20개입",
+    "unit": "6kg",
+    "price": 20000,
+    "ship": 0,
+    "tax": "과세"
+   },
+   {
+    "name": "백찰옥수수 특 30개입",
+    "unit": "9kg",
+    "price": 28240,
+    "ship": 0,
+    "tax": "과세"
+   }
+  ]
+ },
+ {
+  "id": 50,
+  "name": "햇 호박고구마",
+  "cat": "farm",
+  "tax": "면세",
+  "deadline": "오전 10시 30분",
+  "start": "2026-11-18",
+  "price": 5770,
+  "ship": 0,
+  "emoji": "🍠",
+  "images": [],
+  "top": "images/products/p50/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "비세척 호풍미고구마 2kg 한입(20-50g)",
+    "unit": "2kg",
+    "price": 5770,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 호풍미고구마 3kg 한입",
+    "unit": "3kg",
+    "price": 7060,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 호풍미고구마 5kg 한입",
+    "unit": "5kg",
+    "price": 9770,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 호풍미고구마 10kg 한입",
+    "unit": "10kg",
+    "price": 17060,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 호풍미고구마 2kg 중상(50-100g)",
+    "unit": "2kg",
+    "price": 7300,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 호풍미고구마 3kg 중상",
+    "unit": "3kg",
+    "price": 7650,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 호풍미고구마 5kg 중상",
+    "unit": "5kg",
+    "price": 14120,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 호풍미고구마 10kg 중상",
+    "unit": "10kg",
+    "price": 24710,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 호풍미고구마 2kg 특상(100-300g)",
+    "unit": "2kg",
+    "price": 8720,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 호풍미고구마 3kg 특상",
+    "unit": "3kg",
+    "price": 9650,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 호풍미고구마 5kg 특상",
+    "unit": "5kg",
+    "price": 14710,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 호풍미고구마 10kg 특상",
+    "unit": "10kg",
+    "price": 25890,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 호풍미고구마 2kg 왕대(300g이상)",
+    "unit": "2kg",
+    "price": 7180,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 호풍미고구마 3kg 왕대",
+    "unit": "3kg",
+    "price": 9180,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 호풍미고구마 5kg 왕대",
+    "unit": "5kg",
+    "price": 13530,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 호풍미고구마 10kg 왕대",
+    "unit": "10kg",
+    "price": 24710,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 51,
+  "name": "제주도 미니밤호박",
+  "cat": "farm",
+  "tax": "면세",
+  "deadline": "오전 9시 30분",
+  "start": "2026-11-19",
+  "price": 9300,
+  "ship": 0,
+  "emoji": "🌰",
+  "images": [],
+  "top": "images/products/p51/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "제주 미니밤호박(못난이) 3kg",
+    "unit": "3kg",
+    "price": 10120,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "제주 미니밤호박(못난이) 5kg",
+    "unit": "5kg",
+    "price": 15300,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "제주 미니밤호박(못난이) 10kg",
+    "unit": "10kg",
+    "price": 26480,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "제주 미니밤호박(로얄과) 2kg",
+    "unit": "2kg",
+    "price": 9300,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "제주 미니밤호박(로얄과) 3kg",
+    "unit": "3kg",
+    "price": 12830,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "제주 미니밤호박(로얄과) 5kg",
+    "unit": "5kg",
+    "price": 20000,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "제주 미니밤호박(로얄과) 10kg",
+    "unit": "10kg",
+    "price": 34710,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 52,
+  "name": "안동 산마&장마",
+  "cat": "farm",
+  "tax": "면세",
+  "deadline": "오전 9시 30분",
+  "start": "2026-11-20",
+  "price": 5180,
+  "ship": 4000,
+  "emoji": "🍠",
+  "images": [],
+  "top": "images/products/p52/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "안동 장마 (중품) 1kg",
+    "unit": "1kg",
+    "price": 7300,
+    "ship": 4000,
+    "tax": "면세"
+   },
+   {
+    "name": "안동 장마 (상품) 1kg",
+    "unit": "1kg",
+    "price": 9060,
+    "ship": 4000,
+    "tax": "면세"
+   },
+   {
+    "name": "안동 산마 (못난이) 1kg",
+    "unit": "1kg",
+    "price": 5180,
+    "ship": 4000,
+    "tax": "면세"
+   },
+   {
+    "name": "안동 산마 (중품) 1kg",
+    "unit": "1kg",
+    "price": 5530,
+    "ship": 4000,
+    "tax": "면세"
+   },
+   {
+    "name": "안동 산마 (상품) 1kg",
+    "unit": "1kg",
+    "price": 8000,
+    "ship": 4000,
+    "tax": "면세"
+   },
+   {
+    "name": "안동 산마 (특품) 1kg",
+    "unit": "1kg",
+    "price": 14710,
+    "ship": 4000,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 53,
+  "name": "유러피안 채소",
+  "cat": "farm",
+  "tax": "면세",
+  "deadline": "오전 9시 30분",
+  "start": "2026-11-20",
+  "price": 8240,
+  "ship": 0,
+  "emoji": "🥗",
+  "images": [],
+  "top": "images/products/p53/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "유러피안 채소 1kg",
+    "unit": "1kg",
+    "price": 8240,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 54,
+  "name": "히카마 감자",
+  "cat": "farm",
+  "tax": "면세",
+  "deadline": "오전 9시 30분",
+  "start": "2026-11-20",
+  "price": 5770,
+  "ship": 0,
+  "emoji": "🍠",
+  "images": [],
+  "top": "images/products/p54/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "히카마 1kg",
+    "unit": "1kg",
+    "price": 5770,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "히카마 2.5kg",
+    "unit": "2.5kg",
+    "price": 8830,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "히카마 3kg",
+    "unit": "3kg",
+    "price": 10000,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "히카마 5kg",
+    "unit": "5kg",
+    "price": 12830,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "히카마 10kg",
+    "unit": "10kg",
+    "price": 21420,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "(박스포함) 히카마 1kg",
+    "unit": "1kg",
+    "price": 6590,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "(박스포함) 히카마 2.5kg",
+    "unit": "2.5kg",
+    "price": 8950,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "(박스포함) 히카마 3kg",
+    "unit": "3kg",
+    "price": 9650,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "(박스포함) 히카마 5kg",
+    "unit": "5kg",
+    "price": 13890,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "(박스포함) 히카마 10kg",
+    "unit": "10kg",
+    "price": 22120,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 56,
+  "name": "국내산 봄동",
+  "cat": "farm",
+  "tax": "면세",
+  "deadline": "오전 9시 30분",
+  "start": "2026-11-20",
+  "price": 5890,
+  "ship": 0,
+  "emoji": "🥬",
+  "images": [],
+  "top": "images/products/p56/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "국내산 봄동 1kg",
+    "unit": "1kg",
+    "price": 5890,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 봄동 2kg",
+    "unit": "2kg",
+    "price": 7890,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 봄동 3kg",
+    "unit": "3kg",
+    "price": 9650,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 봄동 5kg",
+    "unit": "5kg",
+    "price": 12590,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 봄동 10kg",
+    "unit": "10kg",
+    "price": 19420,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 봄동 15kg",
+    "unit": "15kg",
+    "price": 25890,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 57,
+  "name": "26년 햇 꿀고구마",
+  "cat": "farm",
+  "tax": "면세",
+  "deadline": "오전 9시 30분",
+  "start": "2026-11-23",
+  "price": 6240,
+  "ship": 0,
+  "emoji": "🍠",
+  "images": [],
+  "top": "images/products/p57/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "비세척 꿀고구마 2kg 한입(20-50g)",
+    "unit": "2kg",
+    "price": 6240,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 꿀고구마 3kg 한입(20-50g)",
+    "unit": "3kg",
+    "price": 7650,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 꿀고구마 5kg 한입(20-50g)",
+    "unit": "5kg",
+    "price": 10950,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 꿀고구마 10kg 한입(20-50g)",
+    "unit": "10kg",
+    "price": 17770,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 꿀고구마 2kg 중(50-100g)",
+    "unit": "2kg",
+    "price": 6710,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 꿀고구마 3kg 중(50-100g)",
+    "unit": "3kg",
+    "price": 10000,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 꿀고구마 5kg 중(50-100g)",
+    "unit": "5kg",
+    "price": 14710,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 꿀고구마 10kg 중(50-100g)",
+    "unit": "10kg",
+    "price": 25420,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 꿀고구마 2kg 특상(100-300g)",
+    "unit": "2kg",
+    "price": 8360,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 꿀고구마 3kg 특상(100-300g)",
+    "unit": "3kg",
+    "price": 11060,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 꿀고구마 5kg 특상(100-300g)",
+    "unit": "5kg",
+    "price": 16480,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 꿀고구마 10kg 특상(100-300g)",
+    "unit": "10kg",
+    "price": 30000,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 꿀고구마 2kg 대(300g이상)",
+    "unit": "2kg",
+    "price": 7530,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 꿀고구마 3kg 대(300g이상)",
+    "unit": "3kg",
+    "price": 9300,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 꿀고구마 5kg 대(300g이상)",
+    "unit": "5kg",
+    "price": 13420,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "비세척 꿀고구마 10kg 대(300g이상)",
+    "unit": "10kg",
+    "price": 22830,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 58,
+  "name": "베니하루카(꿀밤고구마)",
+  "cat": "farm",
+  "tax": "면세",
+  "deadline": "오전 9시 30분",
+  "start": "2026-11-23",
+  "price": 5770,
+  "ship": 0,
+  "emoji": "🍠",
+  "images": [],
+  "top": "images/products/p58/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "꿀밤고구마 2kg 한입(20-50g)",
+    "unit": "2kg",
+    "price": 5770,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "꿀밤고구마 3kg 한입(20-50g)",
+    "unit": "3kg",
+    "price": 7180,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "꿀밤고구마 5kg 한입(20-50g)",
+    "unit": "5kg",
+    "price": 9890,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "꿀밤고구마 10kg 한입(20-50g)",
+    "unit": "10kg",
+    "price": 16950,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "꿀밤고구마 2kg 중(50-100g)",
+    "unit": "2kg",
+    "price": 7650,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "꿀밤고구마 3kg 중(50-100g)",
+    "unit": "3kg",
+    "price": 10000,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "꿀밤고구마 5kg 중(50-100g)",
+    "unit": "5kg",
+    "price": 14480,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "꿀밤고구마 10kg 중(50-100g)",
+    "unit": "10kg",
+    "price": 25300,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "꿀밤고구마 2kg 특상(100-300g)",
+    "unit": "2kg",
+    "price": 7770,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "꿀밤고구마 3kg 특상(100-300g)",
+    "unit": "3kg",
+    "price": 10240,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "꿀밤고구마 5kg 특상(100-300g)",
+    "unit": "5kg",
+    "price": 15060,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "꿀밤고구마 10kg 특상(100-300g)",
+    "unit": "10kg",
+    "price": 26480,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "꿀밤고구마 2kg 대(300g이상)",
+    "unit": "2kg",
+    "price": 7420,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "꿀밤고구마 3kg 대(300g이상)",
+    "unit": "3kg",
+    "price": 9420,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "꿀밤고구마 5kg 대(300g이상)",
+    "unit": "5kg",
+    "price": 13530,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "꿀밤고구마 10kg 대(300g이상)",
+    "unit": "10kg",
+    "price": 24710,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 59,
+  "name": "홍찰옥수수",
+  "cat": "farm",
+  "tax": "과세",
+  "deadline": "오전 11시 30분",
+  "start": "2026-11-23",
+  "price": 9180,
+  "ship": 0,
+  "emoji": "🌽",
+  "images": [],
+  "top": "images/products/p59/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "홍찰옥수수 (중) 12cm 내외 10개입",
+    "unit": "10개",
+    "price": 9180,
+    "ship": 0,
+    "tax": "과세"
+   },
+   {
+    "name": "홍찰옥수수 (중) 12cm 내외 15개입",
+    "unit": "15개",
+    "price": 11650,
+    "ship": 0,
+    "tax": "과세"
+   },
+   {
+    "name": "홍찰옥수수 (중) 12cm 내외 20개입",
+    "unit": "20개",
+    "price": 14240,
+    "ship": 0,
+    "tax": "과세"
+   },
+   {
+    "name": "홍찰옥수수 (중) 12cm 내외 30개입",
+    "unit": "30개",
+    "price": 19420,
+    "ship": 0,
+    "tax": "과세"
+   },
+   {
+    "name": "홍찰옥수수 (특) 16cm 내외 10개입",
+    "unit": "10개",
+    "price": 10480,
+    "ship": 0,
+    "tax": "과세"
+   },
+   {
+    "name": "홍찰옥수수 (특) 16cm 내외 15개입",
+    "unit": "15개",
+    "price": 13770,
+    "ship": 0,
+    "tax": "과세"
+   },
+   {
+    "name": "홍찰옥수수 (특) 16cm 내외 20개입",
+    "unit": "20개",
+    "price": 16710,
+    "ship": 0,
+    "tax": "과세"
+   },
+   {
+    "name": "홍찰옥수수 (특) 16cm 내외 30개입",
+    "unit": "30개",
+    "price": 22590,
+    "ship": 0,
+    "tax": "과세"
+   }
+  ]
+ },
+ {
+  "id": 61,
+  "name": "강원도 다발무(고랭지무)",
+  "cat": "farm",
+  "tax": "면세",
+  "deadline": "오전 9시 30분",
+  "start": "2026-11-23",
+  "price": 11300,
+  "ship": 0,
+  "emoji": "🥕",
+  "images": [],
+  "top": "images/products/p61/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "강원도 다발무 5kg (2-3수)",
+    "unit": "5kg",
+    "price": 11300,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "강원도 다발무 10kg (4-6수)",
+    "unit": "10kg",
+    "price": 17530,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "강원도 다발무 16kg (8-11수)",
+    "unit": "16kg",
+    "price": 28240,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ },
+ {
+  "id": 62,
+  "name": "국내산 햇양파",
+  "cat": "farm",
+  "tax": "면세",
+  "deadline": "오전 9시 30분",
+  "start": "2026-11-23",
+  "price": 5060,
+  "ship": 0,
+  "emoji": "🧅",
+  "images": [],
+  "top": "images/products/p62/top.jpg",
+  "detail": [],
+  "options": [
+   {
+    "name": "국내산 햇양파 (소) 2kg",
+    "unit": "2kg",
+    "price": 5060,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 햇양파 (소) 3kg",
+    "unit": "3kg",
+    "price": 5890,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 햇양파 (소) 5kg",
+    "unit": "5kg",
+    "price": 7420,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 햇양파 (소) 10kg",
+    "unit": "10kg",
+    "price": 12360,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 햇양파 (중) 2kg",
+    "unit": "2kg",
+    "price": 5650,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 햇양파 (중) 3kg",
+    "unit": "3kg",
+    "price": 6830,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 햇양파 (중) 5kg",
+    "unit": "5kg",
+    "price": 9060,
+    "ship": 0,
+    "tax": "면세"
+   },
+   {
+    "name": "국내산 햇양파 (중) 10kg",
+    "unit": "10kg",
+    "price": 15180,
+    "ship": 0,
+    "tax": "면세"
+   }
+  ]
+ }
 ];

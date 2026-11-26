@@ -32,26 +32,34 @@ window.SITE = {
 
   /* 메인 배너 (1~10장)
    * 이미지 배너: { image: "images/banners/파일이름.jpg", link: "list.html?cat=sea" }
-   * 글자 배너  : { title, text, image(배경, 선택), color(배경색), link }
+   * 글자 배너  : { title, text, image(배경, 선택), emoji(큰 그림글자, 선택), color(배경색), link }
    */
   banners: [
     {
-      title: "산지직송 고등어 특가",
-      text: "당일 직송, 신선한 고등어 1미 8,900원",
-      image: "images/products/mackerel.jpg",
-      link: "product.html?id=13",
+      title: "산지직송 통영 생굴",
+      text: "바다에서 식탁까지, 오늘 주문하고 신선하게 받아보세요",
+      emoji: "🦪",
+      color: "#1d4e6b",
+      link: "product.html?id=3",
     },
     {
-      title: "도매가 그대로, 매일 특가",
-      text: "농·수·축산물부터 간편식품까지 도매가로 만나보세요",
+      title: "26년 햇 꿀고구마 · 꿀밤고구마",
+      text: "한입 크기부터 왕대까지, 무료배송 도매가",
       image: "images/category/farm.jpg",
-      color: "#1f5a2a",
-      link: "list.html?cat=today",
+      color: "#2c5a1c",
+      link: "list.html?cat=farm",
+    },
+    {
+      title: "국산 김치 무료배송",
+      text: "포기김치·백김치·묵은지·파김치, 도매가로 넉넉하게",
+      emoji: "🥬",
+      color: "#b3361f",
+      link: "list.html?cat=kimchi",
     },
     {
       title: "카카오톡 특가방 오픈!",
       text: "매일 올라오는 실속 특가, 가장 먼저 받아보세요 (비밀번호 1004)",
-      image: "images/category/easy.jpg",
+      emoji: "💬",
       color: "#ef7d1a",
       link: "#kakao",
     },

@@ -39,12 +39,30 @@ def product_ids():
     p = ROOT / "js" / "products.js"
     if not p.exists():
         return ("상품 번호", False, "products.js 없음")
+    import json
     t = p.read_text(encoding="utf-8")
-    block = t.split("window.PRODUCTS", 1)[-1].split("window.REVIEWS", 1)[0]
-    ids = re.findall(r"\bid:\s*(\d+)", block)
+    try:
+        data = json.loads(t[t.index("["): t.rindex("]") + 1])
+    except ValueError as e:
+        return ("상품 번호", False, f"products.js 를 읽지 못함: {e}")
+    ids = [str(x.get("id")) for x in data]
     dup = sorted({i for i in ids if ids.count(i) > 1})
-    return ("상품 번호", not dup and bool(ids),
-            f"{len(ids)}개, 겹침 없음" if not dup else f"겹침: {', '.join(dup)}")
+    noopt = [x.get("name") for x in data if not x.get("options")]
+    ok = bool(ids) and not dup and not noopt
+    note = f"{len(ids)}개 상품·옵션 {sum(len(x.get('options', [])) for x in data)}개, 겹침 없음" if ok else \
+        "; ".join(([f"겹침: {', '.join(dup)}"] if dup else []) + ([f"옵션 없음: {', '.join(noopt[:3])}"] if noopt else []))
+    return ("상품 번호", ok, note)
+
+
+def no_cost():
+    """매입가·마진이 홈페이지 파일에 새어 들어가지 않았는가."""
+    bad = []
+    for f in _files(".js", ".html"):
+        t = f.read_text(encoding="utf-8", errors="replace")
+        for w in ("공급가액", "매입", "마진", "\"cost\"", "\"margin\""):
+            if w in t:
+                bad.append(f"{f.name}:{w}")
+    return ("매입정보", not bad, "홈페이지에 없음" if not bad else ", ".join(bad[:4]))
 
 
 def images():
@@ -87,7 +105,7 @@ def sensitive():
 
 
 def guards() -> list[tuple[str, bool, str]]:
-    return [links(), product_ids(), images(), sensitive()]
+    return [links(), product_ids(), no_cost(), images(), sensitive()]
 
 
 if __name__ == "__main__":
