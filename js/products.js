@@ -1,6 +1,6 @@
 /* 자동 생성 파일 — 손으로 고치지 마세요 (다시 만들면 지워집니다).
  * 원본: 늘푸른우리 제품 공급표_잇플로우.xlsx
- * 만든 때: 2026-11-26 05:46
+ * 만든 때: 2026-11-26 16:43
  * 다시 만들기: python tools/import_excel.py
  * 문구·후기·공지·분류는 js/content.js 에서 고칩니다. */
 window.PRODUCTS = [
@@ -15,10 +15,29 @@ window.PRODUCTS = [
   "ship": 4000,
   "emoji": "🦪",
   "images": [
-   "images/products/p03/ai-1.jpg"
+   "images/products/p03/1.jpg",
+   "images/products/p03/2.jpg",
+   "images/products/p03/3.jpg",
+   "images/products/p03/4.jpg",
+   "images/products/p03/5.jpg",
+   "images/products/p03/6.jpg",
+   "images/products/p03/7.jpg",
+   "images/products/p03/8.jpg",
+   "images/products/p03/9.jpg"
   ],
   "top": "images/products/p03/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p03/detail-1.jpg",
+   "images/products/p03/detail-2.jpg",
+   "images/products/p03/detail-3.jpg",
+   "images/products/p03/detail-4.jpg",
+   "images/products/p03/detail-5.jpg",
+   "images/products/p03/detail-6.jpg",
+   "images/products/p03/detail-7.jpg",
+   "images/products/p03/detail-8.jpg",
+   "images/products/p03/detail-9.jpg",
+   "images/products/p03/detail-10.jpg"
+  ],
   "options": [
    {
     "name": "통영 생굴",
@@ -27,8 +46,7 @@ window.PRODUCTS = [
     "ship": 4000,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 7,
@@ -41,10 +59,31 @@ window.PRODUCTS = [
   "ship": 4000,
   "emoji": "🐚",
   "images": [
-   "images/products/p07/ai-1.jpg"
+   "images/products/p07/1.jpg",
+   "images/products/p07/2.jpg",
+   "images/products/p07/3.jpg",
+   "images/products/p07/4.jpg",
+   "images/products/p07/5.jpg",
+   "images/products/p07/6.jpg",
+   "images/products/p07/7.jpg",
+   "images/products/p07/8.jpg",
+   "images/products/p07/9.jpg",
+   "images/products/p07/10.jpg"
   ],
   "top": "images/products/p07/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p07/detail-1.jpg",
+   "images/products/p07/detail-2.jpg",
+   "images/products/p07/detail-3.jpg",
+   "images/products/p07/detail-4.jpg",
+   "images/products/p07/detail-5.jpg",
+   "images/products/p07/detail-6.jpg",
+   "images/products/p07/detail-7.jpg",
+   "images/products/p07/detail-8.jpg",
+   "images/products/p07/detail-9.jpg",
+   "images/products/p07/detail-10.jpg",
+   "images/products/p07/detail-11.jpg"
+  ],
   "options": [
    {
     "name": "벌교 새꼬막 1kg 소",
@@ -81,8 +120,7 @@ window.PRODUCTS = [
     "ship": null,
     "tax": "과세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 8,
@@ -95,10 +133,28 @@ window.PRODUCTS = [
   "ship": 4000,
   "emoji": "🦑",
   "images": [
-   "images/products/p08/ai-1.jpg"
+   "images/products/p08/1.jpg",
+   "images/products/p08/2.jpg",
+   "images/products/p08/3.jpg",
+   "images/products/p08/4.jpg",
+   "images/products/p08/5.jpg",
+   "images/products/p08/6.jpg",
+   "images/products/p08/7.jpg",
+   "images/products/p08/8.jpg",
+   "images/products/p08/9.jpg"
   ],
   "top": "images/products/p08/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p08/detail-1.jpg",
+   "images/products/p08/detail-2.jpg",
+   "images/products/p08/detail-3.jpg",
+   "images/products/p08/detail-4.jpg",
+   "images/products/p08/detail-5.jpg",
+   "images/products/p08/detail-6.jpg",
+   "images/products/p08/detail-7.jpg",
+   "images/products/p08/detail-8.jpg",
+   "images/products/p08/detail-9.jpg"
+  ],
   "options": [
    {
     "name": "반건조 오징어 5미 350g",
@@ -121,8 +177,7 @@ window.PRODUCTS = [
     "ship": 4000,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 9,
@@ -135,10 +190,29 @@ window.PRODUCTS = [
   "ship": 4000,
   "emoji": "🐙",
   "images": [
-   "images/products/p09/ai-1.jpg"
+   "images/products/p09/1.jpg",
+   "images/products/p09/2.jpg",
+   "images/products/p09/3.jpg",
+   "images/products/p09/4.jpg",
+   "images/products/p09/5.jpg",
+   "images/products/p09/6.jpg",
+   "images/products/p09/7.jpg",
+   "images/products/p09/8.jpg",
+   "images/products/p09/9.jpg"
   ],
   "top": "images/products/p09/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p09/detail-1.jpg",
+   "images/products/p09/detail-2.jpg",
+   "images/products/p09/detail-3.jpg",
+   "images/products/p09/detail-4.jpg",
+   "images/products/p09/detail-5.jpg",
+   "images/products/p09/detail-6.jpg",
+   "images/products/p09/detail-7.jpg",
+   "images/products/p09/detail-8.jpg",
+   "images/products/p09/detail-9.jpg",
+   "images/products/p09/detail-10.jpg"
+  ],
   "options": [
    {
     "name": "활 돌문어 1kg(1-4미)",
@@ -147,8 +221,7 @@ window.PRODUCTS = [
     "ship": 4000,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 10,
@@ -161,10 +234,25 @@ window.PRODUCTS = [
   "ship": 4000,
   "emoji": "🐟",
   "images": [
-   "images/products/p10/ai-1.jpg"
+   "images/products/p10/1.jpg",
+   "images/products/p10/2.jpg",
+   "images/products/p10/3.jpg",
+   "images/products/p10/4.jpg",
+   "images/products/p10/5.jpg",
+   "images/products/p10/6.jpg"
   ],
   "top": "images/products/p10/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p10/detail-1.jpg",
+   "images/products/p10/detail-2.jpg",
+   "images/products/p10/detail-3.jpg",
+   "images/products/p10/detail-4.jpg",
+   "images/products/p10/detail-5.jpg",
+   "images/products/p10/detail-6.jpg",
+   "images/products/p10/detail-7.jpg",
+   "images/products/p10/detail-8.jpg",
+   "images/products/p10/detail-9.jpg"
+  ],
   "options": [
    {
     "name": "반건조 박대 소(26-28)",
@@ -194,8 +282,7 @@ window.PRODUCTS = [
     "ship": 4000,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 11,
@@ -321,10 +408,33 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🦀",
   "images": [
-   "images/products/p13/ai-1.jpg"
+   "images/products/p13/1.jpg",
+   "images/products/p13/2.jpg",
+   "images/products/p13/3.jpg",
+   "images/products/p13/4.jpg",
+   "images/products/p13/5.jpg",
+   "images/products/p13/6.jpg",
+   "images/products/p13/7.jpg",
+   "images/products/p13/8.jpg",
+   "images/products/p13/9.jpg",
+   "images/products/p13/10.jpg",
+   "images/products/p13/11.jpg",
+   "images/products/p13/12.jpg"
   ],
   "top": "images/products/p13/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p13/detail-1.jpg",
+   "images/products/p13/detail-2.jpg",
+   "images/products/p13/detail-3.jpg",
+   "images/products/p13/detail-4.jpg",
+   "images/products/p13/detail-5.jpg",
+   "images/products/p13/detail-6.jpg",
+   "images/products/p13/detail-7.jpg",
+   "images/products/p13/detail-8.jpg",
+   "images/products/p13/detail-9.jpg",
+   "images/products/p13/detail-10.jpg",
+   "images/products/p13/detail-11.jpg"
+  ],
   "options": [
    {
     "name": "(자숙) 러시아대게 B급 3kg/2-3마리",
@@ -347,8 +457,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 14,
@@ -495,10 +604,31 @@ window.PRODUCTS = [
   "ship": 4000,
   "emoji": "🦀",
   "images": [
-   "images/products/p16/ai-1.jpg"
+   "images/products/p16/1.jpg",
+   "images/products/p16/2.jpg",
+   "images/products/p16/3.jpg",
+   "images/products/p16/4.jpg",
+   "images/products/p16/5.jpg",
+   "images/products/p16/6.jpg",
+   "images/products/p16/7.jpg"
   ],
   "top": "images/products/p16/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p16/detail-1.jpg",
+   "images/products/p16/detail-2.jpg",
+   "images/products/p16/detail-3.jpg",
+   "images/products/p16/detail-4.jpg",
+   "images/products/p16/detail-5.jpg",
+   "images/products/p16/detail-6.jpg",
+   "images/products/p16/detail-7.jpg",
+   "images/products/p16/detail-8.jpg",
+   "images/products/p16/detail-9.jpg",
+   "images/products/p16/detail-10.jpg",
+   "images/products/p16/detail-11.jpg",
+   "images/products/p16/detail-12.jpg",
+   "images/products/p16/detail-13.jpg",
+   "images/products/p16/detail-14.jpg"
+  ],
   "options": [
    {
     "name": "연평도 급냉 암꽃게 1kg(3-5미)",
@@ -507,8 +637,7 @@ window.PRODUCTS = [
     "ship": 4000,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 17,
@@ -625,10 +754,31 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🦀",
   "images": [
-   "images/products/p20/ai-1.jpg"
+   "images/products/p20/1.jpg",
+   "images/products/p20/2.jpg",
+   "images/products/p20/3.jpg",
+   "images/products/p20/4.jpg",
+   "images/products/p20/5.jpg",
+   "images/products/p20/6.jpg",
+   "images/products/p20/7.jpg"
   ],
   "top": "images/products/p20/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p20/detail-1.jpg",
+   "images/products/p20/detail-2.jpg",
+   "images/products/p20/detail-3.jpg",
+   "images/products/p20/detail-4.jpg",
+   "images/products/p20/detail-5.jpg",
+   "images/products/p20/detail-6.jpg",
+   "images/products/p20/detail-7.jpg",
+   "images/products/p20/detail-8.jpg",
+   "images/products/p20/detail-9.jpg",
+   "images/products/p20/detail-10.jpg",
+   "images/products/p20/detail-11.jpg",
+   "images/products/p20/detail-12.jpg",
+   "images/products/p20/detail-13.jpg",
+   "images/products/p20/detail-14.jpg"
+  ],
   "options": [
    {
     "name": "하프절단 암꽃게 1kg (6-10조각)",
@@ -651,8 +801,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 21,
@@ -665,10 +814,30 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🐟",
   "images": [
-   "images/products/p21/ai-1.jpg"
+   "images/products/p21/1.jpg",
+   "images/products/p21/2.jpg",
+   "images/products/p21/3.jpg",
+   "images/products/p21/4.jpg",
+   "images/products/p21/5.jpg",
+   "images/products/p21/6.jpg",
+   "images/products/p21/7.jpg",
+   "images/products/p21/8.jpg",
+   "images/products/p21/9.jpg"
   ],
   "top": "images/products/p21/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p21/detail-1.jpg",
+   "images/products/p21/detail-2.jpg",
+   "images/products/p21/detail-3.jpg",
+   "images/products/p21/detail-4.jpg",
+   "images/products/p21/detail-5.jpg",
+   "images/products/p21/detail-6.jpg",
+   "images/products/p21/detail-7.jpg",
+   "images/products/p21/detail-8.jpg",
+   "images/products/p21/detail-9.jpg",
+   "images/products/p21/detail-10.jpg",
+   "images/products/p21/detail-11.jpg"
+  ],
   "options": [
    {
     "name": "국내산 홍어 500g (약)",
@@ -740,8 +909,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 22,
@@ -754,10 +922,33 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🦪",
   "images": [
-   "images/products/p22/ai-1.jpg"
+   "images/products/p22/1.jpg",
+   "images/products/p22/2.jpg",
+   "images/products/p22/3.jpg",
+   "images/products/p22/4.jpg",
+   "images/products/p22/5.jpg",
+   "images/products/p22/6.jpg",
+   "images/products/p22/7.jpg",
+   "images/products/p22/8.jpg",
+   "images/products/p22/9.jpg",
+   "images/products/p22/10.jpg"
   ],
   "top": "images/products/p22/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p22/detail-1.jpg",
+   "images/products/p22/detail-2.jpg",
+   "images/products/p22/detail-3.jpg",
+   "images/products/p22/detail-4.jpg",
+   "images/products/p22/detail-5.jpg",
+   "images/products/p22/detail-6.jpg",
+   "images/products/p22/detail-7.jpg",
+   "images/products/p22/detail-8.jpg",
+   "images/products/p22/detail-9.jpg",
+   "images/products/p22/detail-10.jpg",
+   "images/products/p22/detail-11.jpg",
+   "images/products/p22/detail-12.jpg",
+   "images/products/p22/detail-13.jpg"
+  ],
   "options": [
    {
     "name": "국내산 여수 석화",
@@ -780,8 +971,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 23,
@@ -1272,10 +1462,23 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🥬",
   "images": [
-   "images/products/p33/ai-1.jpg"
+   "images/products/p33/1.jpg",
+   "images/products/p33/2.jpg",
+   "images/products/p33/3.jpg",
+   "images/products/p33/4.jpg",
+   "images/products/p33/5.jpg"
   ],
   "top": "images/products/p33/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p33/detail-1.jpg",
+   "images/products/p33/detail-2.jpg",
+   "images/products/p33/detail-3.jpg",
+   "images/products/p33/detail-4.jpg",
+   "images/products/p33/detail-5.jpg",
+   "images/products/p33/detail-6.jpg",
+   "images/products/p33/detail-7.jpg",
+   "images/products/p33/detail-8.jpg"
+  ],
   "options": [
    {
     "name": "나박물김치",
@@ -1305,8 +1508,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 34,
@@ -1319,10 +1521,24 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🥬",
   "images": [
-   "images/products/p34/ai-1.jpg"
+   "images/products/p34/1.jpg",
+   "images/products/p34/2.jpg"
   ],
   "top": "images/products/p34/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p34/detail-1.jpg",
+   "images/products/p34/detail-2.jpg",
+   "images/products/p34/detail-3.jpg",
+   "images/products/p34/detail-4.jpg",
+   "images/products/p34/detail-5.jpg",
+   "images/products/p34/detail-6.jpg",
+   "images/products/p34/detail-7.jpg",
+   "images/products/p34/detail-8.jpg",
+   "images/products/p34/detail-9.jpg",
+   "images/products/p34/detail-10.jpg",
+   "images/products/p34/detail-11.jpg",
+   "images/products/p34/detail-12.jpg"
+  ],
   "options": [
    {
     "name": "전라도식 파김치",
@@ -1352,8 +1568,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 35,
@@ -1366,10 +1581,25 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🥬",
   "images": [
-   "images/products/p35/ai-1.jpg"
+   "images/products/p35/1.jpg",
+   "images/products/p35/2.jpg",
+   "images/products/p35/3.jpg"
   ],
   "top": "images/products/p35/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p35/detail-1.jpg",
+   "images/products/p35/detail-2.jpg",
+   "images/products/p35/detail-3.jpg",
+   "images/products/p35/detail-4.jpg",
+   "images/products/p35/detail-5.jpg",
+   "images/products/p35/detail-6.jpg",
+   "images/products/p35/detail-7.jpg",
+   "images/products/p35/detail-8.jpg",
+   "images/products/p35/detail-9.jpg",
+   "images/products/p35/detail-10.jpg",
+   "images/products/p35/detail-11.jpg",
+   "images/products/p35/detail-12.jpg"
+  ],
   "options": [
    {
     "name": "여수갓김치",
@@ -1392,8 +1622,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 36,
@@ -1406,10 +1635,31 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🥬",
   "images": [
-   "images/products/p36/ai-1.jpg"
+   "images/products/p36/1.jpg",
+   "images/products/p36/2.jpg",
+   "images/products/p36/3.jpg",
+   "images/products/p36/4.jpg",
+   "images/products/p36/5.jpg",
+   "images/products/p36/6.jpg",
+   "images/products/p36/7.jpg",
+   "images/products/p36/8.jpg"
   ],
   "top": "images/products/p36/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p36/detail-1.jpg",
+   "images/products/p36/detail-2.jpg",
+   "images/products/p36/detail-3.jpg",
+   "images/products/p36/detail-4.jpg",
+   "images/products/p36/detail-5.jpg",
+   "images/products/p36/detail-6.jpg",
+   "images/products/p36/detail-7.jpg",
+   "images/products/p36/detail-8.jpg",
+   "images/products/p36/detail-9.jpg",
+   "images/products/p36/detail-10.jpg",
+   "images/products/p36/detail-11.jpg",
+   "images/products/p36/detail-12.jpg",
+   "images/products/p36/detail-13.jpg"
+  ],
   "options": [
    {
     "name": "매운 실비김치",
@@ -1439,8 +1689,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 37,
@@ -1456,7 +1705,20 @@ window.PRODUCTS = [
    "images/products/p37/ai-1.jpg"
   ],
   "top": "images/products/p37/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p37/detail-1.jpg",
+   "images/products/p37/detail-2.jpg",
+   "images/products/p37/detail-3.jpg",
+   "images/products/p37/detail-4.jpg",
+   "images/products/p37/detail-5.jpg",
+   "images/products/p37/detail-6.jpg",
+   "images/products/p37/detail-7.jpg",
+   "images/products/p37/detail-8.jpg",
+   "images/products/p37/detail-9.jpg",
+   "images/products/p37/detail-10.jpg",
+   "images/products/p37/detail-11.jpg",
+   "images/products/p37/detail-12.jpg"
+  ],
   "options": [
    {
     "name": "총각김치(알타리김치)",
@@ -1493,10 +1755,32 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🥬",
   "images": [
-   "images/products/p39/ai-1.jpg"
+   "images/products/p39/1.jpg",
+   "images/products/p39/2.jpg",
+   "images/products/p39/3.jpg",
+   "images/products/p39/4.jpg",
+   "images/products/p39/5.jpg",
+   "images/products/p39/6.jpg",
+   "images/products/p39/7.jpg",
+   "images/products/p39/8.jpg",
+   "images/products/p39/9.jpg"
   ],
   "top": "images/products/p39/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p39/detail-1.jpg",
+   "images/products/p39/detail-2.jpg",
+   "images/products/p39/detail-3.jpg",
+   "images/products/p39/detail-4.jpg",
+   "images/products/p39/detail-5.jpg",
+   "images/products/p39/detail-6.jpg",
+   "images/products/p39/detail-7.jpg",
+   "images/products/p39/detail-8.jpg",
+   "images/products/p39/detail-9.jpg",
+   "images/products/p39/detail-10.jpg",
+   "images/products/p39/detail-11.jpg",
+   "images/products/p39/detail-12.jpg",
+   "images/products/p39/detail-13.jpg"
+  ],
   "options": [
    {
     "name": "국산 포기김치",
@@ -1526,8 +1810,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 40,
@@ -1540,10 +1823,27 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🥬",
   "images": [
-   "images/products/p40/ai-1.jpg"
+   "images/products/p40/1.jpg",
+   "images/products/p40/2.jpg",
+   "images/products/p40/3.jpg",
+   "images/products/p40/4.jpg",
+   "images/products/p40/5.jpg"
   ],
   "top": "images/products/p40/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p40/detail-1.jpg",
+   "images/products/p40/detail-2.jpg",
+   "images/products/p40/detail-3.jpg",
+   "images/products/p40/detail-4.jpg",
+   "images/products/p40/detail-5.jpg",
+   "images/products/p40/detail-6.jpg",
+   "images/products/p40/detail-7.jpg",
+   "images/products/p40/detail-8.jpg",
+   "images/products/p40/detail-9.jpg",
+   "images/products/p40/detail-10.jpg",
+   "images/products/p40/detail-11.jpg",
+   "images/products/p40/detail-12.jpg"
+  ],
   "options": [
    {
     "name": "배추김치",
@@ -1566,8 +1866,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 41,
@@ -1580,10 +1879,30 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🥬",
   "images": [
-   "images/products/p41/ai-1.jpg"
+   "images/products/p41/1.jpg",
+   "images/products/p41/2.jpg",
+   "images/products/p41/3.jpg",
+   "images/products/p41/4.jpg",
+   "images/products/p41/5.jpg",
+   "images/products/p41/6.jpg",
+   "images/products/p41/7.jpg"
   ],
   "top": "images/products/p41/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p41/detail-1.jpg",
+   "images/products/p41/detail-2.jpg",
+   "images/products/p41/detail-3.jpg",
+   "images/products/p41/detail-4.jpg",
+   "images/products/p41/detail-5.jpg",
+   "images/products/p41/detail-6.jpg",
+   "images/products/p41/detail-7.jpg",
+   "images/products/p41/detail-8.jpg",
+   "images/products/p41/detail-9.jpg",
+   "images/products/p41/detail-10.jpg",
+   "images/products/p41/detail-11.jpg",
+   "images/products/p41/detail-12.jpg",
+   "images/products/p41/detail-13.jpg"
+  ],
   "options": [
    {
     "name": "백김치",
@@ -1613,8 +1932,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 42,
@@ -1627,10 +1945,33 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🥬",
   "images": [
-   "images/products/p42/ai-1.jpg"
+   "images/products/p42/1.jpg",
+   "images/products/p42/2.jpg",
+   "images/products/p42/3.jpg",
+   "images/products/p42/4.jpg",
+   "images/products/p42/5.jpg",
+   "images/products/p42/6.jpg",
+   "images/products/p42/7.jpg",
+   "images/products/p42/8.jpg"
   ],
   "top": "images/products/p42/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p42/detail-1.jpg",
+   "images/products/p42/detail-2.jpg",
+   "images/products/p42/detail-3.jpg",
+   "images/products/p42/detail-4.jpg",
+   "images/products/p42/detail-5.jpg",
+   "images/products/p42/detail-6.jpg",
+   "images/products/p42/detail-7.jpg",
+   "images/products/p42/detail-8.jpg",
+   "images/products/p42/detail-9.jpg",
+   "images/products/p42/detail-10.jpg",
+   "images/products/p42/detail-11.jpg",
+   "images/products/p42/detail-12.jpg",
+   "images/products/p42/detail-13.jpg",
+   "images/products/p42/detail-14.jpg",
+   "images/products/p42/detail-15.jpg"
+  ],
   "options": [
    {
     "name": "묵은지",
@@ -1660,8 +2001,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 43,
@@ -1677,7 +2017,19 @@ window.PRODUCTS = [
    "images/products/p43/ai-1.jpg"
   ],
   "top": "images/products/p43/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p43/detail-1.jpg",
+   "images/products/p43/detail-2.jpg",
+   "images/products/p43/detail-3.jpg",
+   "images/products/p43/detail-4.jpg",
+   "images/products/p43/detail-5.jpg",
+   "images/products/p43/detail-6.jpg",
+   "images/products/p43/detail-7.jpg",
+   "images/products/p43/detail-8.jpg",
+   "images/products/p43/detail-9.jpg",
+   "images/products/p43/detail-10.jpg",
+   "images/products/p43/detail-11.jpg"
+  ],
   "options": [
    {
     "name": "오이소박이",
@@ -1700,10 +2052,26 @@ window.PRODUCTS = [
   "ship": 4000,
   "emoji": "🥬",
   "images": [
-   "images/products/p44/ai-1.jpg"
+   "images/products/p44/1.jpg",
+   "images/products/p44/2.jpg",
+   "images/products/p44/3.jpg",
+   "images/products/p44/4.jpg"
   ],
   "top": "images/products/p44/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p44/detail-1.jpg",
+   "images/products/p44/detail-2.jpg",
+   "images/products/p44/detail-3.jpg",
+   "images/products/p44/detail-4.jpg",
+   "images/products/p44/detail-5.jpg",
+   "images/products/p44/detail-6.jpg",
+   "images/products/p44/detail-7.jpg",
+   "images/products/p44/detail-8.jpg",
+   "images/products/p44/detail-9.jpg",
+   "images/products/p44/detail-10.jpg",
+   "images/products/p44/detail-11.jpg",
+   "images/products/p44/detail-12.jpg"
+  ],
   "options": [
    {
     "name": "부추김치",
@@ -1712,8 +2080,7 @@ window.PRODUCTS = [
     "ship": 4000,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 45,
@@ -1726,10 +2093,28 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🌰",
   "images": [
-   "images/products/p45/ai-1.jpg"
+   "images/products/p45/1.jpg",
+   "images/products/p45/2.jpg",
+   "images/products/p45/3.jpg",
+   "images/products/p45/4.jpg",
+   "images/products/p45/5.jpg",
+   "images/products/p45/6.jpg",
+   "images/products/p45/7.jpg",
+   "images/products/p45/8.jpg"
   ],
   "top": "images/products/p45/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p45/detail-1.jpg",
+   "images/products/p45/detail-2.jpg",
+   "images/products/p45/detail-3.jpg",
+   "images/products/p45/detail-4.jpg",
+   "images/products/p45/detail-5.jpg",
+   "images/products/p45/detail-6.jpg",
+   "images/products/p45/detail-7.jpg",
+   "images/products/p45/detail-8.jpg",
+   "images/products/p45/detail-9.jpg",
+   "images/products/p45/detail-10.jpg"
+  ],
   "options": [
    {
     "name": "햇밤 중",
@@ -1815,8 +2200,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 46,
@@ -1832,7 +2216,16 @@ window.PRODUCTS = [
    "images/products/p46/ai-1.jpg"
   ],
   "top": "images/products/p46/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p46/detail-1.jpg",
+   "images/products/p46/detail-2.jpg",
+   "images/products/p46/detail-3.jpg",
+   "images/products/p46/detail-4.jpg",
+   "images/products/p46/detail-5.jpg",
+   "images/products/p46/detail-6.jpg",
+   "images/products/p46/detail-7.jpg",
+   "images/products/p46/detail-8.jpg"
+  ],
   "options": [
    {
     "name": "시금치 500g",
@@ -1869,10 +2262,28 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🫑",
   "images": [
-   "images/products/p47/ai-1.jpg"
+   "images/products/p47/1.jpg",
+   "images/products/p47/2.jpg",
+   "images/products/p47/3.jpg",
+   "images/products/p47/4.jpg",
+   "images/products/p47/5.jpg",
+   "images/products/p47/6.jpg",
+   "images/products/p47/7.jpg",
+   "images/products/p47/8.jpg"
   ],
   "top": "images/products/p47/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p47/detail-1.jpg",
+   "images/products/p47/detail-2.jpg",
+   "images/products/p47/detail-3.jpg",
+   "images/products/p47/detail-4.jpg",
+   "images/products/p47/detail-5.jpg",
+   "images/products/p47/detail-6.jpg",
+   "images/products/p47/detail-7.jpg",
+   "images/products/p47/detail-8.jpg",
+   "images/products/p47/detail-9.jpg",
+   "images/products/p47/detail-10.jpg"
+  ],
   "options": [
    {
     "name": "혼합 파프리카 1kg",
@@ -1909,8 +2320,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 48,
@@ -1923,10 +2333,27 @@ window.PRODUCTS = [
   "ship": 3000,
   "emoji": "🌰",
   "images": [
-   "images/products/p48/ai-1.jpg"
+   "images/products/p48/1.jpg",
+   "images/products/p48/2.jpg",
+   "images/products/p48/3.jpg",
+   "images/products/p48/4.jpg",
+   "images/products/p48/5.jpg",
+   "images/products/p48/6.jpg",
+   "images/products/p48/7.jpg",
+   "images/products/p48/8.jpg",
+   "images/products/p48/9.jpg"
   ],
   "top": "images/products/p48/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p48/detail-1.jpg",
+   "images/products/p48/detail-2.jpg",
+   "images/products/p48/detail-3.jpg",
+   "images/products/p48/detail-4.jpg",
+   "images/products/p48/detail-5.jpg",
+   "images/products/p48/detail-6.jpg",
+   "images/products/p48/detail-7.jpg",
+   "images/products/p48/detail-8.jpg"
+  ],
   "options": [
    {
     "name": "약단밤 500g",
@@ -1942,8 +2369,7 @@ window.PRODUCTS = [
     "ship": 3000,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 49,
@@ -1959,7 +2385,20 @@ window.PRODUCTS = [
    "images/products/p49/ai-1.jpg"
   ],
   "top": "images/products/p49/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p49/detail-1.jpg",
+   "images/products/p49/detail-2.jpg",
+   "images/products/p49/detail-3.jpg",
+   "images/products/p49/detail-4.jpg",
+   "images/products/p49/detail-5.jpg",
+   "images/products/p49/detail-6.jpg",
+   "images/products/p49/detail-7.jpg",
+   "images/products/p49/detail-8.jpg",
+   "images/products/p49/detail-9.jpg",
+   "images/products/p49/detail-10.jpg",
+   "images/products/p49/detail-11.jpg",
+   "images/products/p49/detail-12.jpg"
+  ],
   "options": [
    {
     "name": "백찰옥수수 특 10개입",
@@ -2003,10 +2442,34 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🍠",
   "images": [
-   "images/products/p50/ai-1.jpg"
+   "images/products/p50/1.jpg",
+   "images/products/p50/2.jpg",
+   "images/products/p50/3.jpg",
+   "images/products/p50/4.jpg",
+   "images/products/p50/5.jpg",
+   "images/products/p50/6.jpg",
+   "images/products/p50/7.jpg",
+   "images/products/p50/8.jpg",
+   "images/products/p50/9.jpg",
+   "images/products/p50/10.jpg",
+   "images/products/p50/11.jpg",
+   "images/products/p50/12.jpg"
   ],
   "top": "images/products/p50/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p50/detail-1.jpg",
+   "images/products/p50/detail-2.jpg",
+   "images/products/p50/detail-3.jpg",
+   "images/products/p50/detail-4.jpg",
+   "images/products/p50/detail-5.jpg",
+   "images/products/p50/detail-6.jpg",
+   "images/products/p50/detail-7.jpg",
+   "images/products/p50/detail-8.jpg",
+   "images/products/p50/detail-9.jpg",
+   "images/products/p50/detail-10.jpg",
+   "images/products/p50/detail-11.jpg",
+   "images/products/p50/detail-12.jpg"
+  ],
   "options": [
    {
     "name": "비세척 호풍미고구마 2kg 한입(20-50g)",
@@ -2120,8 +2583,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 51,
@@ -2137,7 +2599,20 @@ window.PRODUCTS = [
    "images/products/p51/ai-1.jpg"
   ],
   "top": "images/products/p51/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p51/detail-1.jpg",
+   "images/products/p51/detail-2.jpg",
+   "images/products/p51/detail-3.jpg",
+   "images/products/p51/detail-4.jpg",
+   "images/products/p51/detail-5.jpg",
+   "images/products/p51/detail-6.jpg",
+   "images/products/p51/detail-7.jpg",
+   "images/products/p51/detail-8.jpg",
+   "images/products/p51/detail-9.jpg",
+   "images/products/p51/detail-10.jpg",
+   "images/products/p51/detail-11.jpg",
+   "images/products/p51/detail-12.jpg"
+  ],
   "options": [
    {
     "name": "제주 미니밤호박(못난이) 3kg",
@@ -2202,10 +2677,29 @@ window.PRODUCTS = [
   "ship": 4000,
   "emoji": "🍠",
   "images": [
-   "images/products/p52/ai-1.jpg"
+   "images/products/p52/1.jpg",
+   "images/products/p52/2.jpg",
+   "images/products/p52/3.jpg",
+   "images/products/p52/4.jpg",
+   "images/products/p52/5.jpg",
+   "images/products/p52/6.jpg",
+   "images/products/p52/7.jpg",
+   "images/products/p52/8.jpg",
+   "images/products/p52/9.jpg"
   ],
   "top": "images/products/p52/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p52/detail-1.jpg",
+   "images/products/p52/detail-2.jpg",
+   "images/products/p52/detail-3.jpg",
+   "images/products/p52/detail-4.jpg",
+   "images/products/p52/detail-5.jpg",
+   "images/products/p52/detail-6.jpg",
+   "images/products/p52/detail-7.jpg",
+   "images/products/p52/detail-8.jpg",
+   "images/products/p52/detail-9.jpg",
+   "images/products/p52/detail-10.jpg"
+  ],
   "options": [
    {
     "name": "안동 장마 (중품) 1kg",
@@ -2249,8 +2743,7 @@ window.PRODUCTS = [
     "ship": 4000,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 53,
@@ -2266,7 +2759,18 @@ window.PRODUCTS = [
    "images/products/p53/ai-1.jpg"
   ],
   "top": "images/products/p53/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p53/detail-1.jpg",
+   "images/products/p53/detail-2.jpg",
+   "images/products/p53/detail-3.jpg",
+   "images/products/p53/detail-4.jpg",
+   "images/products/p53/detail-5.jpg",
+   "images/products/p53/detail-6.jpg",
+   "images/products/p53/detail-7.jpg",
+   "images/products/p53/detail-8.jpg",
+   "images/products/p53/detail-9.jpg",
+   "images/products/p53/detail-10.jpg"
+  ],
   "options": [
    {
     "name": "유러피안 채소 1kg",
@@ -2289,10 +2793,27 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🍠",
   "images": [
-   "images/products/p54/ai-1.jpg"
+   "images/products/p54/1.jpg",
+   "images/products/p54/2.jpg",
+   "images/products/p54/3.jpg",
+   "images/products/p54/4.jpg",
+   "images/products/p54/5.jpg",
+   "images/products/p54/6.jpg",
+   "images/products/p54/7.jpg"
   ],
   "top": "images/products/p54/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p54/detail-1.jpg",
+   "images/products/p54/detail-2.jpg",
+   "images/products/p54/detail-3.jpg",
+   "images/products/p54/detail-4.jpg",
+   "images/products/p54/detail-5.jpg",
+   "images/products/p54/detail-6.jpg",
+   "images/products/p54/detail-7.jpg",
+   "images/products/p54/detail-8.jpg",
+   "images/products/p54/detail-9.jpg",
+   "images/products/p54/detail-10.jpg"
+  ],
   "options": [
    {
     "name": "히카마 1kg",
@@ -2364,8 +2885,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 56,
@@ -2378,10 +2898,25 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🥬",
   "images": [
-   "images/products/p56/ai-1.jpg"
+   "images/products/p56/1.jpg",
+   "images/products/p56/2.jpg",
+   "images/products/p56/3.jpg",
+   "images/products/p56/4.jpg",
+   "images/products/p56/5.jpg",
+   "images/products/p56/6.jpg",
+   "images/products/p56/7.jpg",
+   "images/products/p56/8.jpg"
   ],
   "top": "images/products/p56/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p56/detail-1.jpg",
+   "images/products/p56/detail-2.jpg",
+   "images/products/p56/detail-3.jpg",
+   "images/products/p56/detail-4.jpg",
+   "images/products/p56/detail-5.jpg",
+   "images/products/p56/detail-6.jpg",
+   "images/products/p56/detail-7.jpg"
+  ],
   "options": [
    {
     "name": "국내산 봄동 1kg",
@@ -2425,8 +2960,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 57,
@@ -2570,10 +3104,44 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🍠",
   "images": [
-   "images/products/p58/ai-1.jpg"
+   "images/products/p58/1.jpg",
+   "images/products/p58/2.jpg",
+   "images/products/p58/3.jpg",
+   "images/products/p58/4.jpg",
+   "images/products/p58/5.jpg",
+   "images/products/p58/6.jpg",
+   "images/products/p58/7.jpg",
+   "images/products/p58/8.jpg",
+   "images/products/p58/9.jpg"
   ],
   "top": "images/products/p58/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p58/detail-1.jpg",
+   "images/products/p58/detail-2.jpg",
+   "images/products/p58/detail-3.jpg",
+   "images/products/p58/detail-4.jpg",
+   "images/products/p58/detail-5.jpg",
+   "images/products/p58/detail-6.jpg",
+   "images/products/p58/detail-7.jpg",
+   "images/products/p58/detail-8.jpg",
+   "images/products/p58/detail-9.jpg",
+   "images/products/p58/detail-10.jpg",
+   "images/products/p58/detail-11.jpg",
+   "images/products/p58/detail-12.jpg",
+   "images/products/p58/detail-13.jpg",
+   "images/products/p58/detail-14.jpg",
+   "images/products/p58/detail-15.jpg",
+   "images/products/p58/detail-16.jpg",
+   "images/products/p58/detail-17.jpg",
+   "images/products/p58/detail-18.jpg",
+   "images/products/p58/detail-19.jpg",
+   "images/products/p58/detail-20.jpg",
+   "images/products/p58/detail-21.jpg",
+   "images/products/p58/detail-22.jpg",
+   "images/products/p58/detail-23.jpg",
+   "images/products/p58/detail-24.jpg",
+   "images/products/p58/detail-25.jpg"
+  ],
   "options": [
    {
     "name": "꿀밤고구마 2kg 한입(20-50g)",
@@ -2687,8 +3255,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 59,
@@ -2701,10 +3268,35 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🌽",
   "images": [
-   "images/products/p59/ai-1.jpg"
+   "images/products/p59/1.jpg",
+   "images/products/p59/2.jpg",
+   "images/products/p59/3.jpg",
+   "images/products/p59/4.jpg",
+   "images/products/p59/5.jpg",
+   "images/products/p59/6.jpg",
+   "images/products/p59/7.jpg",
+   "images/products/p59/8.jpg",
+   "images/products/p59/9.jpg",
+   "images/products/p59/10.jpg",
+   "images/products/p59/11.jpg",
+   "images/products/p59/12.jpg",
+   "images/products/p59/13.jpg",
+   "images/products/p59/14.jpg",
+   "images/products/p59/15.jpg"
   ],
   "top": "images/products/p59/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p59/detail-1.jpg",
+   "images/products/p59/detail-2.jpg",
+   "images/products/p59/detail-3.jpg",
+   "images/products/p59/detail-4.jpg",
+   "images/products/p59/detail-5.jpg",
+   "images/products/p59/detail-6.jpg",
+   "images/products/p59/detail-7.jpg",
+   "images/products/p59/detail-8.jpg",
+   "images/products/p59/detail-9.jpg",
+   "images/products/p59/detail-10.jpg"
+  ],
   "options": [
    {
     "name": "홍찰옥수수 (중) 12cm 내외 10개입",
@@ -2762,8 +3354,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "과세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 61,
@@ -2776,10 +3367,28 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🥕",
   "images": [
-   "images/products/p61/ai-1.jpg"
+   "images/products/p61/1.jpg",
+   "images/products/p61/2.jpg",
+   "images/products/p61/3.jpg",
+   "images/products/p61/4.jpg",
+   "images/products/p61/5.jpg",
+   "images/products/p61/6.jpg",
+   "images/products/p61/7.jpg",
+   "images/products/p61/8.jpg",
+   "images/products/p61/9.jpg"
   ],
   "top": "images/products/p61/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p61/detail-1.jpg",
+   "images/products/p61/detail-2.jpg",
+   "images/products/p61/detail-3.jpg",
+   "images/products/p61/detail-4.jpg",
+   "images/products/p61/detail-5.jpg",
+   "images/products/p61/detail-6.jpg",
+   "images/products/p61/detail-7.jpg",
+   "images/products/p61/detail-8.jpg",
+   "images/products/p61/detail-9.jpg"
+  ],
   "options": [
    {
     "name": "강원도 다발무 5kg (2-3수)",
@@ -2802,8 +3411,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  },
  {
   "id": 62,
@@ -2816,10 +3424,25 @@ window.PRODUCTS = [
   "ship": 0,
   "emoji": "🧅",
   "images": [
-   "images/products/p62/ai-1.jpg"
+   "images/products/p62/1.jpg",
+   "images/products/p62/2.jpg",
+   "images/products/p62/3.jpg",
+   "images/products/p62/4.jpg",
+   "images/products/p62/5.jpg",
+   "images/products/p62/6.jpg"
   ],
   "top": "images/products/p62/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p62/detail-1.jpg",
+   "images/products/p62/detail-2.jpg",
+   "images/products/p62/detail-3.jpg",
+   "images/products/p62/detail-4.jpg",
+   "images/products/p62/detail-5.jpg",
+   "images/products/p62/detail-6.jpg",
+   "images/products/p62/detail-7.jpg",
+   "images/products/p62/detail-8.jpg",
+   "images/products/p62/detail-9.jpg"
+  ],
   "options": [
    {
     "name": "국내산 햇양파 (소) 2kg",
@@ -2877,7 +3500,6 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ],
-  "ai": true
+  ]
  }
 ];
