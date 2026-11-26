@@ -370,3 +370,32 @@ T020
 사용자: 공개 전환 → Pages 켜기 → 배포 주소 확인
 
 ==========================================================
+
+==========================================================
+[DEVELOPMENT RECORD #011]
+
+DATE: 2026-11-26
+TIME: 05:28
+
+[USER] 사용자 지시
+https://github.com/kimjihyun06/mukjago 공개 저장소에 올려 배포 (원격 자동)
+
+[CONTEXT] 그때 상황
+사용자가 직접 만든 공개 빈 저장소. 배포 지시 = 승인
+
+[EXECUTION] 실제 한 일
+mukjago 에 main 푸시(커밋 그대로, 걸쇠 10/10). Pages 켜기 API 는 프록시가 막음(403) → 사용자 클릭 필요. README 를 mukjago 주소로, main 의 기본 올림 대상을 mukjago 로
+
+[FILES] 건드린 파일
+README.md, 04_LOG/*
+
+[ERROR] 오류
+POST repos/kimjihyun06/mukjago/pages → HTTP 403 (Access to this GitHub API path is not permitted through this proxy)
+
+[FIX] 고침
+사용자가 Settings → Pages 에서 main / (root) 저장
+
+[NEXT] 다음
+Pages 켜진 뒤 https://kimjihyun06.github.io/mukjago/ 실측
+
+==========================================================

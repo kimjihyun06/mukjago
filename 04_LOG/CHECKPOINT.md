@@ -2,13 +2,13 @@
 
 > 작업을 다시 시작할 때 **이것부터** 본다.
 
-- 때: 2026-11-26 05:20
+- 때: 2026-11-26 05:28
 - 자리: `/home/user/kimjihyun06-homepage`
 - 판본: 0.1.0
 - 돌고 있는 것: 없음
 
 ## 지금 목표
-GitHub 저장소 연결·푸시 완료. 공개 전환·Pages 켜기 기다림
+mukjago(공개)에 올림. Pages 켜기 기다림
 
 ## 끝난 것
 - 홈페이지 7쪽 + 협업체계 (#001)
@@ -30,8 +30,8 @@ GitHub 저장소 연결·푸시 완료. 공개 전환·Pages 켜기 기다림
 T001~T020 통과
 
 ## 승인 기다리는 것
-- 저장소 공개 전환 (사용자 Settings)
-- GitHub Pages 켜기 (사용자 Settings → Pages)
+- GitHub Pages 켜기: mukjago → Settings → Pages → main / (root)
+- 비공개 kimjihyun06-homepage 저장소를 둘지 지울지
 
 ## 다음에 할 일
 사진 zip 받으면 배치 → import → 측정 → 커밋

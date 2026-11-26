@@ -4,11 +4,11 @@
 
 | | |
 |---|---|
-| Last Updated | 2026-11-26 05:20 |
+| Last Updated | 2026-11-26 05:28 |
 | Version | 0.1.0 |
 
 ## 지금 하는 일
-GitHub 저장소 연결·푸시 완료. 공개 전환·Pages 켜기 기다림
+mukjago(공개)에 올림. Pages 켜기 기다림
 
 ## 끝난 일
 - 홈페이지 7쪽 + 협업체계 (#001)
@@ -30,8 +30,8 @@ GitHub 저장소 연결·푸시 완료. 공개 전환·Pages 켜기 기다림
 T001~T020 통과
 
 ## 승인 기다리는 것
-- 저장소 공개 전환 (사용자 Settings)
-- GitHub Pages 켜기 (사용자 Settings → Pages)
+- GitHub Pages 켜기: mukjago → Settings → Pages → main / (root)
+- 비공개 kimjihyun06-homepage 저장소를 둘지 지울지
 
 ## 위험
 공급표 원본에 공급가액·마진이 있음 → 저장소 밖(../자료/엑셀)에만 두기. 걸쇠 「매입정보」가 지킴

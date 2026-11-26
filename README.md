@@ -1,5 +1,8 @@
 # 먹자GO 홈페이지
 
+- 저장소: https://github.com/kimjihyun06/mukjago (공개)
+- 홈페이지: https://kimjihyun06.github.io/mukjago/
+
 > 도매가로 만나는 맛있는 세상 — 주식회사 잇플로우
 
 빌드 도구 없이 HTML·CSS·JS 만으로 만든 쇼핑몰 홈페이지입니다.
@@ -40,7 +43,7 @@ cd C:\Users\Administrator\Desktop\my-hamepage\my-hamepage
 ```
 
 ```bash
-git clone https://github.com/<아이디>/<저장소이름>.git kimjihyun06-homepage
+git clone https://github.com/kimjihyun06/mukjago.git kimjihyun06-homepage
 ```
 
 처음 올릴 때 이름·메일을 한 번 정해 둡니다:
@@ -58,7 +61,7 @@ git config --global user.email "<GitHub 에 등록한 메일>"
 1. 저장소 → **Settings** → 왼쪽 **Pages**
 2. **Source**: `Deploy from a branch`
 3. **Branch**: `main` / `/ (root)` → **Save**
-4. 1~2분 뒤 주소가 뜹니다: `https://<아이디>.github.io/<저장소이름>/`
+4. 1~2분 뒤 주소가 뜹니다: **https://kimjihyun06.github.io/mukjago/**
 
 ## 4. 매일 작업하는 순서
 

@@ -8,13 +8,13 @@
 >
 > 다듬은 원고는 `BOOK_MANUSCRIPT.md` 로 간다. **RAW -> EDIT -> BOOK**
 
-마지막으로 뽑은 때: 2026-11-26 05:20
+마지막으로 뽑은 때: 2026-11-26 05:28
 
 ---
 
 ## 숫자 (실제 기록에서 셈)
 
-- 개발 기록: **10**
+- 개발 기록: **11**
 - 오류 기록: **2**
 - 시험 기록: **20**
 - 결정 기록: **11**
@@ -394,6 +394,44 @@ tools/set_key.py, tools/generate_images.py, requirements.txt, README.md, CLAUDE.
 
 ### 어떻게 쟀나
 T020
+
+### 결과
+-
+
+### 정한 것
+-
+
+---
+
+
+## 제011회 · 2026-11-26 05:28
+
+### 무엇이 문제였나
+사용자가 직접 만든 공개 빈 저장소. 배포 지시 = 승인
+
+### 사용자가 지시한 것
+https://github.com/kimjihyun06/mukjago 공개 저장소에 올려 배포 (원격 자동)
+
+### 분석
+-
+
+### 실제로 한 일
+mukjago 에 main 푸시(커밋 그대로, 걸쇠 10/10). Pages 켜기 API 는 프록시가 막음(403) → 사용자 클릭 필요. README 를 mukjago 주소로, main 의 기본 올림 대상을 mukjago 로
+
+### 건드린 파일
+README.md, 04_LOG/*
+
+### 일어난 오류
+POST repos/kimjihyun06/mukjago/pages → HTTP 403 (Access to this GitHub API path is not permitted through this proxy)
+
+### 진범
+(없음)
+
+### 고친 방법
+사용자가 Settings → Pages 에서 main / (root) 저장
+
+### 어떻게 쟀나
+-
 
 ### 결과
 -
