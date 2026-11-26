@@ -222,6 +222,7 @@ select { font: inherit; padding: 8px 12px; border: 1px solid var(--line); border
 @media (max-width: 760px) { .slide-emoji { top: 30%; right: 8%; } }
 
 .pd-sub { color: var(--green-d); font-weight: 600; margin: 0 0 6px; }
+.pd-warn { color: #c0392b; font-size: 14px; font-weight: 600; margin: -6px 0 16px; }
 .pd-points { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
 .pd-points li { background: var(--green-l); color: var(--green-d); border-radius: 8px; padding: 4px 10px; font-size: 14px; font-weight: 600; }
 .pd-points li::before { content: "✓ "; color: var(--orange); }

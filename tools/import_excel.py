@@ -138,6 +138,11 @@ def read_sheets(path: Path):
                 opts[key] = {"name": name, "unit": unit, "price": int(round(price)),
                               "ship": None if num(ship_raw) is None else int(num(ship_raw)),
                               "tax": str(g(r, "면세/과세유무") or meta["tax"]).strip(), "date": d}
+        known = {o["ship"] for o in opts.values() if o["ship"] is not None}
+        if known == {0}:  # 「-」 칸: 같은 시트가 모두 무료배송이면 무료로 (홍게 포스터로 확인함)
+            for o in opts.values():
+                if o["ship"] is None:
+                    o["ship"] = 0
         for (n, u), o in opts.items():
             if n in soldout and soldout[n] >= o["date"]:
                 o["soldout"] = True

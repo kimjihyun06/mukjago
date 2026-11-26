@@ -220,6 +220,7 @@
             <dt>과세</dt><dd>${esc(p.tax || "-")} 상품</dd>
             ${p.deadline ? `<dt>주문마감</dt><dd>${esc(p.deadline)} (마감 후 주문은 다음 출고)</dd>` : ""}
           </dl>
+          ${p.info?.note ? `<p class="pd-warn">※ ${esc(p.info.note)}</p>` : ""}
           <label class="opt-label" for="opt">옵션 선택</label>
           <select id="opt" class="opt">${p.options.map((o, i) =>
             `<option value="${i}"${o.soldout ? " disabled" : ""}${i === first ? " selected" : ""}>${esc(optLabel(o))} — ${o.soldout ? "품절" : won(o.price)}</option>`).join("")}</select>

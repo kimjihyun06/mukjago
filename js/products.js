@@ -1,6 +1,6 @@
 /* 자동 생성 파일 — 손으로 고치지 마세요 (다시 만들면 지워집니다).
  * 원본: 늘푸른우리 제품 공급표_잇플로우.xlsx
- * 만든 때: 2026-11-26 04:08
+ * 만든 때: 2026-11-26 04:16
  * 다시 만들기: python tools/import_excel.py
  * 문구·후기·공지·분류는 js/content.js 에서 고칩니다. */
 window.PRODUCTS = [
@@ -192,9 +192,34 @@ window.PRODUCTS = [
   "price": 6830,
   "ship": 3500,
   "emoji": "🐟",
-  "images": [],
+  "images": [
+   "images/products/p11/1.jpg",
+   "images/products/p11/2.jpg",
+   "images/products/p11/3.jpg",
+   "images/products/p11/4.jpg",
+   "images/products/p11/5.jpg",
+   "images/products/p11/6.jpg",
+   "images/products/p11/7.jpg",
+   "images/products/p11/8.jpg",
+   "images/products/p11/9.jpg",
+   "images/products/p11/10.jpg",
+   "images/products/p11/11.jpg",
+   "images/products/p11/12.jpg"
+  ],
   "top": "images/products/p11/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p11/detail-1.jpg",
+   "images/products/p11/detail-2.jpg",
+   "images/products/p11/detail-3.jpg",
+   "images/products/p11/detail-4.jpg",
+   "images/products/p11/detail-5.jpg",
+   "images/products/p11/detail-6.jpg",
+   "images/products/p11/detail-7.jpg",
+   "images/products/p11/detail-8.jpg",
+   "images/products/p11/detail-9.jpg",
+   "images/products/p11/detail-10.jpg",
+   "images/products/p11/detail-11.jpg"
+  ],
   "options": [
    {
     "name": "구룡포 햇 과메기 단품",
@@ -247,7 +272,18 @@ window.PRODUCTS = [
     "ship": 4000,
     "tax": "면세"
    }
-  ]
+  ],
+  "info": {
+   "sub": "여수 바다에서 자란 100% 국내산 참조기",
+   "points": [
+    "100% 국내산 (여수)",
+    "안강망 방식 조업",
+    "500g 6~8미 내외",
+    "구이·찌개·조림"
+   ],
+   "origin": "국내산 (여수)",
+   "courier": "CJ대한통운 · 5개까지 합배송"
+  }
  },
  {
   "id": 13,
@@ -353,9 +389,28 @@ window.PRODUCTS = [
   "price": 12360,
   "ship": 0,
   "emoji": "🦀",
-  "images": [],
+  "images": [
+   "images/products/p15/1.jpg",
+   "images/products/p15/2.jpg",
+   "images/products/p15/3.jpg",
+   "images/products/p15/4.jpg",
+   "images/products/p15/5.jpg"
+  ],
   "top": "images/products/p15/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p15/detail-1.jpg",
+   "images/products/p15/detail-2.jpg",
+   "images/products/p15/detail-3.jpg",
+   "images/products/p15/detail-4.jpg",
+   "images/products/p15/detail-5.jpg",
+   "images/products/p15/detail-6.jpg",
+   "images/products/p15/detail-7.jpg",
+   "images/products/p15/detail-8.jpg",
+   "images/products/p15/detail-9.jpg",
+   "images/products/p15/detail-10.jpg",
+   "images/products/p15/detail-11.jpg",
+   "images/products/p15/detail-12.jpg"
+  ],
   "options": [
    {
     "name": "포항 자숙 연지홍게 3kg(수율70%내외)",
@@ -375,17 +430,28 @@ window.PRODUCTS = [
     "name": "프리미엄 자숙 박달홍게 3kg 9-11마리",
     "unit": "3kg",
     "price": 22360,
-    "ship": null,
+    "ship": 0,
     "tax": "면세"
    },
    {
     "name": "프리미엄 자숙 박달홍게 5kg(혼합) -15마리내외",
     "unit": "5kg",
     "price": 27650,
-    "ship": null,
+    "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "info": {
+   "sub": "당일 조업·당일 발송, 자숙 후 보내드립니다",
+   "points": [
+    "당일 조업·당일 발송",
+    "자숙(찜) 후 발송",
+    "연지홍게 수율 70% 내외",
+    "박달홍게 수율 80~90%"
+   ],
+   "courier": "롯데택배",
+   "note": "표기 중량은 자숙 전 원물 무게 기준이며, 자숙 후 약 30~40% 줄어듭니다. 5kg 은 박달홍게 60% + 연지홍게 40% 혼합(15마리 내외)입니다."
+  }
  },
  {
   "id": 16,

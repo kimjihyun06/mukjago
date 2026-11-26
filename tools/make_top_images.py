@@ -124,6 +124,12 @@ def draw_product(p) -> Image.Image:
         d.line([60, y + row_h, W - 60, y + row_h], fill=LINE, width=2)
         y += row_h
     y += 28
+    if info.get("note"):
+        nf = font(24, "Bold")
+        for line in wrap(d, "※ " + info["note"], nf, W - 140)[:3]:
+            d.text((W // 2, y), line, font=nf, fill="#c0392b", anchor="mt")
+            y += 36
+        y += 6
     note = "※ 판매가는 공급가에 따라 바뀔 수 있습니다." + ("" if p.get("ship") == 0 else " 택배비는 별도입니다.")
     d.text((W // 2, y), note, font=font(24, "Regular"), fill=SUB, anchor="mt")
     y += 70

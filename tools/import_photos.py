@@ -8,8 +8,8 @@
 폴더 안 파일을 이렇게 나눈다:
     대표이미지.jpg / 대표*.jpg      -> 대표사진 맨 앞
     0.jpg 1.jpg 7 (1).jpg ... (숫자) -> 대표사진 (숫자 순서)       -> 1.jpg, 2.jpg ... 로 저장 (가로 최대 1200)
-    *상세*.jpg                      -> 상세페이지 이미지           -> detail-1.jpg ... (세로 2000px 씩 잘라 저장)
-    아주 긴 그림 (세로 > 가로×4)     -> 이름이 달라도 상세페이지로 봄
+    아주 긴 그림 (세로 > 가로×4)     -> 상세페이지 (이름 순서)      -> detail-1.jpg ... (세로 2000px 씩 잘라 저장)
+                                       ※ 「상세 안내.png」 처럼 이름에 상세가 있어도 포스터 모양이면 올리지 않음
     KakaoTalk_*, *카톡*, 그 밖 포스터·광고 그림
                                     -> **올리지 않는다** (공급업체 이름·전화가 들어 있음)
                                        → 필요한 내용은 tools/product_info.json 에 글로 옮겨
@@ -51,7 +51,7 @@ def classify(files):
         s = f.stem
         if re.match(r"(?i)kakaotalk|카톡", s):
             kakao.append(f)
-        elif "상세" in s or _tall(f):
+        elif _tall(f):  # 이름에 「상세」가 있어도 포스터(세로 2배쯤)는 상세가 아님
             detail.append(f)
         elif s.startswith("대표"):
             main.insert(0, (-1, f))
