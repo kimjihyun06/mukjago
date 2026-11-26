@@ -341,3 +341,32 @@ T019
 사용자 PC(D:) 에 반영 — zip 받아 덮어쓰기 또는 GitHub 연결
 
 ==========================================================
+
+==========================================================
+[DEVELOPMENT RECORD #010]
+
+DATE: 2026-11-26
+TIME: 05:20
+
+[USER] 사용자 지시
+GitHub 연결해서 진행, 저장소 만들어 달라, 공개로, API 키·암호는 암호화
+
+[EXECUTION] 실제 한 일
+gh api 로 kimjihyun06/kimjihyun06-homepage 생성(이 세션은 비공개만 가능), add_repo, main 푸시(9커밋). 공개 전환은 프록시가 설정 쓰기를 막아 실패 → 사용자가 Settings 에서. 공개 전 기록 전체 검사. tools/set_key.py(keyring) 추가
+
+[FILES] 건드린 파일
+tools/set_key.py, tools/generate_images.py, requirements.txt, README.md, CLAUDE.md
+
+[ERROR] 오류
+저장소 공개 전환 HTTP 403 (Repository settings writes are not permitted through this proxy)
+
+[FIX] 고침
+사용자가 직접 Settings → General → Change visibility
+
+[TEST] 어떻게 쟀나
+T020
+
+[NEXT] 다음
+사용자: 공개 전환 → Pages 켜기 → 배포 주소 확인
+
+==========================================================

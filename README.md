@@ -118,13 +118,19 @@ python tools/import_photos.py "..\자료\엑셀\5 수산물\밥도둑\순살게�
 **AI 연출 이미지** — 실제 사진이 아직 없는 상품의 대표사진을 Gemini 로 만듭니다. 사진 구석에 「연출 이미지」가 표시되고, 실제 사진(숫자 이름)을 넣으면 자동으로 실제 사진으로 바뀝니다.
 
 1. aistudio.google.com → Get API key → Create API key → 복사 (이미지 생성은 결제 연결 필요, 한 장 약 50원)
-2. 내 PC 에 키 넣기 (한 번만, PowerShell — 키는 파일·대화창에 적지 않습니다):
+2. 내 PC 의 **암호화된 금고**(윈도 자격 증명 관리자)에 키 넣기 — 한 번만. 키는 파일·대화창·메모에 적지 않습니다:
 
 ```bash
-setx GEMINI_API_KEY "여기에_복사한_키"
+pip install -r requirements.txt
 ```
 
-3. PowerShell 을 새로 열고:
+```bash
+python tools/set_key.py
+```
+
+   (입력하는 키는 화면에 안 보입니다. `python tools/set_key.py --check` 로 들어 있는지 확인)
+
+3. 만들기:
 
 ```bash
 python tools/generate_images.py --dry

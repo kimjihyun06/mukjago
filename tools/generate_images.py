@@ -9,8 +9,8 @@
 - 묘사는 tools/ai_prompts.json (상품번호: 영어 묘사). 그림 속 글자·로고·상표는 넣지 않게 지시한다.
 - 실제 사진(1.jpg …)이 들어오면 import_photos 가 ai-*.jpg 를 지우고 실제 사진이 대표가 된다.
 - 홈페이지에는 「연출 이미지」 표시가 붙는다 (손님 오해 방지).
-- 열쇠: 내 PC 에서는 환경변수 GEMINI_API_KEY 에 넣는다 (aistudio.google.com 에서 발급).
-  클라우드 세션에서는 저장된 네트워크 비밀값을 프록시가 붙여 준다. **열쇠를 이 파일에 적지 않는다.**
+- 열쇠: 내 PC 에서는 `python tools/set_key.py` 로 **암호화된 금고**(윈도 자격 증명 관리자)에 넣는다.
+  클라우드 세션에서는 암호화 저장된 네트워크 비밀값을 프록시가 붙여 준다. **열쇠를 파일·대화창에 적지 않는다.**
 - 비용: 2026-11 기준 gemini-2.5-flash-image 한 장 약 $0.04 (요금은 바뀔 수 있음 — 구글 요금표 확인).
 """
 from __future__ import annotations
@@ -47,7 +47,12 @@ def has_real_photo(pid: int) -> bool:
 
 
 def generate(prompt: str) -> bytes:
-    key = os.environ.get("GEMINI_API_KEY") or "proxy-injected"  # 클라우드: 프록시가 진짜 열쇠로 바꿔 끼움
+    sys.path.insert(0, str(ROOT / "tools"))
+    from set_key import get_key
+    # 1) 내 PC: 암호화된 금고(윈도 자격 증명 관리자) — python tools/set_key.py 로 넣음
+    # 2) 환경변수 GEMINI_API_KEY (예전 방식 — 암호화 안 됨, 권하지 않음)
+    # 3) 클라우드 세션: 가짜 값 — 프록시가 암호화 저장된 진짜 열쇠로 바꿔 끼움
+    key = get_key() or os.environ.get("GEMINI_API_KEY") or "proxy-injected"
     body = json.dumps({"model": MODEL, "prompt": prompt, "n": 1, "response_format": "b64_json"}).encode()
     for wait in (0, 10, 30, 60):
         if wait:
