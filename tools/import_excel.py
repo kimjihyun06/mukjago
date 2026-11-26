@@ -172,6 +172,8 @@ def main():
             nxt += 1
     IDS.write_text(json.dumps(ids, ensure_ascii=False, indent=1), encoding="utf-8")
 
+    info_f = ROOT / "tools" / "product_info.json"
+    info = json.loads(info_f.read_text(encoding="utf-8")) if info_f.exists() else {}
     products, hidden = [], []
     for s in sheets:
         if s["hidden"]:
@@ -192,6 +194,7 @@ def main():
             "emoji": emoji(name), "images": main_imgs,
             "top": f"images/products/{folder}/top.jpg", "detail": detail_imgs,
             "options": opts,
+            **({"info": info[str(pid)]} if str(pid) in info else {}),
         })
 
     head = (f"/* 자동 생성 파일 — 손으로 고치지 마세요 (다시 만들면 지워집니다).\n"

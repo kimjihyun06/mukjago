@@ -206,6 +206,7 @@ select { font: inherit; padding: 8px 12px; border: 1px solid var(--line); border
 .review-empty { grid-column: 1 / -1; text-align: center; border: 2px dashed var(--line); border-radius: var(--r); padding: 36px 16px; }
 .review-empty p { margin: 4px 0; font-size: 17px; }
 .pd-cat { color: var(--green); font-weight: 700; margin: 0; }
+.pd > * { min-width: 0; }  /* 사진이 많아도 칸이 늘어나 화면 밖으로 밀리지 않게 */
 .pd-thumbs { display: flex; gap: 8px; margin-top: 10px; overflow-x: auto; }
 .pd-thumbs button { flex: 0 0 72px; height: 72px; padding: 0; border: 2px solid transparent; border-radius: 10px; overflow: hidden; background: none; }
 .pd-thumbs button.on { border-color: var(--green); }
@@ -219,6 +220,11 @@ select { font: inherit; padding: 8px 12px; border: 1px solid var(--line); border
 .cname small { display: block; color: var(--sub); font-size: 13px; }
 .ph-kimchi { background: #fdeeea; }
 @media (max-width: 760px) { .slide-emoji { top: 30%; right: 8%; } }
+
+.pd-sub { color: var(--green-d); font-weight: 600; margin: 0 0 6px; }
+.pd-points { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.pd-points li { background: var(--green-l); color: var(--green-d); border-radius: 8px; padding: 4px 10px; font-size: 14px; font-weight: 600; }
+.pd-points li::before { content: "✓ "; color: var(--orange); }
 
 /* ---------- 알림 ---------- */
 #toast { position: fixed; left: 50%; bottom: 32px; transform: translate(-50%, 20px); background: rgba(29,29,31,.92); color: #fff; padding: 12px 22px;

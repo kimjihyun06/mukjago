@@ -1,6 +1,6 @@
 /* 자동 생성 파일 — 손으로 고치지 마세요 (다시 만들면 지워집니다).
  * 원본: 늘푸른우리 제품 공급표_잇플로우.xlsx
- * 만든 때: 2026-11-26 03:56
+ * 만든 때: 2026-11-26 04:06
  * 다시 만들기: python tools/import_excel.py
  * 문구·후기·공지·분류는 js/content.js 에서 고칩니다. */
 window.PRODUCTS = [
@@ -296,9 +296,25 @@ window.PRODUCTS = [
   "price": 24480,
   "ship": 0,
   "emoji": "🍙",
-  "images": [],
+  "images": [
+   "images/products/p14/1.jpg",
+   "images/products/p14/2.jpg",
+   "images/products/p14/3.jpg",
+   "images/products/p14/4.jpg"
+  ],
   "top": "images/products/p14/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p14/detail-1.jpg",
+   "images/products/p14/detail-2.jpg",
+   "images/products/p14/detail-3.jpg",
+   "images/products/p14/detail-4.jpg",
+   "images/products/p14/detail-5.jpg",
+   "images/products/p14/detail-6.jpg",
+   "images/products/p14/detail-7.jpg",
+   "images/products/p14/detail-8.jpg",
+   "images/products/p14/detail-9.jpg",
+   "images/products/p14/detail-10.jpg"
+  ],
   "options": [
    {
     "name": "국내산 곱창김 100장",
@@ -314,7 +330,18 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "info": {
+   "sub": "장흥·신안 일대에서 온 국내산 곱창김",
+   "points": [
+    "국내산 원초",
+    "무염산 김",
+    "첨가물 무첨가",
+    "지주식 재배"
+   ],
+   "origin": "국내산 (전남 장흥·신안 일대)",
+   "courier": "한진택배"
+  }
  },
  {
   "id": 15,
@@ -606,9 +633,28 @@ window.PRODUCTS = [
   "price": 6480,
   "ship": 4000,
   "emoji": "🦪",
-  "images": [],
+  "images": [
+   "images/products/p23/1.jpg",
+   "images/products/p23/2.jpg",
+   "images/products/p23/3.jpg",
+   "images/products/p23/4.jpg",
+   "images/products/p23/5.jpg",
+   "images/products/p23/6.jpg",
+   "images/products/p23/7.jpg"
+  ],
   "top": "images/products/p23/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p23/detail-1.jpg",
+   "images/products/p23/detail-2.jpg",
+   "images/products/p23/detail-3.jpg",
+   "images/products/p23/detail-4.jpg",
+   "images/products/p23/detail-5.jpg",
+   "images/products/p23/detail-6.jpg",
+   "images/products/p23/detail-7.jpg",
+   "images/products/p23/detail-8.jpg",
+   "images/products/p23/detail-9.jpg",
+   "images/products/p23/detail-10.jpg"
+  ],
   "options": [
    {
     "name": "통영 생굴무침 330g",
@@ -617,7 +663,18 @@ window.PRODUCTS = [
     "ship": 4000,
     "tax": "과세"
    }
-  ]
+  ],
+  "info": {
+   "sub": "국내산 통영 굴 100%, 당일 제조",
+   "points": [
+    "통영 굴 100%",
+    "30년 비법 양념소스",
+    "2단계 꼼꼼 세척",
+    "당일 제조·싱싱 배송"
+   ],
+   "origin": "국내산 (통영)",
+   "courier": "CJ대한통운 · 아이스박스 포장, 6개까지 합배송"
+  }
  },
  {
   "id": 24,
@@ -629,9 +686,31 @@ window.PRODUCTS = [
   "price": 6360,
   "ship": 3500,
   "emoji": "🐚",
-  "images": [],
+  "images": [
+   "images/products/p24/1.jpg",
+   "images/products/p24/2.jpg",
+   "images/products/p24/3.jpg",
+   "images/products/p24/4.jpg",
+   "images/products/p24/5.jpg",
+   "images/products/p24/6.jpg",
+   "images/products/p24/7.jpg",
+   "images/products/p24/8.jpg",
+   "images/products/p24/9.jpg",
+   "images/products/p24/10.jpg"
+  ],
   "top": "images/products/p24/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p24/detail-1.jpg",
+   "images/products/p24/detail-2.jpg",
+   "images/products/p24/detail-3.jpg",
+   "images/products/p24/detail-4.jpg",
+   "images/products/p24/detail-5.jpg",
+   "images/products/p24/detail-6.jpg",
+   "images/products/p24/detail-7.jpg",
+   "images/products/p24/detail-8.jpg",
+   "images/products/p24/detail-9.jpg",
+   "images/products/p24/detail-10.jpg"
+  ],
   "options": [
    {
     "name": "양념 새꼬막무침 330g",
@@ -668,7 +747,18 @@ window.PRODUCTS = [
     "ship": 3500,
     "tax": "과세"
    }
-  ]
+  ],
+  "info": {
+   "sub": "국내산 남해 새꼬막 × 30년 전통 비법소스",
+   "points": [
+    "남해 새꼬막",
+    "30년 전통 비법소스",
+    "초음파 + 2차 세척",
+    "아이스박스 포장"
+   ],
+   "origin": "국내산 (남해)",
+   "courier": "CJ대한통운 · 6개까지 합배송"
+  }
  },
  {
   "id": 25,
@@ -680,9 +770,40 @@ window.PRODUCTS = [
   "price": 17650,
   "ship": 0,
   "emoji": "🦀",
-  "images": [],
+  "images": [
+   "images/products/p25/1.jpg",
+   "images/products/p25/2.jpg",
+   "images/products/p25/3.jpg",
+   "images/products/p25/4.jpg",
+   "images/products/p25/5.jpg",
+   "images/products/p25/6.jpg",
+   "images/products/p25/7.jpg",
+   "images/products/p25/8.jpg",
+   "images/products/p25/9.jpg",
+   "images/products/p25/10.jpg",
+   "images/products/p25/11.jpg",
+   "images/products/p25/12.jpg",
+   "images/products/p25/13.jpg",
+   "images/products/p25/14.jpg",
+   "images/products/p25/15.jpg",
+   "images/products/p25/16.jpg"
+  ],
   "top": "images/products/p25/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p25/detail-1.jpg",
+   "images/products/p25/detail-2.jpg",
+   "images/products/p25/detail-3.jpg",
+   "images/products/p25/detail-4.jpg",
+   "images/products/p25/detail-5.jpg",
+   "images/products/p25/detail-6.jpg",
+   "images/products/p25/detail-7.jpg",
+   "images/products/p25/detail-8.jpg",
+   "images/products/p25/detail-9.jpg",
+   "images/products/p25/detail-10.jpg",
+   "images/products/p25/detail-11.jpg",
+   "images/products/p25/detail-12.jpg",
+   "images/products/p25/detail-13.jpg"
+  ],
   "options": [
    {
     "name": "연평도 간장게장 / 2kg 2미(중사이즈)",
@@ -747,9 +868,29 @@ window.PRODUCTS = [
   "price": 13530,
   "ship": 0,
   "emoji": "🦀",
-  "images": [],
+  "images": [
+   "images/products/p27/1.jpg",
+   "images/products/p27/2.jpg",
+   "images/products/p27/3.jpg",
+   "images/products/p27/4.jpg",
+   "images/products/p27/5.jpg",
+   "images/products/p27/6.jpg"
+  ],
   "top": "images/products/p27/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p27/detail-1.jpg",
+   "images/products/p27/detail-2.jpg",
+   "images/products/p27/detail-3.jpg",
+   "images/products/p27/detail-4.jpg",
+   "images/products/p27/detail-5.jpg",
+   "images/products/p27/detail-6.jpg",
+   "images/products/p27/detail-7.jpg",
+   "images/products/p27/detail-8.jpg",
+   "images/products/p27/detail-9.jpg",
+   "images/products/p27/detail-10.jpg",
+   "images/products/p27/detail-11.jpg",
+   "images/products/p27/detail-12.jpg"
+  ],
   "options": [
    {
     "name": "국내산 연평도 양념게장 / 500g (3-4미)",
@@ -777,9 +918,36 @@ window.PRODUCTS = [
   "price": 12950,
   "ship": 0,
   "emoji": "🦀",
-  "images": [],
+  "images": [
+   "images/products/p28/1.jpg",
+   "images/products/p28/2.jpg",
+   "images/products/p28/3.jpg",
+   "images/products/p28/4.jpg",
+   "images/products/p28/5.jpg",
+   "images/products/p28/6.jpg",
+   "images/products/p28/7.jpg",
+   "images/products/p28/8.jpg",
+   "images/products/p28/9.jpg",
+   "images/products/p28/10.jpg",
+   "images/products/p28/11.jpg",
+   "images/products/p28/12.jpg",
+   "images/products/p28/13.jpg"
+  ],
   "top": "images/products/p28/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p28/detail-1.jpg",
+   "images/products/p28/detail-2.jpg",
+   "images/products/p28/detail-3.jpg",
+   "images/products/p28/detail-4.jpg",
+   "images/products/p28/detail-5.jpg",
+   "images/products/p28/detail-6.jpg",
+   "images/products/p28/detail-7.jpg",
+   "images/products/p28/detail-8.jpg",
+   "images/products/p28/detail-9.jpg",
+   "images/products/p28/detail-10.jpg",
+   "images/products/p28/detail-11.jpg",
+   "images/products/p28/detail-12.jpg"
+  ],
   "options": [
    {
     "name": "양념 순살게장 / 250g",
@@ -800,9 +968,31 @@ window.PRODUCTS = [
   "price": 14710,
   "ship": 0,
   "emoji": "🦀",
-  "images": [],
+  "images": [
+   "images/products/p29/1.jpg",
+   "images/products/p29/2.jpg",
+   "images/products/p29/3.jpg",
+   "images/products/p29/4.jpg",
+   "images/products/p29/5.jpg",
+   "images/products/p29/6.jpg",
+   "images/products/p29/7.jpg",
+   "images/products/p29/8.jpg",
+   "images/products/p29/9.jpg"
+  ],
   "top": "images/products/p29/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p29/detail-1.jpg",
+   "images/products/p29/detail-2.jpg",
+   "images/products/p29/detail-3.jpg",
+   "images/products/p29/detail-4.jpg",
+   "images/products/p29/detail-5.jpg",
+   "images/products/p29/detail-6.jpg",
+   "images/products/p29/detail-7.jpg",
+   "images/products/p29/detail-8.jpg",
+   "images/products/p29/detail-9.jpg",
+   "images/products/p29/detail-10.jpg",
+   "images/products/p29/detail-11.jpg"
+  ],
   "options": [
    {
     "name": "삼점암꽃게장 2kg",
@@ -837,9 +1027,28 @@ window.PRODUCTS = [
   "price": 6830,
   "ship": 3000,
   "emoji": "🦐",
-  "images": [],
+  "images": [
+   "images/products/p30/1.jpg",
+   "images/products/p30/2.jpg",
+   "images/products/p30/3.jpg",
+   "images/products/p30/4.jpg",
+   "images/products/p30/5.jpg",
+   "images/products/p30/6.jpg"
+  ],
   "top": "images/products/p30/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p30/detail-1.jpg",
+   "images/products/p30/detail-2.jpg",
+   "images/products/p30/detail-3.jpg",
+   "images/products/p30/detail-4.jpg",
+   "images/products/p30/detail-5.jpg",
+   "images/products/p30/detail-6.jpg",
+   "images/products/p30/detail-7.jpg",
+   "images/products/p30/detail-8.jpg",
+   "images/products/p30/detail-9.jpg",
+   "images/products/p30/detail-10.jpg",
+   "images/products/p30/detail-11.jpg"
+  ],
   "options": [
    {
     "name": "특제 간장새우장 300g",
@@ -855,7 +1064,17 @@ window.PRODUCTS = [
     "ship": 3000,
     "tax": "과세"
    }
-  ]
+  ],
+  "info": {
+   "sub": "특A급 새우, 300g 한 통에 10~12마리",
+   "points": [
+    "특A급 큰 새우",
+    "한 통 10~12마리",
+    "간장·양념 두 가지 맛",
+    "급냉 포장"
+   ],
+   "courier": "6개까지 합배송"
+  }
  },
  {
   "id": 33,

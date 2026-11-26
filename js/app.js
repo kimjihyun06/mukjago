@@ -210,9 +210,13 @@
         <div class="pd-info">
           <p class="pd-cat">${esc(C[p.cat]?.name || "")}</p>
           <h1>${esc(p.name)}</h1>
+          ${p.info?.sub ? `<p class="pd-sub">${esc(p.info.sub)}</p>` : ""}
           <p class="price lg"><strong id="unit-price">${fromPrice(p)}</strong></p>
+          ${p.info?.points?.length ? `<ul class="pd-points">${p.info.points.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
           <dl class="pd-spec">
             <dt>배송</dt><dd id="ship-txt">${shipText(p.ship)}</dd>
+            ${p.info?.courier ? `<dt>택배</dt><dd>${esc(p.info.courier)}</dd>` : ""}
+            ${p.info?.origin ? `<dt>원산지</dt><dd>${esc(p.info.origin)}</dd>` : ""}
             <dt>과세</dt><dd>${esc(p.tax || "-")} 상품</dd>
             ${p.deadline ? `<dt>주문마감</dt><dd>${esc(p.deadline)} (마감 후 주문은 다음 출고)</dd>` : ""}
           </dl>

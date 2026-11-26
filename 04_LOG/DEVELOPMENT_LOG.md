@@ -96,3 +96,50 @@ DECISION #003~#005
 사진 zip 받기 → images/products/pNN/ 에 배치 → import 다시. GitHub 저장소 주소 받기
 
 ==========================================================
+
+==========================================================
+[DEVELOPMENT RECORD #003]
+
+DATE: 2026-11-26
+TIME: 04:07
+
+[USER] 사용자 지시
+밥도둑 폴더 사진 zip 8개 전달 (간장게장·순살게장·양념게장·곱창김·삼점암꽃게장·새꼬막무침·생굴무침·새우장)
+
+[CONTEXT] 그때 상황
+앞선 zip 5개는 빈 폴더였음. 이번 zip 은 이름이 깨져 와서 안의 상세페이지 파일 이름으로 상품을 맞춤
+
+[ANALYSIS] 분석
+상세페이지는 폭 860~1000, 세로 18,000~25,000px (6~13MB). 숫자사진 일부 6MB/4000px. 홍보이미지는 전부 공급업체 상호·전화 포함
+
+[PLAN] 계획
+사진 넣기 도구 → 8상품 배치 → 홍보이미지 사실만 옮겨 다시 그림 → 측정
+
+[EXECUTION] 실제 한 일
+tools/import_photos.py (대표 맨앞, 숫자순, 상세 2000px 조각, 1MB 이하, 홍보이미지 제외), tools/product_info.json (14·23·24·30), make_top_images 에 특징 칸, 상세페이지에 특징·원산지·택배 표시
+
+[FILES] 건드린 파일
+tools/import_photos.py, tools/product_info.json, tools/import_excel.py, tools/make_top_images.py, js/app.js, css/style.css, images/products/p14,p23~p25,p27~p30/*, js/products.js, 상품번호표.txt, CLAUDE.md, README.md
+
+[ERROR] 오류
+ERROR #002 휴대폰 가로 넘침
+
+[ROOT CAUSE] 진범
+그리드 min-width
+
+[FIX] 고침
+.pd > * { min-width: 0 }
+
+[TEST] 어떻게 쟀나
+T011~T013
+
+[RESULT] 결과
+8상품 대표사진 77장·상세 89조각, 깨진 그림 0, 넘침 0, 걸쇠 10/10
+
+[DECISION] 정한 것
+DECISION #006
+
+[NEXT] 다음
+나머지 43상품 사진, 26번(하프절단 간장게장) 사진 없음, GitHub 주소
+
+==========================================================

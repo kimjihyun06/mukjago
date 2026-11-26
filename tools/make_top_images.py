@@ -53,7 +53,7 @@ def ship_text(s):
 def draw_product(p) -> Image.Image:
     opts = p["options"]
     row_h = 74
-    im = Image.new("RGB", (W, 1400 + row_h * len(opts)), "white")  # 넉넉히 그리고 끝에서 자른다
+    im = Image.new("RGB", (W, 1800 + row_h * len(opts)), "white")  # 넉넉히 그리고 끝에서 자른다
     d = ImageDraw.Draw(im)
 
     # 머리: 로고 + 주황 띠
@@ -85,6 +85,27 @@ def draw_product(p) -> Image.Image:
         d.text((x + w / 2, y + 27), c, font=cf, fill=GREEN_D, anchor="mm")
         x += w + 16
     y += 54 + 40
+
+    # 특징 (tools/product_info.json — 홍보이미지에서 옮긴 사실)
+    info = p.get("info") or {}
+    if info.get("sub"):
+        d.text((W // 2, y), info["sub"], font=fit(d, info["sub"], W - 160, 34, "Bold", 24), fill=GREEN_D, anchor="mt")
+        y += 64
+    pts = info.get("points", [])[:4]
+    if pts:
+        cw = (W - 120 - 18 * (len(pts) - 1)) / len(pts)
+        for i, pt in enumerate(pts):
+            x0 = 60 + i * (cw + 18)
+            d.rounded_rectangle([x0, y, x0 + cw, y + 110], radius=18, fill="#eef5ea")
+            d.text((x0 + cw / 2, y + 30), "●", font=font(22), fill=ORANGE, anchor="mm")
+            pf = fit(d, pt, cw - 24, 28, "Bold", 18)
+            d.text((x0 + cw / 2, y + 72), pt, font=pf, fill=INK, anchor="mm")
+        y += 110 + 22
+    extra = " · ".join(x for x in (info.get("origin") and f"원산지 {info['origin']}", info.get("courier")) if x)
+    if extra:
+        d.text((W // 2, y), extra, font=fit(d, extra, W - 120, 26, "Regular", 18), fill=SUB, anchor="mt")
+        y += 52
+    y += 14
 
     # 옵션 가격표
     d.rectangle([60, y, W - 60, y + 64], fill=GREEN)
