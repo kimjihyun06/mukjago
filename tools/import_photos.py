@@ -150,6 +150,10 @@ def main():
         for y in range(0, im.height, SLICE_H):
             k += 1
             total += save_small(im.crop((0, y, DETAIL_W, min(y + SLICE_H, im.height))), out / f"detail-{k}.jpg")
+    if opt.get("main_label") and main_f:  # 대표사진 이름표 (tools/label_main.py)
+        sys.path.insert(0, str(ROOT / "tools"))
+        import label_main
+        label_main.apply(out / "1.jpg", opt["main_label"])
     print(f"p{pid:02d}: 대표사진 {len(main_f)}장, 상세 {len(detail_f)}장 -> {k}조각, 합계 {total / 1e6:.1f}MB")
     if kakao:
         print(f"  올리지 않음(카톡·포스터 홍보이미지): {', '.join(f.name for f in kakao)}")

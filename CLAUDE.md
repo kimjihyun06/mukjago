@@ -131,6 +131,7 @@ python tools/makebook.py       # 기록 -> 출판 원자료
 | 상품 사진 (전 품목) | `사진전체갱신.bat` = `python tools/import_all_photos.py` — 자료\엑셀 전체를 폴더 이름으로 상품과 짝지음 |
 | 상품 사진 (한 상품) | `python tools/import_photos.py <사진폴더> <상품번호>` → `상품갱신.bat` (크기 줄이기·상세 자르기 자동) |
 | 상품 특징(홍보이미지에서 옮긴 사실) | `tools/product_info.json` |
+| 대표사진에 상품 이름 글자 | `tools/product_info.json` 의 `main_label` → `python tools/label_main.py` (사진 다시 넣어도 자동으로 붙음) |
 | 사진 없는 상품의 AI 연출 이미지 | `tools/ai_prompts.json` → `python tools/generate_images.py` (**돈 듦: 장당 약 $0.04 — 「만들 것 N장」 먼저 말하고**) |
 | 첫 화면 칸 순서·문구 | `index.html` |
 | 머리글·바닥글·장바구니 동작 | `js/app.js` |

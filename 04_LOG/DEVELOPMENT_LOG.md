@@ -527,3 +527,26 @@ images/products/p12, p30, p57, p58, js/products.js, 상품번호표.txt
 AI 대표 6개 상품은 실물 숫자 사진이 생기면 다시 연결
 
 ==========================================================
+
+==========================================================
+[DEVELOPMENT RECORD #016]
+
+DATE: 2026-11-26
+TIME: 08:09
+
+[USER] 사용자 지시
+활 돌문어의 첫번째 대표이미지에 활 돌문어라고 글자를 넣어줘
+
+[EXECUTION] 실제 한 일
+tools/label_main.py (아래 가운데 먹자GO 초록 이름표, JPEG 주석으로 중복 방지), product_info 9.main_label, import_photos 가 다시 넣을 때 자동 적용
+
+[FILES] 건드린 파일
+tools/label_main.py, tools/import_photos.py, tools/product_info.json, images/products/p09/1.jpg, CLAUDE.md
+
+[TEST] 어떻게 쟀나
+두 번 실행 → 두 번째 「이미 있음」. 원본 3장으로 import 다시 → 1.jpg 만 이름표(주석 True, 2.jpg False), 이름표 자리 색 (49,86,42). 걸쇠 10/10
+
+[RESULT] 결과
+p09 1.jpg 에 「활 돌문어」
+
+==========================================================
