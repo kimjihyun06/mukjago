@@ -107,7 +107,7 @@
   function thumb(p, cls = "thumb", src) {
     const img = src || (p.images || [])[0];
     return img
-      ? `<div class="${cls}"><img src="${esc(img)}" alt="${esc(p.name)}" loading="lazy"></div>`
+      ? `<div class="${cls}"><img src="${esc(img)}" alt="${esc(p.name)}${p.ai ? " (연출 이미지)" : ""}" loading="lazy">${p.ai ? '<span class="ai-badge">연출 이미지</span>' : ""}</div>`
       : `<div class="${cls} ph ph-${p.cat}" role="img" aria-label="${esc(p.name)} 사진 준비 중"><span>${p.emoji || "🛒"}</span><small>사진 준비 중</small></div>`;
   }
   function badges(p) {

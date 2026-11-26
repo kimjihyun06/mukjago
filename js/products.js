@@ -1,6 +1,6 @@
 /* 자동 생성 파일 — 손으로 고치지 마세요 (다시 만들면 지워집니다).
  * 원본: 늘푸른우리 제품 공급표_잇플로우.xlsx
- * 만든 때: 2026-11-26 05:00
+ * 만든 때: 2026-11-26 05:12
  * 다시 만들기: python tools/import_excel.py
  * 문구·후기·공지·분류는 js/content.js 에서 고칩니다. */
 window.PRODUCTS = [
@@ -14,7 +14,9 @@ window.PRODUCTS = [
   "price": 11180,
   "ship": 4000,
   "emoji": "🦪",
-  "images": [],
+  "images": [
+   "images/products/p03/ai-1.jpg"
+  ],
   "top": "images/products/p03/top.jpg",
   "detail": [],
   "options": [
@@ -25,7 +27,8 @@ window.PRODUCTS = [
     "ship": 4000,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 7,
@@ -37,7 +40,9 @@ window.PRODUCTS = [
   "price": 1650,
   "ship": 4000,
   "emoji": "🐚",
-  "images": [],
+  "images": [
+   "images/products/p07/ai-1.jpg"
+  ],
   "top": "images/products/p07/top.jpg",
   "detail": [],
   "options": [
@@ -76,7 +81,8 @@ window.PRODUCTS = [
     "ship": null,
     "tax": "과세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 8,
@@ -88,7 +94,9 @@ window.PRODUCTS = [
   "price": 9180,
   "ship": 4000,
   "emoji": "🦑",
-  "images": [],
+  "images": [
+   "images/products/p08/ai-1.jpg"
+  ],
   "top": "images/products/p08/top.jpg",
   "detail": [],
   "options": [
@@ -113,7 +121,8 @@ window.PRODUCTS = [
     "ship": 4000,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 9,
@@ -125,7 +134,9 @@ window.PRODUCTS = [
   "price": 19420,
   "ship": 4000,
   "emoji": "🐙",
-  "images": [],
+  "images": [
+   "images/products/p09/ai-1.jpg"
+  ],
   "top": "images/products/p09/top.jpg",
   "detail": [],
   "options": [
@@ -136,7 +147,8 @@ window.PRODUCTS = [
     "ship": 4000,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 10,
@@ -148,7 +160,9 @@ window.PRODUCTS = [
   "price": 5890,
   "ship": 4000,
   "emoji": "🐟",
-  "images": [],
+  "images": [
+   "images/products/p10/ai-1.jpg"
+  ],
   "top": "images/products/p10/top.jpg",
   "detail": [],
   "options": [
@@ -180,7 +194,8 @@ window.PRODUCTS = [
     "ship": 4000,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 11,
@@ -261,7 +276,9 @@ window.PRODUCTS = [
   "price": 10000,
   "ship": 4000,
   "emoji": "🐟",
-  "images": [],
+  "images": [
+   "images/products/p12/ai-1.jpg"
+  ],
   "top": "images/products/p12/top.jpg",
   "detail": [
    "images/products/p12/detail-1.jpg",
@@ -289,7 +306,8 @@ window.PRODUCTS = [
    ],
    "origin": "국내산 (여수)",
    "courier": "CJ대한통운 · 5개까지 합배송"
-  }
+  },
+  "ai": true
  },
  {
   "id": 13,
@@ -301,7 +319,9 @@ window.PRODUCTS = [
   "price": 40590,
   "ship": 0,
   "emoji": "🦀",
-  "images": [],
+  "images": [
+   "images/products/p13/ai-1.jpg"
+  ],
   "top": "images/products/p13/top.jpg",
   "detail": [],
   "options": [
@@ -326,7 +346,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 14,
@@ -469,7 +490,9 @@ window.PRODUCTS = [
   "price": 14710,
   "ship": 4000,
   "emoji": "🦀",
-  "images": [],
+  "images": [
+   "images/products/p16/ai-1.jpg"
+  ],
   "top": "images/products/p16/top.jpg",
   "detail": [],
   "options": [
@@ -480,7 +503,8 @@ window.PRODUCTS = [
     "ship": 4000,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 17,
@@ -596,7 +620,9 @@ window.PRODUCTS = [
   "price": 16710,
   "ship": 0,
   "emoji": "🦀",
-  "images": [],
+  "images": [
+   "images/products/p20/ai-1.jpg"
+  ],
   "top": "images/products/p20/top.jpg",
   "detail": [],
   "options": [
@@ -621,7 +647,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 21,
@@ -633,7 +660,9 @@ window.PRODUCTS = [
   "price": 27650,
   "ship": 0,
   "emoji": "🐟",
-  "images": [],
+  "images": [
+   "images/products/p21/ai-1.jpg"
+  ],
   "top": "images/products/p21/top.jpg",
   "detail": [],
   "options": [
@@ -707,7 +736,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 22,
@@ -719,7 +749,9 @@ window.PRODUCTS = [
   "price": 10590,
   "ship": 0,
   "emoji": "🦪",
-  "images": [],
+  "images": [
+   "images/products/p22/ai-1.jpg"
+  ],
   "top": "images/products/p22/top.jpg",
   "detail": [],
   "options": [
@@ -744,7 +776,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 23,
@@ -1234,7 +1267,9 @@ window.PRODUCTS = [
   "price": 7300,
   "ship": 0,
   "emoji": "🥬",
-  "images": [],
+  "images": [
+   "images/products/p33/ai-1.jpg"
+  ],
   "top": "images/products/p33/top.jpg",
   "detail": [],
   "options": [
@@ -1266,7 +1301,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 34,
@@ -1278,7 +1314,9 @@ window.PRODUCTS = [
   "price": 12360,
   "ship": 0,
   "emoji": "🥬",
-  "images": [],
+  "images": [
+   "images/products/p34/ai-1.jpg"
+  ],
   "top": "images/products/p34/top.jpg",
   "detail": [],
   "options": [
@@ -1310,7 +1348,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 35,
@@ -1322,7 +1361,9 @@ window.PRODUCTS = [
   "price": 14710,
   "ship": 0,
   "emoji": "🥬",
-  "images": [],
+  "images": [
+   "images/products/p35/ai-1.jpg"
+  ],
   "top": "images/products/p35/top.jpg",
   "detail": [],
   "options": [
@@ -1347,7 +1388,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 36,
@@ -1359,7 +1401,9 @@ window.PRODUCTS = [
   "price": 13530,
   "ship": 0,
   "emoji": "🥬",
-  "images": [],
+  "images": [
+   "images/products/p36/ai-1.jpg"
+  ],
   "top": "images/products/p36/top.jpg",
   "detail": [],
   "options": [
@@ -1391,7 +1435,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 37,
@@ -1403,7 +1448,9 @@ window.PRODUCTS = [
   "price": 14710,
   "ship": 0,
   "emoji": "🥬",
-  "images": [],
+  "images": [
+   "images/products/p37/ai-1.jpg"
+  ],
   "top": "images/products/p37/top.jpg",
   "detail": [],
   "options": [
@@ -1428,7 +1475,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 39,
@@ -1440,7 +1488,9 @@ window.PRODUCTS = [
   "price": 14120,
   "ship": 0,
   "emoji": "🥬",
-  "images": [],
+  "images": [
+   "images/products/p39/ai-1.jpg"
+  ],
   "top": "images/products/p39/top.jpg",
   "detail": [],
   "options": [
@@ -1472,7 +1522,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 40,
@@ -1484,7 +1535,9 @@ window.PRODUCTS = [
   "price": 16480,
   "ship": 0,
   "emoji": "🥬",
-  "images": [],
+  "images": [
+   "images/products/p40/ai-1.jpg"
+  ],
   "top": "images/products/p40/top.jpg",
   "detail": [],
   "options": [
@@ -1509,7 +1562,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 41,
@@ -1521,7 +1575,9 @@ window.PRODUCTS = [
   "price": 14830,
   "ship": 0,
   "emoji": "🥬",
-  "images": [],
+  "images": [
+   "images/products/p41/ai-1.jpg"
+  ],
   "top": "images/products/p41/top.jpg",
   "detail": [],
   "options": [
@@ -1553,7 +1609,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 42,
@@ -1565,7 +1622,9 @@ window.PRODUCTS = [
   "price": 16120,
   "ship": 0,
   "emoji": "🥬",
-  "images": [],
+  "images": [
+   "images/products/p42/ai-1.jpg"
+  ],
   "top": "images/products/p42/top.jpg",
   "detail": [],
   "options": [
@@ -1597,7 +1656,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 43,
@@ -1609,7 +1669,9 @@ window.PRODUCTS = [
   "price": 8240,
   "ship": 4000,
   "emoji": "🥒",
-  "images": [],
+  "images": [
+   "images/products/p43/ai-1.jpg"
+  ],
   "top": "images/products/p43/top.jpg",
   "detail": [],
   "options": [
@@ -1620,7 +1682,8 @@ window.PRODUCTS = [
     "ship": 4000,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 44,
@@ -1632,7 +1695,9 @@ window.PRODUCTS = [
   "price": 7060,
   "ship": 4000,
   "emoji": "🥬",
-  "images": [],
+  "images": [
+   "images/products/p44/ai-1.jpg"
+  ],
   "top": "images/products/p44/top.jpg",
   "detail": [],
   "options": [
@@ -1643,7 +1708,8 @@ window.PRODUCTS = [
     "ship": 4000,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 45,
@@ -1655,7 +1721,9 @@ window.PRODUCTS = [
   "price": 6360,
   "ship": 0,
   "emoji": "🌰",
-  "images": [],
+  "images": [
+   "images/products/p45/ai-1.jpg"
+  ],
   "top": "images/products/p45/top.jpg",
   "detail": [],
   "options": [
@@ -1743,7 +1811,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 46,
@@ -1755,7 +1824,9 @@ window.PRODUCTS = [
   "price": 6000,
   "ship": 0,
   "emoji": "🥬",
-  "images": [],
+  "images": [
+   "images/products/p46/ai-1.jpg"
+  ],
   "top": "images/products/p46/top.jpg",
   "detail": [],
   "options": [
@@ -1780,7 +1851,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 47,
@@ -1792,7 +1864,9 @@ window.PRODUCTS = [
   "price": 6120,
   "ship": 0,
   "emoji": "🫑",
-  "images": [],
+  "images": [
+   "images/products/p47/ai-1.jpg"
+  ],
   "top": "images/products/p47/top.jpg",
   "detail": [],
   "options": [
@@ -1831,7 +1905,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 48,
@@ -1843,7 +1918,9 @@ window.PRODUCTS = [
   "price": 4360,
   "ship": 3000,
   "emoji": "🌰",
-  "images": [],
+  "images": [
+   "images/products/p48/ai-1.jpg"
+  ],
   "top": "images/products/p48/top.jpg",
   "detail": [],
   "options": [
@@ -1861,7 +1938,8 @@ window.PRODUCTS = [
     "ship": 3000,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 49,
@@ -1873,7 +1951,9 @@ window.PRODUCTS = [
   "price": 11650,
   "ship": 0,
   "emoji": "🌽",
-  "images": [],
+  "images": [
+   "images/products/p49/ai-1.jpg"
+  ],
   "top": "images/products/p49/top.jpg",
   "detail": [],
   "options": [
@@ -1905,7 +1985,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "과세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 50,
@@ -1917,7 +1998,9 @@ window.PRODUCTS = [
   "price": 5770,
   "ship": 0,
   "emoji": "🍠",
-  "images": [],
+  "images": [
+   "images/products/p50/ai-1.jpg"
+  ],
   "top": "images/products/p50/top.jpg",
   "detail": [],
   "options": [
@@ -2033,7 +2116,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 51,
@@ -2045,7 +2129,9 @@ window.PRODUCTS = [
   "price": 9300,
   "ship": 0,
   "emoji": "🌰",
-  "images": [],
+  "images": [
+   "images/products/p51/ai-1.jpg"
+  ],
   "top": "images/products/p51/top.jpg",
   "detail": [],
   "options": [
@@ -2098,7 +2184,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 52,
@@ -2110,7 +2197,9 @@ window.PRODUCTS = [
   "price": 5180,
   "ship": 4000,
   "emoji": "🍠",
-  "images": [],
+  "images": [
+   "images/products/p52/ai-1.jpg"
+  ],
   "top": "images/products/p52/top.jpg",
   "detail": [],
   "options": [
@@ -2156,7 +2245,8 @@ window.PRODUCTS = [
     "ship": 4000,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 53,
@@ -2168,7 +2258,9 @@ window.PRODUCTS = [
   "price": 8240,
   "ship": 0,
   "emoji": "🥗",
-  "images": [],
+  "images": [
+   "images/products/p53/ai-1.jpg"
+  ],
   "top": "images/products/p53/top.jpg",
   "detail": [],
   "options": [
@@ -2179,7 +2271,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 54,
@@ -2191,7 +2284,9 @@ window.PRODUCTS = [
   "price": 5770,
   "ship": 0,
   "emoji": "🍠",
-  "images": [],
+  "images": [
+   "images/products/p54/ai-1.jpg"
+  ],
   "top": "images/products/p54/top.jpg",
   "detail": [],
   "options": [
@@ -2265,7 +2360,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 56,
@@ -2277,7 +2373,9 @@ window.PRODUCTS = [
   "price": 5890,
   "ship": 0,
   "emoji": "🥬",
-  "images": [],
+  "images": [
+   "images/products/p56/ai-1.jpg"
+  ],
   "top": "images/products/p56/top.jpg",
   "detail": [],
   "options": [
@@ -2323,7 +2421,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 57,
@@ -2335,7 +2434,9 @@ window.PRODUCTS = [
   "price": 6240,
   "ship": 0,
   "emoji": "🍠",
-  "images": [],
+  "images": [
+   "images/products/p57/ai-1.jpg"
+  ],
   "top": "images/products/p57/top.jpg",
   "detail": [],
   "options": [
@@ -2451,7 +2552,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 58,
@@ -2463,7 +2565,9 @@ window.PRODUCTS = [
   "price": 5770,
   "ship": 0,
   "emoji": "🍠",
-  "images": [],
+  "images": [
+   "images/products/p58/ai-1.jpg"
+  ],
   "top": "images/products/p58/top.jpg",
   "detail": [],
   "options": [
@@ -2579,7 +2683,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 59,
@@ -2591,7 +2696,9 @@ window.PRODUCTS = [
   "price": 9180,
   "ship": 0,
   "emoji": "🌽",
-  "images": [],
+  "images": [
+   "images/products/p59/ai-1.jpg"
+  ],
   "top": "images/products/p59/top.jpg",
   "detail": [],
   "options": [
@@ -2651,7 +2758,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "과세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 61,
@@ -2663,7 +2771,9 @@ window.PRODUCTS = [
   "price": 11300,
   "ship": 0,
   "emoji": "🥕",
-  "images": [],
+  "images": [
+   "images/products/p61/ai-1.jpg"
+  ],
   "top": "images/products/p61/top.jpg",
   "detail": [],
   "options": [
@@ -2688,7 +2798,8 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  },
  {
   "id": 62,
@@ -2700,7 +2811,9 @@ window.PRODUCTS = [
   "price": 5060,
   "ship": 0,
   "emoji": "🧅",
-  "images": [],
+  "images": [
+   "images/products/p62/ai-1.jpg"
+  ],
   "top": "images/products/p62/top.jpg",
   "detail": [],
   "options": [
@@ -2760,6 +2873,7 @@ window.PRODUCTS = [
     "ship": 0,
     "tax": "면세"
    }
-  ]
+  ],
+  "ai": true
  }
 ];

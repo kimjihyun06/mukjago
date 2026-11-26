@@ -303,3 +303,41 @@ T018
 사용자 새 요청: 필요한 이미지 API 자동 생성 — 업체·비용 승인과 열쇠 필요
 
 ==========================================================
+
+==========================================================
+[DEVELOPMENT RECORD #009]
+
+DATE: 2026-11-26
+TIME: 05:12
+
+[USER] 사용자 지시
+필요한 이미지는 api 를 이용해서 자동 생성 (Gemini, 연출 이미지 표시, 대표사진 38개)
+
+[CONTEXT] 그때 상황
+열쇠는 네트워크 비밀값으로 저장(프록시가 붙임, 값은 보지 않음). 입력창 2번 닫힘 → 사용자가 다시 띄워 달라 해서 3번째에 저장됨
+
+[EXECUTION] 실제 한 일
+tools/ai_prompts.json(상품별 영어 묘사), tools/generate_images.py(이미 있으면 건너뜀·429 재시도·--dry/--only/--force), import_excel 이 실제 사진 없을 때만 ai-1.jpg 를 대표로 + ai 표시, app.js·css 「연출 이미지」 딱지
+
+[FILES] 건드린 파일
+tools/ai_prompts.json, tools/generate_images.py, tools/import_excel.py, js/app.js, css/style.css, images/products/pNN/ai-1.jpg ×38, js/products.js, README.md, CLAUDE.md
+
+[ERROR] 오류
+대게가 킹크랩으로, 봄동이 배추로 그려짐
+
+[ROOT CAUSE] 진범
+대게 묘사에 king crab 낱말이 섞임 / 봄동 모양 묘사 부족
+
+[FIX] 고침
+묘사 고쳐 그 상품만 --force
+
+[TEST] 어떻게 쟀나
+T019
+
+[RESULT] 결과
+대표사진 51/51, 생성 40장 약 $1.60
+
+[NEXT] 다음
+사용자 PC(D:) 에 반영 — zip 받아 덮어쓰기 또는 GitHub 연결
+
+==========================================================

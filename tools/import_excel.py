@@ -16,6 +16,7 @@
   - 숫자 이름 (1.jpg, 2.jpg ...)        -> 대표사진 (전부, 숫자 순서대로)
   - detail 로 시작 (detail-1.jpg ...)   -> 상세페이지 이미지 (안내 이미지 아래)
   - top.jpg                            -> 이 명령이 자동으로 만드는 상단 안내 이미지
+  - ai-1.jpg                           -> tools/generate_images.py 가 만든 연출 이미지 (실제 사진이 없을 때만 대표)
 상품 번호는 tools/product_ids.json 에 시트 이름별로 고정된다 (시트 순서가 바뀌어도 그대로).
 """
 from __future__ import annotations
@@ -160,13 +161,16 @@ def read_sheets(path: Path):
 def images_for(pid: str):
     folder = IMG / pid
     if not folder.exists():
-        return [], []
+        return [], [], False
     files = [f for f in folder.iterdir() if f.suffix.lower() in IMG_EXT]
     main = sorted((f for f in files if f.stem.isdigit()), key=lambda f: int(f.stem))
     detail = sorted((f for f in files if f.stem.lower().startswith("detail")),
                     key=lambda f: [int(x) if x.isdigit() else x for x in re.split(r"(\d+)", f.stem)])
     rel = lambda f: f.relative_to(ROOT).as_posix()
-    return [rel(f) for f in main], [rel(f) for f in detail]
+    if not main:  # 실제 사진이 없을 때만 AI 연출 이미지(ai-1.jpg …)를 대표로
+        main = sorted(f for f in files if f.stem.lower().startswith("ai-"))
+        return [rel(f) for f in main], [rel(f) for f in detail], bool(main)
+    return [rel(f) for f in main], [rel(f) for f in detail], False
 
 
 def main():
@@ -190,7 +194,7 @@ def main():
             continue
         pid = ids[s["sheet"]]
         folder = f"p{pid:02d}"
-        main_imgs, detail_imgs = images_for(folder)
+        main_imgs, detail_imgs, is_ai = images_for(folder)
         opts = [{k: o[k] for k in ("name", "unit", "price", "ship", "tax")} | ({"soldout": True} if o.get("soldout") else {})
                 for o in s["options"]]
         live = [o for o in opts if not o.get("soldout")] or opts
@@ -204,6 +208,7 @@ def main():
             "top": f"images/products/{folder}/top.jpg", "detail": detail_imgs,
             "options": opts,
             **({"info": info[str(pid)]} if str(pid) in info else {}),
+            **({"ai": True} if is_ai else {}),
         })
 
     head = (f"/* 자동 생성 파일 — 손으로 고치지 마세요 (다시 만들면 지워집니다).\n"
@@ -222,6 +227,7 @@ def main():
     n_opt = sum(len(p["options"]) for p in products)
     print(f"엑셀: {xlsx.name}")
     print(f"  시트 {len(sheets)}개 -> 상품 {len(products)}개 (옵션 {n_opt}개), 숨김 시트 {len(hidden)}개 제외")
+    print(f"  AI 연출 이미지를 대표로 쓰는 상품 {sum(1 for p in products if p.get('ai'))}개")
     print(f"  대표사진 있는 상품 {sum(1 for p in products if p['images'])}개, 상세이미지 있는 상품 {sum(1 for p in products if p['detail'])}개")
     print(f"  -> {OUT.relative_to(ROOT)}")
 

@@ -125,6 +125,7 @@ python tools/makebook.py       # 기록 -> 출판 원자료
 | **메뉴·하위 메뉴**(분류)·첫 화면 Best·후기·공지 | `js/content.js` — 메뉴 순서는 자료 폴더 순서(1 전체상품 … 8 입점문의)를 따른다 |
 | 상품 사진 | `python tools/import_photos.py <사진폴더> <상품번호>` → `상품갱신.bat` (크기 줄이기·상세 자르기 자동) |
 | 상품 특징(홍보이미지에서 옮긴 사실) | `tools/product_info.json` |
+| 사진 없는 상품의 AI 연출 이미지 | `tools/ai_prompts.json` → `python tools/generate_images.py` (**돈 듦: 장당 약 $0.04 — 「만들 것 N장」 먼저 말하고**) |
 | 첫 화면 칸 순서·문구 | `index.html` |
 | 머리글·바닥글·장바구니 동작 | `js/app.js` |
 | 색·글꼴·배치 | `css/style.css` |
@@ -136,6 +137,7 @@ python tools/makebook.py       # 기록 -> 출판 원자료
 - 상품 번호는 `tools/product_ids.json` 에 시트 이름별로 고정 — **지우거나 고치지 않는다** (주소 `product.html?id=번호` 가 바뀜).
 - 하위 메뉴는 상품 이름 낱말(match)로 나뉜다. 어디에도 안 맞으면 default 칸 — 새 상품이 엉뚱한 칸에 가면 낱말을 더한다.
 - 엑셀의 **숨김 시트 = 품절/판매중단** 으로 보고 올리지 않는다. 공급가액·마진은 절대 싣지 않는다 (걸쇠 「매입정보」).
+- AI 연출 이미지(`ai-1.jpg`)는 실제 사진이 없을 때만 대표가 되고 「연출 이미지」 표시가 붙는다. 그림 속 글자·로고 금지 지시를 지운다면 가짜 상표가 그려질 수 있다.
 - `images/products/pNN/top.jpg` 는 import 가 엑셀 가격으로 다시 그린다 — 손으로 바꾸지 않는다.
 
 ## 12. 배포 (GitHub Pages)
