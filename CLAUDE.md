@@ -122,7 +122,7 @@ python tools/makebook.py       # 기록 -> 출판 원자료
 |---|---|
 | 회사 정보·전화·계좌·카톡 링크·**메인 배너** | `js/config.js` |
 | **상품·가격** | 공급표 엑셀 → `python tools/import_excel.py` → `js/products.js` (**자동 생성, 손대지 말 것**) |
-| 분류 문구·첫 화면 Best·후기·공지 | `js/content.js` |
+| **메뉴·하위 메뉴**(분류)·첫 화면 Best·후기·공지 | `js/content.js` — 메뉴 순서는 자료 폴더 순서(1 전체상품 … 8 입점문의)를 따른다 |
 | 상품 사진 | `python tools/import_photos.py <사진폴더> <상품번호>` → `상품갱신.bat` (크기 줄이기·상세 자르기 자동) |
 | 상품 특징(홍보이미지에서 옮긴 사실) | `tools/product_info.json` |
 | 첫 화면 칸 순서·문구 | `index.html` |
@@ -134,6 +134,7 @@ python tools/makebook.py       # 기록 -> 출판 원자료
 - 사진 파일 이름은 **영문·숫자·-** 만 쓴다 (한글 이름은 주소에서 깨진다).
 - 사진은 가로 1600px·1MB 이하로 줄여서 넣는다 (걸쇠가 잰다).
 - 상품 번호는 `tools/product_ids.json` 에 시트 이름별로 고정 — **지우거나 고치지 않는다** (주소 `product.html?id=번호` 가 바뀜).
+- 하위 메뉴는 상품 이름 낱말(match)로 나뉜다. 어디에도 안 맞으면 default 칸 — 새 상품이 엉뚱한 칸에 가면 낱말을 더한다.
 - 엑셀의 **숨김 시트 = 품절/판매중단** 으로 보고 올리지 않는다. 공급가액·마진은 절대 싣지 않는다 (걸쇠 「매입정보」).
 - `images/products/pNN/top.jpg` 는 import 가 엑셀 가격으로 다시 그린다 — 손으로 바꾸지 않는다.
 

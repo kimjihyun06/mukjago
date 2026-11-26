@@ -1,6 +1,6 @@
 /* 자동 생성 파일 — 손으로 고치지 마세요 (다시 만들면 지워집니다).
  * 원본: 늘푸른우리 제품 공급표_잇플로우.xlsx
- * 만든 때: 2026-11-26 04:21
+ * 만든 때: 2026-11-26 04:24
  * 다시 만들기: python tools/import_excel.py
  * 문구·후기·공지·분류는 js/content.js 에서 고칩니다. */
 window.PRODUCTS = [
@@ -743,7 +743,7 @@ window.PRODUCTS = [
  {
   "id": 23,
   "name": "통영생굴무침",
-  "cat": "easy",
+  "cat": "sea",
   "tax": "과세",
   "deadline": "오전 10시 30분",
   "start": "2026-11-02",
@@ -796,7 +796,7 @@ window.PRODUCTS = [
  {
   "id": 24,
   "name": "새꼬막무침(양념'간장)",
-  "cat": "easy",
+  "cat": "sea",
   "tax": "과세",
   "deadline": "오전 10시 30분",
   "start": "2026-11-02",
@@ -880,7 +880,7 @@ window.PRODUCTS = [
  {
   "id": 25,
   "name": "국내산연평도 100%알배기 간장게장",
-  "cat": "easy",
+  "cat": "sea",
   "tax": "과세",
   "deadline": "오전 11시 30분",
   "start": "2026-11-02",
@@ -948,7 +948,7 @@ window.PRODUCTS = [
  {
   "id": 26,
   "name": "국내산연평도 알배기간장게장(하프절단)",
-  "cat": "easy",
+  "cat": "sea",
   "tax": "과세",
   "deadline": "오후 2시",
   "start": "2026-11-02",
@@ -1003,7 +1003,7 @@ window.PRODUCTS = [
  {
   "id": 27,
   "name": "국내산연평도 양념게장",
-  "cat": "easy",
+  "cat": "sea",
   "tax": "과세",
   "deadline": "오전 11시 30분",
   "start": "2026-11-03",
@@ -1053,7 +1053,7 @@ window.PRODUCTS = [
  {
   "id": 28,
   "name": "국내산 연평도 순살게장",
-  "cat": "easy",
+  "cat": "sea",
   "tax": "과세",
   "deadline": "오전 11시 30분",
   "start": "2026-11-03",
@@ -1103,7 +1103,7 @@ window.PRODUCTS = [
  {
   "id": 29,
   "name": "명품 삼점암꽃게장",
-  "cat": "easy",
+  "cat": "sea",
   "tax": "과세",
   "deadline": "오후 1시",
   "start": "2026-11-03",
@@ -1162,7 +1162,7 @@ window.PRODUCTS = [
  {
   "id": 30,
   "name": "특제 간장&양념 깐새우장",
-  "cat": "easy",
+  "cat": "sea",
   "tax": "과세",
   "deadline": "오후 2시",
   "start": "2026-11-12",

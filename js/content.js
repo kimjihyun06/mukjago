@@ -3,13 +3,40 @@
  * (상품·가격은 엑셀에서 자동으로 만들어지는 js/products.js 에 있습니다)
  * ============================================================= */
 
-/* 분류 — 엑셀의 「구분」으로 자동 배정됩니다
- *   수산(면세) -> sea, 수산(과세: 게장·무침) -> easy, 김치 -> kimchi, 그 밖 -> farm */
+/* 분류 = 상단 메뉴 (자료 폴더 순서: 3 농산물 · 4 축산물 · 5 수산물 · 6 김치류 · 7 간편식품)
+ *   큰 분류는 엑셀 「구분」으로 자동 배정: 수산 -> sea, 김치 -> kimchi, 그 밖 -> farm
+ *   하위 메뉴(subs)는 상품 이름에 match 낱말이 들어 있으면 그 칸으로,
+ *   어디에도 안 맞으면 default 칸으로 갑니다. 새 상품이 생기면 낱말만 더하면 됩니다. */
 window.CATEGORIES = {
-  farm:   { name: "농산물",    title: "실속 담은 농산물 특가", sub: "매일 찾는 기본 식재료, 거품 뺀 도매가로 한번에!" },
-  sea:    { name: "수산물",    title: "산지직송 수산의 반격", sub: "바다 건너 식탁 직행, 산지에서 바로 보내드립니다!" },
-  kimchi: { name: "김치",      title: "정성 담은 김치 특가",   sub: "매일 밥상에 오르는 김치, 도매가로 넉넉하게!" },
-  easy:   { name: "게장·반찬", title: "밥도둑 게장·반찬",       sub: "국내산 연평도 게장부터 무침까지, 밥 한 공기 뚝딱!" },
+  farm: { name: "농산물", title: "실속 담은 농산물 특가", sub: "매일 찾는 기본 식재료, 거품 뺀 도매가로 한번에!", default: "veg",
+    subs: [
+      { key: "veg",    name: "채소",       match: [] },
+      { key: "potato", name: "고구마·감자", match: ["고구마", "히카마", "감자", "산마", "장마"] },
+      { key: "chest",  name: "밤",         match: ["햇밤", "약단밤"] },
+      { key: "corn",   name: "옥수수",     match: ["옥수수"] },
+    ] },
+  meat: { name: "축산물", title: "진심을 담은 정직한 축산", sub: "보이는 그대로 알차게, 정직하게 고른 고기.", default: "pork",
+    subs: [
+      { key: "pork",   name: "국내산 한돈", match: ["한돈", "돼지", "삼겹", "목살"] },
+      { key: "beef",   name: "국내산 한우", match: ["한우"] },
+      { key: "import", name: "수입육",     match: ["수입", "미국산", "호주산"] },
+    ] },
+  sea: { name: "수산물", title: "산지직송 수산의 반격", sub: "바다 건너 식탁 직행, 산지에서 바로 보내드립니다!", default: "season",
+    subs: [
+      { key: "season", name: "제철 수산물", match: [] },
+      { key: "bap",    name: "밥도둑",     match: ["게장", "무침", "새우장", "꼬막장", "곱창김"] },
+    ] },
+  kimchi: { name: "김치류", title: "정성 담은 김치 특가", sub: "매일 밥상에 오르는 김치, 도매가로 넉넉하게!", default: "special",
+    subs: [
+      { key: "cabbage", name: "배추김치", match: ["배추김치", "포기", "백김치", "묵은지"] },
+      { key: "special", name: "별미김치", match: [] },
+      { key: "water",   name: "물김치",   match: ["물김치"] },
+    ] },
+  easy: { name: "간편식품", title: "든든한 간편식품", sub: "국·탕부터 반찬까지, 데우기만 하면 한 끼 완성!", default: "side",
+    subs: [
+      { key: "soup", name: "국탕류", match: ["국밥", "탕", "찌개", "육개장"] },
+      { key: "side", name: "반찬류", match: [] },
+    ] },
 };
 
 /* 첫 화면 칸에 올릴 상품 번호 (product.html?id=번호)

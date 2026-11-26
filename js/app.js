@@ -10,6 +10,9 @@
   const params = new URLSearchParams(location.search);
   const shipText = (s) => (s === 0 ? "무료배송" : s == null ? "택배비 문의" : `택배비 ${won(s)}`);
   const optLabel = (o) => (!o.unit || o.name.includes(o.unit) ? o.name : `${o.name} (${o.unit})`);
+  /* 하위 메뉴: 상품 이름에 match 낱말이 있으면 그 칸, 없으면 default 칸 (js/content.js) */
+  const subOf = (p) => { const c = C[p.cat]; if (!c?.subs) return null;
+    return c.subs.find((s) => s.match.some((w) => p.name.includes(w))) || c.subs.find((s) => s.key === c.default) || c.subs[0]; };
   const fromPrice = (p) => `${won(p.price)}${p.options.filter((o) => !o.soldout).length > 1 ? "~" : ""}`;
 
   /* ---------- 저장 (이 기기 브라우저에만) ---------- */
@@ -48,8 +51,8 @@
 
   /* ---------- 머리글 ---------- */
   function header() {
-    const navs = [["list.html", "전체상품", "all"], ["list.html?cat=today", "오늘의특가", "today"],
-      ...Object.entries(C).map(([k, c]) => [`list.html?cat=${k}`, c.name, k]), ["notice.html#partner", "입점문의", "partner"]];
+    const navs = [["list.html", "전체상품", "all"], ["list.html?cat=today", "오늘의 특가", "today"],
+      ...Object.entries(C).map(([k, c]) => [`list.html?cat=${k}`, c.name, k, c.subs || []]), ["notice.html#partner", "입점문의", "partner"]];
     const cur = params.get("cat") || (location.pathname.endsWith("list.html") ? "all" : "");
     return `
     <div class="topbar"><div class="wrap">
@@ -60,8 +63,9 @@
     <div class="logo-row wrap"><a href="index.html" class="logo" aria-label="${esc(S.name)} 홈"><img src="images/logo.png" alt="${esc(S.name)} - ${esc(S.slogan)}" width="360" height="175"></a></div>
     <nav class="gnb" aria-label="주 메뉴"><div class="wrap">
       <button class="menu-btn" aria-label="메뉴 열기" aria-expanded="false">☰</button>
-      <ul class="gnb-list">${navs.map(([h, t, k], i) =>
-        `<li><a href="${h}"${k === cur ? ' aria-current="page"' : ""}>${i === 0 ? "<b>≡</b> " : ""}${esc(t)}</a></li>`).join("")}</ul>
+      <ul class="gnb-list">${navs.map(([h, t, k, subs], i) =>
+        `<li class="${subs?.length ? "has-sub" : ""}${k === "today" ? " hot" : ""}"><a href="${h}"${k === cur ? ' aria-current="page"' : ""}>${i === 0 ? "<b>☰</b> " : ""}${esc(t)}${subs?.length ? '<i class="caret" aria-hidden="true"></i>' : ""}</a>${
+          subs?.length ? `<ul class="sub">${subs.map((s) => `<li><a href="list.html?cat=${k}&amp;sub=${s.key}">${esc(s.name)}<small>${P.filter((p) => p.cat === k && subOf(p)?.key === s.key).length || ""}</small></a></li>`).join("")}</ul>` : ""}</li>`).join("")}</ul>
       <form class="search" action="list.html" role="search">
         <input name="q" type="search" placeholder="검색" aria-label="상품 검색" value="${esc(params.get("q") || "")}">
         <button aria-label="검색">🔍</button>
@@ -125,6 +129,12 @@
       </div>
     </article>`;
   }
+  function subTabs(cat, active) {
+    const c = C[cat]; if (!c?.subs) return "";
+    const n = (key) => P.filter((p) => p.cat === cat && (key === "" || subOf(p)?.key === key)).length;
+    const tab = (key, name) => `<a href="list.html?cat=${cat}${key ? `&amp;sub=${key}` : ""}"${active === key ? ' class="on" aria-current="page"' : ""}>${esc(name)} <small>${n(key)}</small></a>`;
+    return `<nav class="subtabs" aria-label="${esc(c.name)} 하위 메뉴">${active === null ? "" : tab("", "전체")}${c.subs.map((s) => tab(s.key, s.name)).join("")}</nav>`;
+  }
   const grid = (list) => list.length ? `<div class="grid">${list.map(card).join("")}</div>` : `<p class="empty">상품이 없습니다.</p>`;
   const pick = (ids) => ids.map(byId).filter(Boolean);
   const newest = (n) => [...P].sort((a, b) => (b.start || "").localeCompare(a.start || "")).slice(0, n);
@@ -159,7 +169,9 @@
     Object.keys(C).forEach((k) => {
       const sec = $(`#sec-${k}`); if (!sec) return;
       const list = P.filter((p) => p.cat === k);
+      if (!list.length) { sec.hidden = true; return; }  // 아직 상품이 없는 분류(축산물·간편식품)는 첫 화면에서 숨김
       sec.innerHTML = `<div class="sec-head"><div><h2>${esc(C[k].title)}</h2><p>${esc(C[k].sub)}</p></div><a href="list.html?cat=${k}" class="more-link">${list.length}개 전체보기 ›</a></div>` +
+        subTabs(k, null) +
         grid([...list].sort((a, b) => (b.start || "").localeCompare(a.start || "")).slice(0, 6));
     });
     $("#kakao-pw").textContent = S.kakaoPassword;
@@ -177,7 +189,13 @@
     const cat = params.get("cat"), q = (params.get("q") || "").trim();
     let list = P, title = "전체상품", sub = `먹자GO 의 모든 상품 ${P.length}개를 도매가로 만나보세요.`;
     if (cat === "today") { list = newest(12); title = "지금 안 사면 '손해', 오늘의 특가전!"; sub = "망설이면 놓치는 오늘의 최저가, 실속 구성과 가격을 한 번에 잡으세요!"; }
-    else if (C[cat]) { list = P.filter((p) => p.cat === cat); title = C[cat].title; sub = C[cat].sub; }
+    else if (C[cat]) {
+      list = P.filter((p) => p.cat === cat); title = C[cat].name; sub = C[cat].sub;
+      const sk = params.get("sub"), s = C[cat].subs?.find((x) => x.key === sk);
+      if (s) { list = list.filter((p) => subOf(p)?.key === s.key); title = `${C[cat].name} › ${s.name}`; }
+      $("#subtabs").innerHTML = subTabs(cat, s?.key || "");
+      if (!list.length) sub = "상품을 준비하고 있습니다. 곧 도매가로 찾아뵙겠습니다!";
+    }
     if (q) { const k = q.toLowerCase(); list = list.filter((p) => [p.name, C[p.cat]?.name, ...p.options.map((o) => o.name)].join(" ").toLowerCase().includes(k)); title = `'${q}' 검색 결과`; sub = `${list.length}개 상품`; }
     document.title = `${title} | ${S.name}`;
     $("#list-title").textContent = title; $("#list-sub").textContent = sub;
@@ -201,14 +219,14 @@
     const imgs = p.images || [];
     const first = p.options.findIndex((o) => !o.soldout);
     box.innerHTML = `
-      <nav class="crumb" aria-label="위치"><a href="index.html">홈</a> › <a href="list.html?cat=${p.cat}">${esc(C[p.cat]?.name || "")}</a> › <span>${esc(p.name)}</span></nav>
+      <nav class="crumb" aria-label="위치"><a href="index.html">홈</a> › <a href="list.html?cat=${p.cat}">${esc(C[p.cat]?.name || "")}</a>${subOf(p) ? ` › <a href="list.html?cat=${p.cat}&amp;sub=${subOf(p).key}">${esc(subOf(p).name)}</a>` : ""} › <span>${esc(p.name)}</span></nav>
       <div class="pd">
         <div class="pd-gallery">
           ${thumb(p, "pd-img", imgs[0])}
           ${imgs.length > 1 ? `<div class="pd-thumbs">${imgs.map((s, i) => `<button data-img="${esc(s)}"${i ? "" : ' class="on"'} aria-label="사진 ${i + 1}"><img src="${esc(s)}" alt=""></button>`).join("")}</div>` : ""}
         </div>
         <div class="pd-info">
-          <p class="pd-cat">${esc(C[p.cat]?.name || "")}</p>
+          <p class="pd-cat">${esc(C[p.cat]?.name || "")}${subOf(p) ? ` · ${esc(subOf(p).name)}` : ""}</p>
           <h1>${esc(p.name)}</h1>
           ${p.info?.sub ? `<p class="pd-sub">${esc(p.info.sub)}</p>` : ""}
           <p class="price lg"><strong id="unit-price">${fromPrice(p)}</strong></p>

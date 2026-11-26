@@ -121,7 +121,7 @@ python tools/import_photos.py "..\자료\엑셀\5 수산물\밥도둑\순살게�
 |---|---|
 | 회사 정보·전화·계좌·**카톡 오픈채팅 링크**·**메인 배너** | `js/config.js` |
 | 상품·가격 | 엑셀 → `상품갱신.bat` (`js/products.js` 는 자동 생성) |
-| 분류 문구·첫 화면 Best·후기·공지사항 | `js/content.js` |
+| 메뉴·하위 메뉴·첫 화면 Best·후기·공지사항 | `js/content.js` |
 | 첫 화면 칸 순서·문구 | `index.html` |
 | 색·글꼴·배치 | `css/style.css` |
 | 사진 | `images/` (배너 `images/banners/`, 상품 `images/products/`) |

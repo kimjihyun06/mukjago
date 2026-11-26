@@ -33,7 +33,6 @@ h1, h2, h3 { margin: 0; line-height: 1.3; }
 .gnb-list { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; flex: 1; }
 .gnb-list a { display: block; padding: 8px 12px; font-weight: 700; font-size: 16px; border-radius: 8px; }
 .gnb-list a:hover, .gnb-list a[aria-current] { color: var(--green); background: var(--green-l); }
-.gnb-list li:nth-child(2) a { color: var(--red); }
 .menu-btn { display: none; background: none; border: 0; font-size: 24px; padding: 4px 8px; }
 .search { display: flex; border: 2px solid var(--green); border-radius: 22px; overflow: hidden; width: 220px; }
 .search input { border: 0; padding: 7px 14px; flex: 1; min-width: 0; font: inherit; outline: 0; }
@@ -226,6 +225,27 @@ select { font: inherit; padding: 8px 12px; border: 1px solid var(--line); border
 .pd-points { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
 .pd-points li { background: var(--green-l); color: var(--green-d); border-radius: 8px; padding: 4px 10px; font-size: 14px; font-weight: 600; }
 .pd-points li::before { content: "✓ "; color: var(--orange); }
+
+/* ---------- 하위 메뉴 (드롭다운) ---------- */
+.gnb-list > li { position: relative; }
+.gnb-list > li.hot > a { color: var(--orange); }
+.caret { display: inline-block; width: 6px; height: 6px; margin-left: 6px; border-right: 1.5px solid #9aa0a6; border-bottom: 1.5px solid #9aa0a6; transform: translateY(-3px) rotate(45deg); }
+.gnb-list .sub { list-style: none; margin: 0; padding: 8px; position: absolute; left: 0; top: 100%; min-width: 170px; background: #fff;
+  border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 10px 28px rgba(0,0,0,.12); display: none; z-index: 30; }
+.gnb-list > li.has-sub:hover > .sub, .gnb-list > li.has-sub:focus-within > .sub { display: block; }
+.gnb-list .sub a { display: flex; justify-content: space-between; gap: 12px; padding: 9px 12px; font-weight: 600; font-size: 15px; border-radius: 8px; color: var(--ink); white-space: nowrap; }
+.gnb-list .sub a:hover { background: var(--green-l); color: var(--green); }
+.gnb-list .sub small { color: var(--sub); font-weight: 400; }
+.subtabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; }
+.subtabs a { border: 1px solid var(--line); border-radius: 20px; padding: 7px 16px; font-weight: 600; font-size: 15px; background: #fff; }
+.subtabs a small { color: var(--sub); font-weight: 400; margin-left: 2px; }
+.subtabs a.on, .subtabs a:hover { background: var(--green); border-color: var(--green); color: #fff; }
+.subtabs a.on small, .subtabs a:hover small { color: #e2efd9; }
+@media (max-width: 760px) {
+  .gnb-list .sub { position: static; display: flex; flex-wrap: wrap; gap: 4px; box-shadow: none; border: 0; padding: 0 0 8px 16px; min-width: 0; }
+  .gnb-list .sub a { padding: 4px 10px; font-size: 14px; background: var(--bg2); }
+  .caret { display: none; }
+}
 
 /* ---------- 알림 ---------- */
 #toast { position: fixed; left: 50%; bottom: 32px; transform: translate(-50%, 20px); background: rgba(29,29,31,.92); color: #fff; padding: 12px 22px;

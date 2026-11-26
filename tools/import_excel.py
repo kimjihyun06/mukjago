@@ -69,7 +69,11 @@ def category(kind: str, tax: str) -> str:
     if kind == "김치":
         return "kimchi"
     if kind == "수산":
-        return "easy" if tax == "과세" else "sea"   # 게장·무침·새우장 = 반찬
+        return "sea"     # 게장·무침도 수산물 (하위 메뉴 「밥도둑」은 js/content.js 가 나눔)
+    if kind in ("축산", "정육"):
+        return "meat"
+    if kind in ("간편", "간편식품", "가공"):
+        return "easy"
     return "farm"
 
 
