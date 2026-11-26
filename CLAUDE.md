@@ -116,6 +116,8 @@ python tools/makebook.py       # 기록 -> 출판 원자료
 - 2026-11-26: 받은 카톡·포스터 홍보이미지 8장이 전부 **공급업체(우리농축산) 이름과 그쪽 전화번호**가 박힌 것이었다.
   그대로 올리면 손님이 공급업체로 전화한다. → `tools/import_photos.py` 가 숫자·상세 외 그림은 올리지 않고,
   사실만 `tools/product_info.json` 에 글로 옮겨 top.jpg 에 먹자GO 디자인으로 다시 그린다.
+- 2026-11-26: 사용자는 PC 의 자료 폴더를 「넣어 두면 홈페이지에 들어간다」고 여겼지만, 클라우드 세션은 PC 를 못 본다.
+  국내산 햇밤 상세페이지가 PC 에만 있어 빠졌다. → PC 에서 `사진전체갱신.bat` 으로 전 품목을 연결한다.
 - 2026-11-26: 대표사진 16장 상품이 휴대폰에서 화면 폭 1288px 로 밀렸다 (썸네일 줄이 칸을 늘림). → `.pd > * { min-width: 0 }`
 
 ## 11. 이 홈페이지의 짜임 (어디를 고치나)
@@ -125,7 +127,8 @@ python tools/makebook.py       # 기록 -> 출판 원자료
 | 회사 정보·전화·계좌·카톡 링크·**메인 배너** | `js/config.js` |
 | **상품·가격** | 공급표 엑셀 → `python tools/import_excel.py` → `js/products.js` (**자동 생성, 손대지 말 것**) |
 | **메뉴·하위 메뉴**(분류)·첫 화면 Best·후기·공지 | `js/content.js` — 메뉴 순서는 자료 폴더 순서(1 전체상품 … 8 입점문의)를 따른다 |
-| 상품 사진 | `python tools/import_photos.py <사진폴더> <상품번호>` → `상품갱신.bat` (크기 줄이기·상세 자르기 자동) |
+| 상품 사진 (전 품목) | `사진전체갱신.bat` = `python tools/import_all_photos.py` — 자료\엑셀 전체를 폴더 이름으로 상품과 짝지음 |
+| 상품 사진 (한 상품) | `python tools/import_photos.py <사진폴더> <상품번호>` → `상품갱신.bat` (크기 줄이기·상세 자르기 자동) |
 | 상품 특징(홍보이미지에서 옮긴 사실) | `tools/product_info.json` |
 | 사진 없는 상품의 AI 연출 이미지 | `tools/ai_prompts.json` → `python tools/generate_images.py` (**돈 듦: 장당 약 $0.04 — 「만들 것 N장」 먼저 말하고**) |
 | 첫 화면 칸 순서·문구 | `index.html` |

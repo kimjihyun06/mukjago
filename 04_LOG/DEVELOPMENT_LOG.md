@@ -399,3 +399,35 @@ POST repos/kimjihyun06/mukjago/pages → HTTP 403 (Access to this GitHub API pat
 Pages 켜진 뒤 https://kimjihyun06.github.io/mukjago/ 실측
 
 ==========================================================
+
+==========================================================
+[DEVELOPMENT RECORD #012]
+
+DATE: 2026-11-26
+TIME: 05:46
+
+[USER] 사용자 지시
+자료\엑셀 폴더에 상세페이지 이미지가 있으면 홈페이지에 넣어야 하는데 없다 (국내산 햇밤). 전 품목 확인해서 연결
+
+[CONTEXT] 그때 상황
+클라우드 세션은 PC(D:) 를 못 봄. 받은 것은 대화창 캡처(91×2000 축소본)뿐이라 쓸 수 없음. 연결된 PC 폴더 0
+
+[EXECUTION] 실제 한 일
+tools/import_all_photos.py (자료 폴더 전체 → 폴더 이름으로 상품 짝짓기, 애매하면 보류, 원래 이름으로 동점 가르기), 사진전체갱신.bat (git pull → 미리보기 → 확인 → 연결 → 점검 → 확인 → push), product_info 에 kakao_detail·skip_files 저장, import_photos AI 유지 규칙
+
+[FILES] 건드린 파일
+tools/import_all_photos.py, tools/import_photos.py, tools/product_info.json, 사진전체갱신.bat, README.md, CLAUDE.md
+
+[ERROR] 오류
+ERROR #003
+
+[TEST] 어떻게 쟀나
+T024
+
+[RESULT] 결과
+도구는 준비됨. 실제 전 품목 연결은 PC 에서 bat 실행 또는 Remote Control 연결 후
+
+[NEXT] 다음
+사용자: PC 에서 사진전체갱신.bat 또는 Remote Control 연결
+
+==========================================================

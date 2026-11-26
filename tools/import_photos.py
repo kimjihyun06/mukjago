@@ -20,6 +20,7 @@
 """
 from __future__ import annotations
 
+import json
 import re
 import sys
 from pathlib import Path
@@ -113,7 +114,15 @@ def main():
     src = unwrap(src)
     files = [f for f in src.rglob("*") if f.is_file() and f.suffix.lower() in EXT]
     main_f, detail_f, kakao, skip = classify(files, src)
-    if "--kakao-detail" in sys.argv:
+    # 상품별로 정해 둔 것 (tools/product_info.json): 다시 돌려도 사용자의 선택이 유지되게
+    info_f = ROOT / "tools" / "product_info.json"
+    opt = (json.loads(info_f.read_text(encoding="utf-8")) if info_f.exists() else {}).get(str(pid), {})
+    if opt.get("skip_files"):  # 예: 홍게 5kg 상세페이지는 넣지 않기로 함
+        drop = set(opt["skip_files"])
+        main_f = [f for f in main_f if f.name not in drop]
+        detail_f = [f for f in detail_f if f.name not in drop]
+        skip += [f for f in files if f.name in drop]
+    if "--kakao-detail" in sys.argv or opt.get("kakao_detail"):
         # 사용자가 「카톡 사진을 상세로 써 달라」고 한 경우에만: 카톡 이름의 실물 사진 -> 상세 이미지 (이름순)
         # 포스터·광고(카톡 이름이 아닌 그림)는 여전히 올리지 않는다.
         kk = sorted((f for f in kakao if re.match(r"(?i)kakaotalk|카톡", f.stem)), key=lambda f: f.name)
@@ -122,8 +131,11 @@ def main():
     out = ROOT / "images" / "products" / f"p{pid:02d}"
     out.mkdir(parents=True, exist_ok=True)
     for old in out.iterdir():
-        if old.name != "top.jpg":
-            old.unlink()
+        if old.name == "top.jpg":
+            continue
+        if old.stem.startswith("ai-") and not main_f:
+            continue  # 새 실제 대표사진이 없으면 AI 연출 이미지는 남긴다 (대표사진이 비지 않게)
+        old.unlink()
 
     total = 0
     for i, f in enumerate(main_f, 1):
@@ -143,7 +155,7 @@ def main():
         print(f"  올리지 않음(카톡·포스터 홍보이미지): {', '.join(f.name for f in kakao)}")
         print("  -> 내용은 tools/product_info.json 에 옮겨 적으세요")
     if skip:
-        print(f"  건너뜀(이름 규칙 밖): {', '.join(f.name for f in skip)}")
+        print(f"  건너뜀(정해 둔 제외·이름 규칙 밖): {', '.join(f.name for f in skip)}")
 
 
 if __name__ == "__main__":
