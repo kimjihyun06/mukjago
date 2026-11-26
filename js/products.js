@@ -1,6 +1,6 @@
 /* 자동 생성 파일 — 손으로 고치지 마세요 (다시 만들면 지워집니다).
  * 원본: 늘푸른우리 제품 공급표_잇플로우.xlsx
- * 만든 때: 2026-11-26 04:16
+ * 만든 때: 2026-11-26 04:21
  * 다시 만들기: python tools/import_excel.py
  * 문구·후기·공지·분류는 js/content.js 에서 고칩니다. */
 window.PRODUCTS = [
@@ -486,9 +486,23 @@ window.PRODUCTS = [
   "price": 16360,
   "ship": 4000,
   "emoji": "🐟",
-  "images": [],
+  "images": [
+   "images/products/p17/1.jpg",
+   "images/products/p17/2.jpg"
+  ],
   "top": "images/products/p17/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p17/detail-1.jpg",
+   "images/products/p17/detail-2.jpg",
+   "images/products/p17/detail-3.jpg",
+   "images/products/p17/detail-4.jpg",
+   "images/products/p17/detail-5.jpg",
+   "images/products/p17/detail-6.jpg",
+   "images/products/p17/detail-7.jpg",
+   "images/products/p17/detail-8.jpg",
+   "images/products/p17/detail-9.jpg",
+   "images/products/p17/detail-10.jpg"
+  ],
   "options": [
    {
     "name": "국내산 방어 필렛",
@@ -504,7 +518,18 @@ window.PRODUCTS = [
     "ship": 4000,
     "tax": "면세"
    }
-  ]
+  ],
+  "info": {
+   "sub": "청정 남해 일대에서 잡은 국내산 제철 대방어",
+   "points": [
+    "300g 1~2인분",
+    "500g 2~3인분",
+    "회초장 30g 증정",
+    "빙장 포장"
+   ],
+   "origin": "국내산 (남해 일대)",
+   "courier": "CJ대한통운 · 오후 2시 전 결제 시 당일 출고"
+  }
  },
  {
   "id": 18,
@@ -516,9 +541,24 @@ window.PRODUCTS = [
   "price": 14710,
   "ship": 4000,
   "emoji": "🐟",
-  "images": [],
+  "images": [
+   "images/products/p18/1.jpg",
+   "images/products/p18/2.jpg",
+   "images/products/p18/3.jpg",
+   "images/products/p18/4.jpg",
+   "images/products/p18/5.jpg"
+  ],
   "top": "images/products/p18/top.jpg",
-  "detail": [],
+  "detail": [
+   "images/products/p18/detail-1.jpg",
+   "images/products/p18/detail-2.jpg",
+   "images/products/p18/detail-3.jpg",
+   "images/products/p18/detail-4.jpg",
+   "images/products/p18/detail-5.jpg",
+   "images/products/p18/detail-6.jpg",
+   "images/products/p18/detail-7.jpg",
+   "images/products/p18/detail-8.jpg"
+  ],
   "options": [
    {
     "name": "하모 샤브샤브세트",
@@ -527,7 +567,18 @@ window.PRODUCTS = [
     "ship": 4000,
     "tax": "면세"
    }
-  ]
+  ],
+  "info": {
+   "sub": "여수 국내산 하모(갯장어) 샤브샤브 세트",
+   "points": [
+    "손질 하모 300g",
+    "스틱육수 1봉",
+    "약재 1봉",
+    "참소스 2개"
+   ],
+   "origin": "국내산 (여수)",
+   "courier": "CJ대한통운 · 5개까지 합배송"
+  }
  },
  {
   "id": 20,
